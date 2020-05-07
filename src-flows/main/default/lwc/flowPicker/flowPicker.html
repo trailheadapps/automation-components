@@ -1,0 +1,12 @@
+<template>
+    <div class={componentClasses}>
+        <lightning-combobox
+            label={label}
+            placeholder={placeholder}
+            value={selectedFlowApiName}
+            options={flowDefinitions}
+            required={required}
+            onchange={handleChange}
+        ></lightning-combobox>
+    </div>
+</template>

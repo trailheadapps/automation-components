@@ -1,0 +1,3 @@
+<aura:documentation>
+	<aura:description>Minimizes the utility bar (only if the flow is running in a utility bar).</aura:description>
+</aura:documentation>

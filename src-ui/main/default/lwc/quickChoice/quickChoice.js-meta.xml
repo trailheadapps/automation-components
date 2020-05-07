@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>48.0</apiVersion>
+    <isExposed>true</isExposed>
+    <masterLabel>Quick Choice</masterLabel>
+    <description
+    >Displays a list of choices to the user in a variety of formats (picklist, radio, cards)</description>
+    <targets>
+        <target>lightning__FlowScreen</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightning__FlowScreen">
+            <property name="value" label="Value" type="String" />
+            <property
+                name="choiceValues"
+                label="Choice Values (String Collection)"
+                type="String[]"
+            />
+            <property
+                name="choiceLabels"
+                label="Choice Labels (String Collection)"
+                type="String[]"
+            />
+            <property
+                name="choiceIcons"
+                label="Card Mode - Choice Icons (String Collection)"
+                type="String[]"
+            />
+            <property
+                name="numberOfColumns"
+                label="Card Mode - Number of Columns (1 or 2)"
+                type="String"
+            />
+            <property
+                name="inputSource"
+                label="Input Source (list or picklist)"
+                type="String"
+                required="true"
+                default="list"
+            />
+            <property name="label" label="Master Label" type="String" />
+            <property
+                name="required"
+                label="Required"
+                type="Boolean"
+                default="false"
+            />
+            <property
+                name="displayMode"
+                label="Display Mode (cards, picklist or radio)"
+                type="String"
+                required="true"
+                default="picklist"
+            />
+            <property
+                name="recordTypeId"
+                label="Record Type Id"
+                type="String"
+            />
+            <property
+                name="qualifiedPicklistFieldName"
+                label="Qualified Picklist Field Name (eg. Opportunity.StageName)"
+                type="String"
+            />
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

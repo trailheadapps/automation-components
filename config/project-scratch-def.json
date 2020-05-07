@@ -1,0 +1,13 @@
+{
+    "orgName": "automation-components",
+    "edition": "Developer",
+    "features": [],
+    "settings": {
+        "apexSettings": {
+            "enableApexApprovalLockUnlock": true
+        },
+        "mobileSettings": {
+            "enableS1EncryptedStoragePref2": false
+        }
+    }
+}

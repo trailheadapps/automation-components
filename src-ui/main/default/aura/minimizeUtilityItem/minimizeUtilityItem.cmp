@@ -1,0 +1,3 @@
+<aura:component implements="lightning:availableForFlowActions" access="global">
+    <lightning:utilityBarAPI aura:id="utilityBar" />
+</aura:component>

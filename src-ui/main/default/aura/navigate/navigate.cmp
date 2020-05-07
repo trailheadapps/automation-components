@@ -1,0 +1,47 @@
+<aura:component implements="lightning:availableForFlowActions" access="global">
+    <aura:attribute
+        name="destinationType"
+        type="String"
+        required="true"
+        access="global"
+        description="Redirect destination type. Supported values: object, record, app, url, tab, knowledge, namedpage, relatedlist"
+    />
+    <aura:attribute
+        name="destinationRecordId"
+        type="String"
+        access="global"
+        description="Target record Id used when destination is 'record' or 'relatedlist'."
+    />
+    <aura:attribute
+        name="destinationName"
+        type="String"
+        access="global"
+        description="If destination is 'object' or 'record', value is the object API name. If destination is 'app', value is the name of the app. If destination is 'namedpage', value is the name of the page. If destination is 'tab', value is the name of the tab. If destination is 'knowledge', value is the name of the article type."
+    />
+    <aura:attribute
+        name="destinationAction"
+        type="String"
+        access="global"
+        description="If destination is 'object', value must be one of [home, list, new]. If destination is 'record', value must be one of [clone, edit, view]."
+    />
+    <aura:attribute
+        name="destinationActionFilter"
+        type="String"
+        access="global"
+        description="Filter name used when destination is 'object' and action name is 'list'."
+    />
+    <aura:attribute
+        name="destinationUrl"
+        type="String"
+        access="global"
+        description="Target URL used when destination is 'url' or 'knowledge'."
+    />
+    <aura:attribute
+        name="relationshipName"
+        type="String"
+        access="global"
+        description="Target relationship name used when destination is 'relatedList'."
+    />
+
+    <lightning:navigation aura:id="navService" />
+</aura:component>

@@ -1,0 +1,94 @@
+<template>
+    <fieldset class="slds-form-element">
+        <legend class="slds-form-element__legend slds-form-element__label">
+            <abbr if:true={required} title="required" class="slds-required"
+                >*</abbr
+            >
+            {label}
+        </legend>
+        <div class="slds-form-element__control cards-container">
+            <div
+                class="slds-grid slds-gutters_medium slds-wrap slds-grid_vertical-align-center"
+            >
+                <template for:each={options} for:item="option">
+                    <div key={option.value} class={columnClass}>
+                        <div
+                            class="slds-visual-picker slds-visual-picker_vertical slds-size_medium"
+                        >
+                            <input
+                                type="radio"
+                                id={option.value}
+                                value={option.value}
+                                name="visualList"
+                                data-id={option.value}
+                                onclick={handleChange}
+                            />
+                            <label for={option.value}>
+                                <!-- With icons-->
+                                <template if:true={hasIcons}>
+                                    <span
+                                        class="slds-visual-picker__figure slds-visual-picker__text slds-box slds-box_link slds-media slds-media_center card-with-icon"
+                                    >
+                                        <div
+                                            class="slds-media__figure slds-media__figure_fixed-width slds-align_absolute-center slds-var-p-right_small slds-border_right"
+                                        >
+                                            <span class="slds-icon_container">
+                                                <lightning-icon
+                                                    icon-name={option.iconName}
+                                                    size="small"
+                                                >
+                                                </lightning-icon>
+                                            </span>
+                                        </div>
+                                        <div class="slds-media__body">
+                                            <span
+                                                class="slds-text-heading_small"
+                                                >{option.value}</span
+                                            >
+                                            <span
+                                                if:true={option.label}
+                                                class="slds-text-title slds-var-m-top_x-small"
+                                                >{option.label}</span
+                                            >
+                                        </div>
+                                    </span>
+                                </template>
+
+                                <!-- Without icons-->
+                                <template if:false={hasIcons}>
+                                    <span
+                                        class="slds-visual-picker__figure slds-visual-picker__text"
+                                    >
+                                        <span>
+                                            <span
+                                                class="slds-text-heading_small"
+                                                >{option.value}</span
+                                            >
+                                            <span
+                                                if:true={option.label}
+                                                class="slds-text-title slds-var-m-top_x-small"
+                                                >{option.label}</span
+                                            >
+                                        </span>
+                                    </span>
+                                </template>
+
+                                <!-- Selected option marker -->
+                                <span
+                                    class="icon-container slds-visual-picker__text-check"
+                                >
+                                    <lightning-icon
+                                        icon-name="utility:check"
+                                        size="x-small"
+                                        variant="inverse"
+                                    >
+                                    </lightning-icon>
+                                </span>
+                            </label>
+                        </div>
+                    </div>
+                </template>
+            </div>
+        </div>
+    </fieldset>
+</template>

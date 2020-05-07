@@ -1,0 +1,7 @@
+.cards-container {
+    max-width: 41rem;
+}
+
+.card-with-icon {
+    width: auto !important;
+}

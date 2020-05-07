@@ -1,0 +1,77 @@
+<aura:documentation>
+	<aura:description>
+		<p>Redirects the user at the end of a Flow.</p>
+		<p>This component uses <code>lightning:navigation</code> to navigate to one these destination types:</p>
+		<table>
+			<tr>
+				<th>Destination Type</th>
+				<th>Description</th>
+				<th>Required Parameters</th>
+			</tr>
+			<tr>
+				<td>record</td>
+				<td>Record page in edit, clone or view mode</td>
+				<td>
+					<ul>
+						<li><code>destinationName</code>, the object API name.</li>
+						<li><code>destinationRecordId</code>, the record Id.</li>
+						<li><code>destinationAction</code>, the record page mode. One of clone, edit, view.</li>
+					</ul>
+				</td>
+			</tr>
+			<tr>
+				<td>object</td>
+				<td>New record form or list view</td>
+				<td>
+					<ul>
+						<li><code>destinationName</code>, the object API name.</li>
+						<li><code>destinationAction</code>, the object page mode. One of home, list, new.</li>
+						<li><code>destinationActionFilter</code>, the list view name when displaying a list.</li>
+					</ul>
+				</td>
+			</tr>
+			<tr>
+				<td>app</td>
+				<td>App page</td>
+				<td><code>destinationName</code>, the app API name.</td>
+			</tr>
+			<tr>
+				<td>url</td>
+				<td>Web page</td>
+				<td><code>destinationUrl</code>, the web page's URL.</td>
+			</tr>
+			<tr>
+				<td>tab</td>
+				<td>Custom Tab page</td>
+				<td><code>destinationName</code>, the tab API name.</td>
+			</tr>
+			<tr>
+				<td>knowledge</td>
+				<td>Knowledge page</td>
+				<td>
+					<ul>
+						<li><code>destinationName</code>, the article type.</li>
+						<li><code>destinationUrl</code>, the article URL.</li>
+					</ul>
+				</td>
+			</tr>
+			<tr>
+				<td>namedPage</td>
+				<td>Named page (examples include ”home”, “today”, “chatter” and a variety of community named pages)</td>
+				<td><code>destinationName</code>, the page API name.</td>
+			</tr>
+			<tr>
+				<td>relatedList</td>
+				<td>Related object list view</td>
+				<td>
+					<ul>
+						<li><code>destinationName</code>, the object API name.</li>
+						<li><code>destinationRecordId</code>, the record Id.</li>
+						<li><code>relationshipName</code>, the relationship API name.</li>
+					</ul>
+				</td>
+			</tr>
+		</table>
+
+	</aura:description>
+</aura:documentation>

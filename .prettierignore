@@ -1,0 +1,13 @@
+# List files or directories below to ignore them when running prettier
+# More information: https://prettier.io/docs/en/ignore.html
+.sfdx
+.localdevserver
+.vscode
+jsconfig.json
+coverage/
+
+# Exclude packaged project config (edited by CI workflow)
+sfdx-project-packaged.json
+
+# Exclude Connect API
+src-messaging/main/connect-api/*
