@@ -30,6 +30,8 @@ Follow this set of instructions if you want to deploy the components to your pro
 
 1. Click links from the table to install the managed packages in your org.
 
+   Disclaimer: these packages haven't gone through security review yet but that is our plan for the future.
+
 | Package Name           | Install Link                                                                                                                               | Documentation Link                                                                                  |
 | ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------ | --------------------------------------------------------------------------------------------------- |
 | Apex Formula Evaluator | <a name="AC - Apex Formula Evaluator" href="https://login.salesforce.com/packaging/installPackage.apexp?p0=04t5w000003xWckAAE">Install</a> | [Documentation](https://github.com/trailheadapps/automation-components/wiki/apex-formula-evaluator) |
