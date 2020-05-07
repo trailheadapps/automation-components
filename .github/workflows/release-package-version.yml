@@ -41,7 +41,8 @@ jobs:
 
             # Add namespace to project config
             - name: Add namespace to project config
-              run: sed -i 's,"namespace": "","namespace": "autocomp",' sfdx-project.json
+              run: |
+                  sed -i 's,"namespace": "","namespace": "autocomp",' sfdx-project.json
 
             # Create package version and extract its id
             - name: Create package version
@@ -89,7 +90,8 @@ jobs:
 
             # Remove namespace from project config
             - name: Remove namespace from project config
-              run: sed -i 's,"namespace": "autocomp","namespace": "",' sfdx-project.json
+              run: |
+                  sed -i 's,"namespace": "autocomp","namespace": "",' sfdx-project.json
 
             # Commit project config and readme
             - name: Commit project config and readme
