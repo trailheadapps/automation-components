@@ -1,6 +1,7 @@
 global class CalculateBusinessHours {
     /**
      * Calculates the duration in terms business hours between two dates
+     * Original contribution by Chris Van Der Merwe (https://trailblazer.me/id/cvandermerwe1)
      * Inputs:
      *   Id businessHoursId
      *   DateTime startDate
