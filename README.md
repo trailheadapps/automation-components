@@ -30,7 +30,7 @@ Follow this set of instructions if you want to deploy the components to your pro
 
 1. Click links from the table to install the managed packages in your org.
 
-   Disclaimer: these packages haven't gone through security review yet but that is our plan for the future.
+    Disclaimer: these packages haven't gone through security review yet but that is our plan for the future.
 
 | Package Name           | Install Link                                                                                                                               | Documentation Link                                                                                  |
 | ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------ | --------------------------------------------------------------------------------------------------- |
