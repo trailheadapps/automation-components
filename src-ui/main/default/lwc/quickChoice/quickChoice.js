@@ -73,7 +73,7 @@ export default class QuickChoice extends LightningElement {
                 : new Array(data.values.length);
             // Load values from picklist field
             let options;
-            if (this.isCards) {
+            if (this.isCards()) {
                 // Keep labels empty for cards since values === labels
                 options = data.values.map((option, index) => ({
                     value: option.value,
@@ -88,7 +88,7 @@ export default class QuickChoice extends LightningElement {
             }
             // Add a 'none' option when selection is not required
             if (!this.required) {
-                if (this.isCards) {
+                if (this.isCards()) {
                     options.unshift({
                         label: '-- None --',
                         value: '',
