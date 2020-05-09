@@ -107,7 +107,7 @@ This includes non source-tracked orgs such as a [free Developer Edition Org](htt
 1. Run this command in a terminal to deploy the app.
 
     ```
-    sfdx force:source:deploy -p force-app
+    sfdx force:source:deploy -p src-collections,src-data,src-flows,src-messaging,src-security,src-strings,src-ui,src-utilities
     ```
 
 1. If your org isn't already open, open it now:
