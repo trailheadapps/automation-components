@@ -6,8 +6,8 @@
 jsconfig.json
 coverage/
 
-# Exclude packaged project config (edited by CI workflow)
-sfdx-project-packaged.json
+# Exclude project config (edited by CI workflow)
+sfdx-project.json
 
 # Exclude Connect API
 src-messaging/main/connect-api/*
