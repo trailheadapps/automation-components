@@ -89,17 +89,17 @@ Follow this set of instructions if you want to deploy the components to your pro
 Follow this set of instructions if you want to deploy the app to a more permanent environment than a Scratch org.
 This includes non source-tracked orgs such as a [free Developer Edition Org](https://developer.salesforce.com/signup) or a [Trailhead Playground](https://trailhead.salesforce.com/).
 
-1. Authorize your Trailhead Playground or Developer org and provide it with an alias (**mydevorg** in the command below):
-
-    ```
-    sfdx force:auth:web:login -d -a mydevorg
-    ```
-
 1. Clone this repository:
 
     ```
     git clone https://github.com/trailheadapps/automation-components
     cd automation-components
+    ```
+
+1. Authorize your Trailhead Playground or Developer org and provide it with an alias (**mydevorg** in the command below):
+
+    ```
+    sfdx force:auth:web:login -s -a mydevorg
     ```
 
 1. If you are setting up a Developer Edition: go to **Setup**, under **My Domain**, [register a My Domain](https://help.salesforce.com/articleView?id=domain_name_setup.htm&type=5).
