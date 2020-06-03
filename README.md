@@ -2,7 +2,7 @@
 
 [![Github Workflow](<https://github.com/trailheadapps/automation-components/workflows/Salesforce%20DX%20(scratch%20org)/badge.svg?branch=master>)](https://github.com/trailheadapps/automation-components/actions?query=workflow%3A%22Salesforce+DX+%28scratch+org%29%22) [![codecov](https://codecov.io/gh/trailheadapps/automation-components/branch/master/graph/badge.svg)](https://codecov.io/gh/trailheadapps/automation-components)
 
-Automation Components provides a set of reusable and production-ready extensions that include invocable actions, flow screen components and local actions. These are intended as an easy to install, easy to use toolbox.
+Automation Components provides a set of reusable and production-ready extensions that include invocable actions, flow screen components and local actions. These are intended as an easy to install, easy to use toolbox. Read more in this [blog post](https://developer.salesforce.com/blogs/2020/05/introducing-automation-components.html).
 
 This is an Open Source project. A special thanks to the project contributors.
 
