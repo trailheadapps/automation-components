@@ -9,6 +9,7 @@
         var destinationActionFilter = component.get(
             'v.destinationActionFilter'
         );
+
         if (!['home', 'list', 'new'].includes(destinationAction)) {
             throw new Error(
                 'Invalid Destination Action: ' +
@@ -16,6 +17,7 @@
                     '+. Supported values: home, list, new'
             );
         }
+
         // Return page reference
         return {
             type: 'standard__objectPage',
@@ -40,6 +42,7 @@
             component,
             'destinationRecordId'
         );
+
         if (!['clone', 'edit', 'view'].includes(destinationAction)) {
             throw new Error(
                 'Invalid Destination Action: ' +
@@ -47,6 +50,7 @@
                     '. Supported values: clone, edit, view'
             );
         }
+
         // Return page reference
         return {
             type: 'standard__recordPage',
@@ -61,6 +65,7 @@
     getAppReference: function (component) {
         // Validate inputs
         var destinationName = this.require(component, 'destinationName');
+
         // Return page reference
         return {
             type: 'standard__app',
@@ -73,6 +78,7 @@
     getUrlReference: function (component) {
         // Validate inputs
         var destinationUrl = this.require(component, 'destinationUrl');
+
         // Return page reference
         return {
             type: 'standard__webPage',
@@ -85,6 +91,7 @@
     getNamedPageReference: function (component) {
         // Validate inputs
         var destinationName = this.require(component, 'destinationName');
+
         // Return page reference
         return {
             type: 'standard__namedPage',
@@ -97,6 +104,7 @@
     getTabReference: function (component) {
         // Validate inputs
         var destinationName = this.require(component, 'destinationName');
+
         // Return page reference
         return {
             type: 'standard__navItemPage',
@@ -110,6 +118,7 @@
         // Validate inputs
         var destinationName = this.require(component, 'destinationName');
         var destinationUrl = this.require(component, 'destinationUrl');
+
         // Return page reference
         return {
             type: 'standard__knowledgeArticlePage',
@@ -128,6 +137,7 @@
         );
         var destinationName = this.require(component, 'destinationName');
         var relationshipName = this.require(component, 'relationshipName');
+
         // Return page reference
         return {
             type: 'standard__recordRelationshipPage',
@@ -142,11 +152,13 @@
 
     require: function (component, attributeName) {
         var value = component.get('v.' + attributeName);
+
         if (!value) {
             throw new Error(
                 'Missing mandatory value for attribute ' + attributeName
             );
         }
+
         return value;
     }
 });
