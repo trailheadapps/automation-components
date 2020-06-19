@@ -4,6 +4,7 @@
 
         var destinationType = component.get('v.destinationType').toLowerCase();
         var pageReference;
+
         switch (destinationType) {
             case 'object':
                 pageReference = helper.getObjectPageReference(component);
