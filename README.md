@@ -2,7 +2,7 @@
 
 [![Github Workflow](<https://github.com/trailheadapps/automation-components/workflows/Salesforce%20DX%20(scratch%20org)/badge.svg?branch=master>)](https://github.com/trailheadapps/automation-components/actions?query=workflow%3A%22Salesforce+DX+%28scratch+org%29%22) [![codecov](https://codecov.io/gh/trailheadapps/automation-components/branch/master/graph/badge.svg)](https://codecov.io/gh/trailheadapps/automation-components)
 
-Automation Components provides a set of reusable and production-ready extensions that include invocable actions, flow screen components and local actions. These are intended as an easy to install, easy to use toolbox.
+Automation Components provides a set of reusable and production-ready extensions that include invocable actions, flow screen components and local actions. These are intended as an easy to install, easy to use toolbox. Read more in this [blog post](https://developer.salesforce.com/blogs/2020/05/introducing-automation-components.html).
 
 This is an Open Source project. A special thanks to the project contributors.
 
@@ -89,17 +89,17 @@ Follow this set of instructions if you want to deploy the components to your pro
 Follow this set of instructions if you want to deploy the app to a more permanent environment than a Scratch org.
 This includes non source-tracked orgs such as a [free Developer Edition Org](https://developer.salesforce.com/signup) or a [Trailhead Playground](https://trailhead.salesforce.com/).
 
-1. Authorize your Trailhead Playground or Developer org and provide it with an alias (**mydevorg** in the command below):
-
-    ```
-    sfdx force:auth:web:login -d -a mydevorg
-    ```
-
 1. Clone this repository:
 
     ```
     git clone https://github.com/trailheadapps/automation-components
     cd automation-components
+    ```
+
+1. Authorize your Trailhead Playground or Developer org and provide it with an alias (**mydevorg** in the command below):
+
+    ```
+    sfdx force:auth:web:login -s -a mydevorg
     ```
 
 1. If you are setting up a Developer Edition: go to **Setup**, under **My Domain**, [register a My Domain](https://help.salesforce.com/articleView?id=domain_name_setup.htm&type=5).

@@ -80,7 +80,7 @@ jobs:
               run: |
                   packageName="${{ github.event.client_payload.packageName }}"
                   packageVersionId="${{ steps.create-package-version.outputs.packageVersionId }}"
-                  packageLinkRegex="<a name=\"$packageName\" href=\"https:\/\/login\.salesforce\.com\/packaging\/installPackage\.apexp\?p0=[a-zA-Z0-9]{18}\">"
+                  packageLinkRegex="<a name=\"$packageName\" href=\"https:\/\/login\.salesforce\.com\/packaging\/installPackage\.apexp\?p0=[a-zA-ZA-ZA-Z0-9]{18}\">"
                   newPackageLink="<a name=\"${packageName}\" href=\"https://login.salesforce.com/packaging/installPackage.apexp?p0=${packageVersionId}\">"
                   sed -E -i "s,${packageLinkRegex},${newPackageLink}," README.md
 

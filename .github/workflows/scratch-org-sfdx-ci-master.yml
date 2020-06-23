@@ -33,15 +33,19 @@ jobs:
             # Install npm dependencies for Prettier and Jest
             - name: 'Install npm dependencies'
               if: steps.cache-npm.outputs.cache-hit != 'true'
-              run: npm install
+              run: npm ci
 
             # Prettier formatting
             - name: 'Code formatting verification with Prettier'
               run: npm run prettier:verify
 
-            # ESlint
+            # Lint LWC
             - name: 'Lint Lightning Web Components'
               run: npm run lint:lwc
+
+            # Lint Aura
+            - name: 'Lint Aura'
+              run: npm run lint:aura
 
             # Unit tests
             - name: 'Unit test Lightning Web Components'
@@ -51,7 +55,7 @@ jobs:
             - name: 'Upload code coverage for LWC to Codecov.io'
               uses: codecov/codecov-action@v1
               with:
-                  flag: LWC
+                  flags: LWC
 
     scratch-org-test:
         runs-on: ubuntu-latest
@@ -78,10 +82,6 @@ jobs:
             - name: 'Authenticate Dev Hub'
               run: 'sfdx force:auth:sfdxurl:store -f ./DEVHUB_SFDX_URL.txt -a devhub -d'
 
-            # Lint Aura components
-            - name: 'Lint Aura components'
-              run: 'sfdx force:lightning:lint . --exit'
-
             # Create scratch org
             - name: 'Create scratch org'
               run: 'sfdx force:org:create -f config/project-scratch-def.json -a scratch-org -s -d 1'
@@ -98,7 +98,7 @@ jobs:
             - name: 'Upload code coverage for Apex to Codecov.io'
               uses: codecov/codecov-action@v1
               with:
-                  flag: Apex
+                  flags: Apex
 
             # Housekeeping
             - name: 'Delete scratch org'

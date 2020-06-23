@@ -1,6 +1,7 @@
 ({
     invoke: function (component) {
         var utilityAPI = component.find('utilityBar');
+
         utilityAPI
             .getUtilityInfo()
             .then(function (response) {
