@@ -11,6 +11,9 @@ on:
 jobs:
     release-package-version:
         runs-on: ubuntu-latest
+        strategy:
+            matrix:
+                package: ${{ fromJson( github.event.client_payload.packageNames ) }}
         steps:
             # Install Salesforce CLI
             - name: Install Salesforce CLI
@@ -46,10 +49,10 @@ jobs:
 
             # Create package version and extract its id
             - name: Create package version
-              id: create-package-version
+              id: createPackageVersion
               run: |
                   set +e
-                  packageName="${{ github.event.client_payload.packageName }}"
+                  packageName="${{ matrix.package }}"
                   json=$(sfdx force:package:version:create -c -p "$packageName" -x -w 20 -f config/project-scratch-def.json --json)
                   echo $json
                   status=$(echo $json | jq '.status')
@@ -73,40 +76,35 @@ jobs:
 
             # Install new package in scratch org
             - name: Install new package version in scratch org
-              run: sfdx force:package:install --package ${{ steps.create-package-version.outputs.packageVersionId }} -w 10 -u scratch-org -r
+              run: sfdx force:package:install --package ${{ steps.createPackageVersion.outputs.packageVersionId }} -w 10 -u scratch-org -r
 
             # Update package install link in readme
             - name: Update package install link in readme
               run: |
-                  packageName="${{ github.event.client_payload.packageName }}"
-                  packageVersionId="${{ steps.create-package-version.outputs.packageVersionId }}"
+                  packageName="${{ matrix.package }}"
+                  packageVersionId="${{ steps.createPackageVersion.outputs.packageVersionId }}"
                   packageLinkRegex="<a name=\"$packageName\" href=\"https:\/\/login\.salesforce\.com\/packaging\/installPackage\.apexp\?p0=[a-zA-ZA-ZA-Z0-9]{18}\">"
                   newPackageLink="<a name=\"${packageName}\" href=\"https://login.salesforce.com/packaging/installPackage.apexp?p0=${packageVersionId}\">"
                   sed -E -i "s,${packageLinkRegex},${newPackageLink}," README.md
 
             # Promote package version
             - name: Promote package version
-              run: sfdx force:package:version:promote --package ${{ steps.create-package-version.outputs.packageVersionId }} -n
+              run: sfdx force:package:version:promote --package ${{ steps.createPackageVersion.outputs.packageVersionId }} -n
 
             # Remove namespace from project config
             - name: Remove namespace from project config
               run: |
                   sed -i 's,"namespace": "autocomp","namespace": "",' sfdx-project.json
 
-            # Commit project config and readme
-            - name: Commit project config and readme
-              run: |
-                  git config --local user.email "action@github.com"
-                  git config --local user.name "GitHub Action"
-                  git add sfdx-project.json
-                  git add README.md
-                  git commit -m "Released new package version"
-
-            # Push changes in git
-            - name: Push changes in git
-              uses: ad-m/github-push-action@master
+            # Create PR for new package version
+            - name: 'Create PR for new package version'
+              uses: peter-evans/create-pull-request@v2
               with:
-                  github_token: ${{ secrets.GITHUB_TOKEN }}
+                  title: 'Package: ${{ matrix.package }} - New version: ${{ steps.createPackageVersion.outputs.packageVersionId }}'
+                  body: 'Added new package version ID ${{ steps.createPackageVersion.outputs.packageVersionId }} for package ${{ matrix.package }}'
+                  commit-message: 'Package: ${{ matrix.package }} - New version: ${{ steps.createPackageVersion.outputs.packageVersionId }}'
+                  branch: 'auto/package-version-${{ steps.createPackageVersion.outputs.packageVersionId }}'
+                  token: ${{ secrets.GITHUB_TOKEN }}
 
             # Housekeeping
             - name: Delete scratch org

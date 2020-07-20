@@ -15,7 +15,7 @@ jobs:
     formatting-and-linting:
         runs-on: ubuntu-latest
         steps:
-            # Checkout the code in the pull request
+            # Checkout the source code
             - name: 'Checkout source code'
               uses: actions/checkout@v2
 
@@ -69,7 +69,7 @@ jobs:
                   tar xJf sfdx-linux-amd64.tar.xz -C sfdx-cli --strip-components 1
                   ./sfdx-cli/install
 
-            # Checkout the code in the pull request
+            # Checkout the source code
             - name: 'Checkout source code'
               uses: actions/checkout@v2
 
@@ -104,3 +104,78 @@ jobs:
             - name: 'Delete scratch org'
               if: always()
               run: 'sfdx force:org:delete -p -u scratch-org'
+
+    trigger-packaging:
+        runs-on: ubuntu-latest
+        needs: scratch-org-test
+        steps:
+            # Checkout the source code with history
+            - name: 'Checkout source code'
+              uses: actions/checkout@v2
+              with:
+                  fetch-depth: 0
+
+            # Check for package changes using git diff
+            - name: Check for package changes
+              id: checkForChanges
+              run: |
+                  changedPaths=$(git diff-tree --name-only ${{ github.event.before }} ${{ github.sha }})
+
+                  set +e
+                  changedPackages=()
+
+                  if [[ $(echo "$changedPaths" | grep -c '^src-apex-formula-evaluator$') == 1 ]]; then
+                      changedPackages+=( 'AC - Apex Formula Evaluator' )
+                  fi
+
+                  if [[ $(echo "$changedPaths" | grep -c '^src-collections$') == 1 ]]; then
+                      changedPackages+=( 'AC - Collections' )
+                  fi
+
+                  if [[ $(echo "$changedPaths" | grep -c '^src-data$') == 1 ]]; then
+                      changedPackages+=( 'AC - Data' )
+                  fi
+
+                  if [[ $(echo "$changedPaths" | grep -c '^src-flows$') == 1 ]]; then
+                      changedPackages+=( 'AC - Flows' )
+                  fi
+
+                  if [[ $(echo "$changedPaths" | grep -c '^src-messaging$') == 1 ]]; then
+                      changedPackages+=( 'AC - Messaging' )
+                  fi
+
+                  if [[ $(echo "$changedPaths" | grep -c '^src-security$') == 1 ]]; then
+                      changedPackages+=( 'AC - Security' )
+                  fi
+
+                  if [[ $(echo "$changedPaths" | grep -c '^src-strings$') == 1 ]]; then
+                      changedPackages+=( 'AC - Strings' )
+                  fi
+
+                  if [[ $(echo "$changedPaths" | grep -c '^src-ui$') == 1 ]]; then
+                      changedPackages+=( 'AC - UI' )
+                  fi
+
+                  if [[ $(echo "$changedPaths" | grep -c '^src-utilities$') == 1 ]]; then
+                      changedPackages+=( 'AC - Utilities' )
+                  fi
+
+                  echo "Changed packages (${#changedPackages[@]}):"
+                  for i in ${changedPackages[@]}; do
+                      echo "- $i"
+                  done
+
+                  changedPackagesJson='[]'
+                  if (( ${#changedPackages[@]} > 0 )); then
+                      changedPackagesJson=$(printf '%s\n' "${changedPackages[@]}" | jq -R . | jq -c -s .)
+                  fi
+                  echo "::set-output name=changes::$changedPackagesJson"
+
+            # Trigger packaging workflow if needed
+            - name: 'Trigger packaging workflow if needed'
+              uses: peter-evans/repository-dispatch@v1.1.0
+              if: ${{ steps.checkForChanges.outputs.changes != '[]' }}
+              with:
+                  token: ${{ secrets.REPO_ACCESS_TOKEN }}
+                  event-type: release-package-version-event
+                  client-payload: '{ "ref": "${{ github.ref }}", "sha": "${{ github.sha }}", "packageNames": "${{ steps.checkForChanges.outputs.changes }}" }'
