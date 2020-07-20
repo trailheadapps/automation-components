@@ -42,7 +42,7 @@ Follow this set of instructions if you want to deploy the components to your pro
 | Security               | <a name="AC - Security" href="https://login.salesforce.com/packaging/installPackage.apexp?p0=04t5w000003xYUvAAM">Install</a>               | [Documentation](https://github.com/trailheadapps/automation-components/wiki/security)               |
 | Strings                | <a name="AC - Strings" href="https://login.salesforce.com/packaging/installPackage.apexp?p0=04t5w000003xY1rAAE">Install</a>                | [Documentation](https://github.com/trailheadapps/automation-components/wiki/strings)                |
 | UI                     | <a name="AC - UI" href="https://login.salesforce.com/packaging/installPackage.apexp?p0=04t5w000003ysO5AAI">Install</a>                     | [Documentation](https://github.com/trailheadapps/automation-components/wiki/ui)                     |
-| Utilities              | <a name="AC - Utilities" href="https://login.salesforce.com/packaging/installPackage.apexp?p0=04t5w000003xY1wAAE">Install</a>              | [Documentation](https://github.com/trailheadapps/automation-components/wiki/utilities)              |
+| Utilities              | <a name="AC - Utilities" href="https://login.salesforce.com/packaging/installPackage.apexp?p0=04t5w000005qrwoAAA">Install</a>              | [Documentation](https://github.com/trailheadapps/automation-components/wiki/utilities)              |
 
 ## Installing the components using a Scratch Org
 
