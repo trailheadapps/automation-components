@@ -31,7 +31,7 @@ global class LaunchAutolaunchedFlowTests {
         input.param1Name = FLOW_INPUT_OPERATION;
         input.param1Value = 'substract';
         input.param2Name = FLOW_INPUT_A;
-        input.param2Value = '10';
+        input.param2Value = '8';
         input.param3Name = FLOW_INPUT_B;
         input.param3Value = '2';
         List<LaunchAutolaunchedFlow.InputParameters> inputs = new List<LaunchAutolaunchedFlow.InputParameters>{

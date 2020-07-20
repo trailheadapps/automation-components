@@ -33,7 +33,7 @@ global with sharing class FilterRecordsWithFormula {
             // For each member of the input collection, call the FormulaEvaluator.parseFormula method, which
             // returns true if the formula is true for this member
             // the FormulaEvaluator use the recordId of the current member as context, replacing expressions in the
-            // formula string of the form $Record.fieldname. For example, if the formula is '$Record.Age__c > 22' and the input collection
+            // formula string of the form $Record.fieldname. For example, if the formula is '$Record.Age__c > 21' and the input collection
             // is a collection of Student__c, the evaluator takes the current student's Id, retrieve the record, and looks for a field 'Student__c.Age__c'
             List<FormulaEvaluator.ContextWrapper> context = new List<FormulaEvaluator.ContextWrapper>();
             context.add(
