@@ -77,6 +77,13 @@
         "AC - Strings": "0Ho5w000000TN49CAG",
         "AC - UI": "0Ho5w000000TN4ECAW",
         "AC - Utilities": "0Ho5w000000TN4JCAW",
-        "AC - Apex Formula Evaluator@49.1.0-1": "04t5w000005qrweAAA"
+        "AC - Apex Formula Evaluator@49.1.0-1": "04t5w000005qrweAAA",
+        "AC - Data@49.1.0-1": "04t5w000005qrwKAAQ",
+        "AC - Utilities@49.1.0-1": "04t5w000005qrwoAAA",
+        "AC - Security@49.1.0-1": "04t5w000005qrwZAAQ",
+        "AC - Flows@49.1.0-1": "04t5w000005qrwPAAQ",
+        "AC - Collections@49.1.0-1": "04t5w000005qrwUAAQ",
+        "AC - UI@49.1.0-1": "04t5w000005qrwjAAA",
+        "AC - Strings@49.1.0-1": "04t5w000005qrwVAAQ"
     }
 }
