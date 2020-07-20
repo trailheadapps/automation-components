@@ -13,7 +13,7 @@ jobs:
         runs-on: ubuntu-latest
         strategy:
             matrix:
-                package: ${{ fromJson( github.event.client_payload.packageNames ) }}
+                package: ${{ github.event.client_payload.packageNames }}
         steps:
             # Install Salesforce CLI
             - name: Install Salesforce CLI
