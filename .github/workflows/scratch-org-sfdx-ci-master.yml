@@ -178,4 +178,4 @@ jobs:
               with:
                   token: ${{ secrets.REPO_ACCESS_TOKEN }}
                   event-type: release-package-version-event
-                  client-payload: '{ "ref": "${{ github.ref }}", "sha": "${{ github.sha }}", "packageNames": "${{ steps.checkForChanges.outputs.changes }}" }'
+                  client-payload: '{ "ref": "${{ github.ref }}", "sha": "${{ github.sha }}", "packageNames": ${{ steps.checkForChanges.outputs.changes }} }'
