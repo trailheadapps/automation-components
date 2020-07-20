@@ -43,6 +43,7 @@ global class SetRecordLockTests {
 
     @isTest
     global static void bulkInvoke_fails_when_unkown_recordId() {
+        // Testing lock on an unkown record
         SetRecordLock.InputParameters input = new SetRecordLock.InputParameters();
         input.recordId = '0010R00000yvEyRQAU';
         input.isLocked = true;
