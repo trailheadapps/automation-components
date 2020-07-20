@@ -1,7 +1,7 @@
 @isTest(isParallel=true)
 global class SampleDataFactory {
     // ACCOUNTS
-    global final static String ACCOUNT_NAME = 'Sample Account';
+    global final static String ACCOUNT_NAME = 'Sample account';
 
     global final static List<Account> SAMPLE_ACCOUNTS = new List<Account>{
         new Account(Name = ACCOUNT_NAME + 1, NumberOfEmployees = 20),
@@ -14,7 +14,7 @@ global class SampleDataFactory {
     };
 
     // TASKS
-    global final static String TASK_NAME = 'Sample Task';
+    global final static String TASK_NAME = 'Sample task';
 
     global final static List<Task> SAMPLE_TASKS = new List<Task>{
         new Task(

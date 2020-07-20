@@ -68,10 +68,8 @@ global class PostRichChatter {
 
         // Chatter's support for hyperlinks is unconventional and I haven't figured out how to convert a normal anchor link (<a href="http://www.salesforce.com" target="_blank">link</a>) into the chatter equivalent
         // so this hack puts the url into a parentheses next to the link word. anyone who has a better approach is encouraged.
-        // extract the url
-        // find all strings that start with <a and end with > i.e.extract url from an anchor tag
-        // extract the text
-        // craft a replacement string
+        // extract the url find all strings that start with <a and end with > i.e.extract url from an anchor tag
+        // extract the text craft a replacement string
         // matcher = ANCHOR.matcher(body);
         // body = matcher.replaceAll('$3 ($2) ');
         // also have to strip out indent markup:

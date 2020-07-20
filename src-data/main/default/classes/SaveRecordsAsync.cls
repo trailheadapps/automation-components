@@ -1,6 +1,6 @@
 global class SaveRecordsAsync {
     /**
-     * Upserts a list of records asynchronously (outside current transaction)
+     * Upserts a list of records asynchronously (outside of current transaction)
      * Original contribution by David Entremont (https://twitter.com/davidentremont)
      * Inputs:
      *   List<SObject> records
