@@ -9,6 +9,7 @@ on:
             - prerelease/spring[2-9][0-9]
             - prerelease/summer[2-9][0-9]
             - prerelease/winter[2-9][0-9]
+            - auto/package-version*
 
 # Jobs to be executed
 jobs:
