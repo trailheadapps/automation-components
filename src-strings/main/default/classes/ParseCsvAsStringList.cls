@@ -29,7 +29,7 @@ global class ParseCsvAsStringList {
             ? ','
             : input.separator;
         Boolean trimValues = input.trimValues == null ? true : input.trimValues;
-        // Split strings
+        // Split strings using separator
         String[] values = csvString.split(separator);
         if (trimValues) {
             for (Integer i = 0; i < values.size(); i++) {

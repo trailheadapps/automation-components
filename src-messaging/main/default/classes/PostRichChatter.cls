@@ -12,7 +12,7 @@ global class PostRichChatter {
      * Posts a rich text Chatter message
      * Inputs:
      *   String body
-     *   String targetNameOrId Reference to the user, Chatter group, or record whose feed you want to post to.
+     *   String targetNameOrId Reference to the User, Chatter group, or record whose feed you want to post to.
      *   Id communityId Optional Community Id if posting to a Community
      * Outputs:
      *   Id feedItemId

@@ -47,7 +47,7 @@ global class SaveRecordsAsync {
     }
 
     /**
-     * Apex queueable job that upserts records
+     * Apex queueable job that upserts the provided records
      */
     public class UpsertRecordsQueueable implements Queueable {
         private List<SObject> records;
