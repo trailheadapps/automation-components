@@ -8,6 +8,7 @@ global class CalculateBusinessHoursTests {
             WHERE Name = 'Default'
             LIMIT 1
         ];
+        // Run test with a one day diff
         DateTime startDate = DateTime.newInstance(2020, 3, 27);
         DateTime endDate = startDate.addDays(1);
 

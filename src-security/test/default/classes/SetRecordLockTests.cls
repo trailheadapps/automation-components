@@ -44,7 +44,7 @@ global class SetRecordLockTests {
     @isTest
     global static void bulkInvoke_fails_when_unkown_recordId() {
         SetRecordLock.InputParameters input = new SetRecordLock.InputParameters();
-        input.recordId = '0010R00000yvEyRQAU';
+        input.recordId = '0010R00000yvEyRQAu';
         input.isLocked = true;
         List<SetRecordLock.InputParameters> inputs = new List<SetRecordLock.InputParameters>{
             input

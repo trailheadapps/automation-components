@@ -53,7 +53,7 @@ global with sharing class FlowPickerController {
                 isFirst = false;
             }
         }
-        // Sort results by FLow Label
+        // Sort results by Flow Label
         query += ' ORDER BY Label ASC';
         return query;
     }

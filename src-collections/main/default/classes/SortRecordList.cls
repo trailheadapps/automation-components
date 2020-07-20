@@ -3,7 +3,7 @@ global with sharing class SortRecordList {
      * Sorts a record list
      * Inputs:
      *   List<SObject> collection
-     *   String sortKeys - Array of objects in JSON format: [{ "field":"Name", "direction":"asc" }]
+     *   String sortKeys - Array of objects in JSON format: [{ "field":"Name", "direction":"desc" }]
      * Outputs:
      *   List<SObject> collection
      */
