@@ -3,64 +3,64 @@
         {
             "path": "src-apex-formula-evaluator",
             "package": "AC - Apex Formula Evaluator",
-            "versionName": "ver 0.1",
-            "versionNumber": "0.1.0.NEXT",
+            "versionName": "Summer '20 release",
+            "versionNumber": "49.0.0.NEXT",
             "default": false
         },
         {
             "path": "src-collections",
             "package": "AC - Collections",
-            "versionName": "ver 0.1",
-            "versionNumber": "0.1.0.NEXT",
+            "versionName": "Summer '20 release",
+            "versionNumber": "49.0.0.NEXT",
             "default": true
         },
         {
             "path": "src-data",
             "package": "AC - Data",
-            "versionName": "ver 0.1",
-            "versionNumber": "0.1.0.NEXT",
+            "versionName": "Summer '20 release",
+            "versionNumber": "49.0.0.NEXT",
             "default": false
         },
         {
             "path": "src-flows",
             "package": "AC - Flows",
-            "versionName": "ver 0.1",
-            "versionNumber": "0.1.0.NEXT",
+            "versionName": "Summer '20 release",
+            "versionNumber": "49.0.0.NEXT",
             "default": false
         },
         {
             "path": "src-messaging",
             "package": "AC - Messaging",
-            "versionName": "ver 0.1",
-            "versionNumber": "0.1.0.NEXT",
+            "versionName": "Summer '20 release",
+            "versionNumber": "49.0.0.NEXT",
             "default": false
         },
         {
             "path": "src-security",
             "package": "AC - Security",
-            "versionName": "ver 0.1",
-            "versionNumber": "0.1.0.NEXT",
+            "versionName": "Summer '20 release",
+            "versionNumber": "49.0.0.NEXT",
             "default": false
         },
         {
             "path": "src-strings",
             "package": "AC - Strings",
-            "versionName": "ver 0.1",
-            "versionNumber": "0.1.0.NEXT",
+            "versionName": "Summer '20 release",
+            "versionNumber": "49.0.0.NEXT",
             "default": false
         },
         {
             "path": "src-ui",
             "package": "AC - UI",
             "versionName": "ver 0.3",
-            "versionNumber": "0.3.0.NEXT",
+            "versionNumber": "49.0.0.NEXT",
             "default": false
         },
         {
             "path": "src-utilities",
             "package": "AC - Utilities",
-            "versionName": "ver 0.1",
-            "versionNumber": "0.1.0.NEXT",
+            "versionName": "Summer '20 release",
+            "versionNumber": "49.0.0.NEXT",
             "default": false
         }
     ],
@@ -76,27 +76,6 @@
         "AC - Security": "0Ho5w000000TN44CAG",
         "AC - Strings": "0Ho5w000000TN49CAG",
         "AC - UI": "0Ho5w000000TN4ECAW",
-        "AC - Utilities": "0Ho5w000000TN4JCAW",
-        "AC - Apex Formula Evaluator@0.1.0-1": "04t5w000003ro93AAA",
-        "AC - Collections@0.1.0-1": "04t5w000003rGEFAA2",
-        "AC - Collections@0.1.0-2": "04t5w000003xWQHAA2",
-        "AC - Data@0.1.0-1": "04t5w000003rSDnAAM",
-        "AC - Flows@0.1.0-1": "04t5w000003w2EkAAI",
-        "AC - Flows@0.1.0-2": "04t5w000003xWQCAA2",
-        "AC - Messaging@0.1.0-1": "04t5w000003w4IzAAI",
-        "AC - Security@0.1.0-1": "04t5w000003w52ZAAQ",
-        "AC - Strings@0.1.0-1": "04t5w000003w5JAAAY",
-        "AC - UI@0.1.0-1": "04t5w000003w5JFAAY",
-        "AC - Utilities@0.1.0-1": "04t5w000003w5NSAAY",
-        "AC - Apex Formula Evaluator@0.1.0-4": "04t5w000003wfiHAAQ",
-        "AC - UI@0.1.0-2": "04t5w000003wheGAAQ",
-        "AC - Data@0.1.0-6": "04t5w000003x8N8AAI",
-        "AC - Apex Formula Evaluator@0.1.0-7": "04t5w000003xWckAAE",
-        "AC - UI@0.2.0-1": "04t5w000003xXUfAAM",
-        "AC - Messaging@0.1.0-2": "04t5w000003xY1mAAE",
-        "AC - Strings@0.1.0-2": "04t5w000003xY1rAAE",
-        "AC - Utilities@0.1.0-2": "04t5w000003xY1wAAE",
-        "AC - Security@0.1.0-2": "04t5w000003xYUvAAM",
-        "AC - UI@0.3.0-1": "04t5w000003ysO5AAI"
+        "AC - Utilities": "0Ho5w000000TN4JCAW"
     }
 }
