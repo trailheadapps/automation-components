@@ -98,13 +98,22 @@ jobs:
 
             # Create PR for new package version
             - name: 'Create PR for new package version'
-              uses: peter-evans/create-pull-request@v2
+              id: create-pr
+              uses: peter-evans/create-pull-request@v3
               with:
                   title: 'Package: ${{ matrix.package }} - New version: ${{ steps.createPackageVersion.outputs.packageVersionId }}'
-                  body: 'Added new package version ID ${{ steps.createPackageVersion.outputs.packageVersionId }} for package ${{ matrix.package }}'
+                  body: 'Released new package version ${{ steps.createPackageVersion.outputs.packageVersionId }} for package ${{ matrix.package }}'
+                  author: github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>
                   commit-message: 'Package: ${{ matrix.package }} - New version: ${{ steps.createPackageVersion.outputs.packageVersionId }}'
                   branch: 'auto/package-version-${{ steps.createPackageVersion.outputs.packageVersionId }}'
-                  token: ${{ secrets.GITHUB_TOKEN }}
+                  token: ${{ secrets.BOT_ACCESS_TOKEN }}
+
+            # Approve pull request
+            - name: 'Approve Pull Request'
+              uses: juliangruber/approve-pull-request-action@v1
+              with:
+                  github-token: ${{ secrets.GITHUB_TOKEN }}
+                  number: ${{ steps.create-pr.outputs.pull-request-number }}
 
             # Housekeeping
             - name: Delete scratch org
