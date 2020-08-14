@@ -52,8 +52,8 @@
         {
             "path": "src-ui",
             "package": "AC - UI",
-            "versionName": "ver 0.3",
-            "versionNumber": "49.1.0.NEXT",
+            "versionName": "Summer '20 release",
+            "versionNumber": "49.2.0.NEXT",
             "default": false
         },
         {
@@ -83,7 +83,6 @@
         "AC - Security@49.1.0-1": "04t5w000005qrwZAAQ",
         "AC - Flows@49.1.0-1": "04t5w000005qrwPAAQ",
         "AC - Collections@49.1.0-1": "04t5w000005qrwUAAQ",
-        "AC - UI@49.1.0-1": "04t5w000005qrwjAAA",
         "AC - Strings@49.1.0-1": "04t5w000005qrwVAAQ",
         "AC - Messaging@49.1.0-2": "04t5w000005qrwyAAA"
     }

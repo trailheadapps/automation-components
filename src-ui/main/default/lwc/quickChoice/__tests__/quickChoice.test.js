@@ -4,7 +4,7 @@ import QuickChoice from 'c/quickChoice';
 import { registerApexTestWireAdapter } from '@salesforce/sfdx-lwc-jest';
 import { getPicklistValues } from 'lightning/uiObjectInfoApi';
 
-// Register as Apex wire adapter. Some tests verify that provisioned values trigger desired behavior.
+// Register as Apex wire adapter. Some tests verify that provisioned values trigger desired behavior
 const getPicklistValuesAdapter = registerApexTestWireAdapter(getPicklistValues);
 
 const SAMPLE_VALUES = ['a', 'b', 'c'];
