@@ -14,7 +14,7 @@ const MOCK_RECORD_TYPE_ID = 'mockRecordTypeId';
 
 describe('c-quick-choice', () => {
     afterEach(() => {
-        // The jsdom instance is shared across test cases in a single file so reset the DOM
+        // The JSDOM instance is shared across test cases in a single file so reset the DOM
         while (document.body.firstChild) {
             document.body.removeChild(document.body.firstChild);
         }
