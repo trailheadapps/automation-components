@@ -1,5 +1,5 @@
 # Unique name for this workflow
-name: Release Package Version
+name: Packaging
 
 # Workflow starts when receiving release-package-version-event custom event
 # Event contains the packageName of the target package for which a new version will be released
