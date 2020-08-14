@@ -44,10 +44,10 @@ jobs:
               run: npm run lint:lwc
 
             # Lint Aura
-            - name: 'Lint Aura'
-              run: npm run lint:aura
+            - name: 'Lint Aura components'
+              run: 'npm run lint:aura'
 
-            # Unit tests
+            # LWC unit tests
             - name: 'Unit test Lightning Web Components'
               run: npm run test:unit:coverage
 
