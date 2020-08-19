@@ -2,6 +2,7 @@
     invoke: function (component) {
         var utilityAPI = component.find('utilityBar');
 
+        // Minimize utility bar if it's open
         utilityAPI
             .getUtilityInfo()
             .then(function (response) {
