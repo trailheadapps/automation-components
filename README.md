@@ -6,7 +6,7 @@ Automation Components provides a set of reusable and production-ready extensions
 
 This is an Open Source project. A special thanks to the project contributors.
 
-Check out the community site [unofficialsf.com](unofficialsf.com) for more Automation developer resources.
+Check out the community site [unofficialsf.com](https://unofficialsf.com/) for more Automation developer resources.
 
 ## Table of contents
 
