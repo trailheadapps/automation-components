@@ -127,6 +127,6 @@ global class PostRichChatter {
      */
     global class OutputParameters {
         @InvocableVariable
-        public Id feedItemId;
+        global Id feedItemId;
     }
 }

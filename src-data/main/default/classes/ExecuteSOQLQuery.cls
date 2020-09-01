@@ -38,6 +38,6 @@ global class ExecuteSOQLQuery {
      */
     global class OutputParameters {
         @InvocableVariable
-        public List<SObject> records;
+        global List<SObject> records;
     }
 }

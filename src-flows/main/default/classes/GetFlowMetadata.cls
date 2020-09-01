@@ -94,20 +94,20 @@ global class GetFlowMetadata {
      */
     global class OutputParameters {
         @invocableVariable
-        public String flowApiName;
+        global String flowApiName;
         @invocableVariable
-        public String flowDefinitionId;
+        global String flowDefinitionId;
         @invocableVariable
-        public String activeVersionId;
+        global String activeVersionId;
         @invocableVariable
-        public String description;
+        global String description;
         @invocableVariable
-        public String label;
+        global String label;
         @invocableVariable
-        public String latestVersionId;
+        global String latestVersionId;
         @invocableVariable
-        public String namespacePrefix;
+        global String namespacePrefix;
         @invocableVariable
-        public String flowType;
+        global String flowType;
     }
 }
