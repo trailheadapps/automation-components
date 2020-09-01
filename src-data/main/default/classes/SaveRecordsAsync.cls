@@ -43,7 +43,7 @@ global class SaveRecordsAsync {
      */
     global class OutputParameters {
         @InvocableVariable
-        public Id jobId;
+        global Id jobId;
     }
 
     /**

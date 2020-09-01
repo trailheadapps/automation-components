@@ -18,21 +18,21 @@
             "path": "src-data",
             "package": "AC - Data",
             "versionName": "Summer '20 release",
-            "versionNumber": "49.1.0.NEXT",
+            "versionNumber": "49.2.0.NEXT",
             "default": false
         },
         {
             "path": "src-flows",
             "package": "AC - Flows",
             "versionName": "Summer '20 release",
-            "versionNumber": "49.1.0.NEXT",
+            "versionNumber": "49.2.0.NEXT",
             "default": false
         },
         {
             "path": "src-messaging",
             "package": "AC - Messaging",
             "versionName": "Summer '20 release",
-            "versionNumber": "49.1.0.NEXT",
+            "versionNumber": "49.2.0.NEXT",
             "default": false
         },
         {
@@ -78,13 +78,10 @@
         "AC - UI": "0Ho5w000000TN4ECAW",
         "AC - Utilities": "0Ho5w000000TN4JCAW",
         "AC - Apex Formula Evaluator@49.1.0-1": "04t5w000005qrweAAA",
-        "AC - Data@49.1.0-1": "04t5w000005qrwKAAQ",
         "AC - Utilities@49.1.0-1": "04t5w000005qrwoAAA",
         "AC - Security@49.1.0-1": "04t5w000005qrwZAAQ",
-        "AC - Flows@49.1.0-1": "04t5w000005qrwPAAQ",
         "AC - Collections@49.1.0-1": "04t5w000005qrwUAAQ",
         "AC - Strings@49.1.0-1": "04t5w000005qrwVAAQ",
-        "AC - Messaging@49.1.0-2": "04t5w000005qrwyAAA",
         "AC - UI@49.3.0-1": "04t5w000005uctqAAA",
         "AC - UI@49.4.0-1": "04t5w000005udVYAAY"
     }
