@@ -199,4 +199,49 @@ describe('c-quick-choice', () => {
             });
         });
     });
+
+    it('is accessible in picklist mode', () => {
+        const element = createElement('c-quick-choice', {
+            is: QuickChoice
+        });
+
+        element.displayMode = 'picklist';
+        element.inputSource = 'list';
+        element.choiceValues = SAMPLE_VALUES;
+        document.body.appendChild(element);
+
+        return Promise.resolve().then(() => {
+            expect(element).toBeAccessible();
+        });
+    });
+
+    it('is accessible in radio mode', () => {
+        const element = createElement('c-quick-choice', {
+            is: QuickChoice
+        });
+
+        element.displayMode = 'radio';
+        element.inputSource = 'list';
+        element.choiceValues = SAMPLE_VALUES;
+        document.body.appendChild(element);
+
+        return Promise.resolve().then(() => {
+            expect(element).toBeAccessible();
+        });
+    });
+
+    it('is accessible in cards mode', () => {
+        const element = createElement('c-quick-choice', {
+            is: QuickChoice
+        });
+
+        element.displayMode = 'cards';
+        element.inputSource = 'list';
+        element.choiceValues = SAMPLE_VALUES;
+        document.body.appendChild(element);
+
+        return Promise.resolve().then(() => {
+            expect(element).toBeAccessible();
+        });
+    });
 });
