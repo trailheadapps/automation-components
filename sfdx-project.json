@@ -82,8 +82,8 @@
         "AC - Security@49.1.0-1": "04t5w000005qrwZAAQ",
         "AC - Collections@49.1.0-1": "04t5w000005qrwUAAQ",
         "AC - Strings@49.1.0-1": "04t5w000005qrwVAAQ",
-        "AC - UI@49.3.0-1": "04t5w000005uctqAAA",
         "AC - UI@49.4.0-1": "04t5w000005udVYAAY",
-        "AC - Flows@49.2.0-8": "04t5w000005uebBAAQ"
+        "AC - Flows@49.2.0-8": "04t5w000005uebBAAQ",
+        "AC - Messaging@49.2.0-1": "04t5w000005uebGAAQ"
     }
 }
