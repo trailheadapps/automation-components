@@ -187,8 +187,6 @@ describe('c-flow-picker', () => {
         element.componentWidth = 5;
         document.body.appendChild(element);
 
-        return Promise.resolve().then(() => {
-            expect(element).toBeAccessible();
-        });
+        return Promise.resolve().then(() => expect(element).toBeAccessible());
     });
 });

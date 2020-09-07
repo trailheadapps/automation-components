@@ -211,9 +211,7 @@ describe('c-quick-choice', () => {
         element.choiceValues = SAMPLE_VALUES;
         document.body.appendChild(element);
 
-        return Promise.resolve().then(() => {
-            expect(element).toBeAccessible();
-        });
+        return Promise.resolve().then(() => expect(element).toBeAccessible());
     });
 
     it('is accessible in radio mode', () => {
@@ -226,9 +224,7 @@ describe('c-quick-choice', () => {
         element.choiceValues = SAMPLE_VALUES;
         document.body.appendChild(element);
 
-        return Promise.resolve().then(() => {
-            expect(element).toBeAccessible();
-        });
+        return Promise.resolve().then(() => expect(element).toBeAccessible());
     });
 
     it('is accessible in cards mode without icons', () => {
@@ -242,9 +238,7 @@ describe('c-quick-choice', () => {
         element.choiceValues = SAMPLE_VALUES;
         document.body.appendChild(element);
 
-        return Promise.resolve().then(() => {
-            expect(element).toBeAccessible();
-        });
+        return Promise.resolve().then(() => expect(element).toBeAccessible());
     });
 
     it('is accessible in cards mode with icons', () => {
@@ -259,8 +253,6 @@ describe('c-quick-choice', () => {
         element.choiceIcons = SAMPLE_ICONS;
         document.body.appendChild(element);
 
-        return Promise.resolve().then(() => {
-            expect(element).toBeAccessible();
-        });
+        return Promise.resolve().then(() => expect(element).toBeAccessible());
     });
 });
