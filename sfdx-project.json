@@ -66,7 +66,7 @@
     ],
     "namespace": "",
     "sfdcLoginUrl": "https://login.salesforce.com",
-    "sourceApiVersion": "49.0",
+    "sourceApiVersion": "50.0",
     "packageAliases": {
         "AC - Apex Formula Evaluator": "0Ho5w000000TN4OCAW",
         "AC - Collections": "0Ho5w000000TN3kCAG",
