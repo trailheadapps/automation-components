@@ -201,58 +201,68 @@ describe('c-quick-choice', () => {
         });
     });
 
-    it('is accessible in picklist mode', () => {
-        const element = createElement('c-quick-choice', {
-            is: QuickChoice
+    describe('Accessibility', () => {
+        it('is accessible in picklist mode', () => {
+            const element = createElement('c-quick-choice', {
+                is: QuickChoice
+            });
+
+            element.displayMode = 'picklist';
+            element.inputSource = 'list';
+            element.choiceValues = SAMPLE_VALUES;
+            document.body.appendChild(element);
+
+            return Promise.resolve().then(() =>
+                expect(element).toBeAccessible()
+            );
         });
 
-        element.displayMode = 'picklist';
-        element.inputSource = 'list';
-        element.choiceValues = SAMPLE_VALUES;
-        document.body.appendChild(element);
+        it('is accessible in radio mode', () => {
+            const element = createElement('c-quick-choice', {
+                is: QuickChoice
+            });
 
-        return Promise.resolve().then(() => expect(element).toBeAccessible());
-    });
+            element.displayMode = 'radio';
+            element.inputSource = 'list';
+            element.choiceValues = SAMPLE_VALUES;
+            document.body.appendChild(element);
 
-    it('is accessible in radio mode', () => {
-        const element = createElement('c-quick-choice', {
-            is: QuickChoice
+            return Promise.resolve().then(() =>
+                expect(element).toBeAccessible()
+            );
         });
 
-        element.displayMode = 'radio';
-        element.inputSource = 'list';
-        element.choiceValues = SAMPLE_VALUES;
-        document.body.appendChild(element);
+        it('is accessible in cards mode without icons', () => {
+            const element = createElement('c-quick-choice', {
+                is: QuickChoice
+            });
 
-        return Promise.resolve().then(() => expect(element).toBeAccessible());
-    });
+            element.required = true;
+            element.displayMode = 'cards';
+            element.inputSource = 'list';
+            element.choiceValues = SAMPLE_VALUES;
+            document.body.appendChild(element);
 
-    it('is accessible in cards mode without icons', () => {
-        const element = createElement('c-quick-choice', {
-            is: QuickChoice
+            return Promise.resolve().then(() =>
+                expect(element).toBeAccessible()
+            );
         });
 
-        element.required = true;
-        element.displayMode = 'cards';
-        element.inputSource = 'list';
-        element.choiceValues = SAMPLE_VALUES;
-        document.body.appendChild(element);
+        it('is accessible in cards mode with icons', () => {
+            const element = createElement('c-quick-choice', {
+                is: QuickChoice
+            });
 
-        return Promise.resolve().then(() => expect(element).toBeAccessible());
-    });
+            element.required = true;
+            element.displayMode = 'cards';
+            element.inputSource = 'list';
+            element.choiceValues = SAMPLE_VALUES;
+            element.choiceIcons = SAMPLE_ICONS;
+            document.body.appendChild(element);
 
-    it('is accessible in cards mode with icons', () => {
-        const element = createElement('c-quick-choice', {
-            is: QuickChoice
+            return Promise.resolve().then(() =>
+                expect(element).toBeAccessible()
+            );
         });
-
-        element.required = true;
-        element.displayMode = 'cards';
-        element.inputSource = 'list';
-        element.choiceValues = SAMPLE_VALUES;
-        element.choiceIcons = SAMPLE_ICONS;
-        document.body.appendChild(element);
-
-        return Promise.resolve().then(() => expect(element).toBeAccessible());
     });
 });

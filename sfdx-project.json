@@ -25,7 +25,7 @@
             "path": "src-flows",
             "package": "AC - Flows",
             "versionName": "Summer '20 release",
-            "versionNumber": "49.2.0.NEXT",
+            "versionNumber": "49.3.0.NEXT",
             "default": false
         },
         {
@@ -53,7 +53,7 @@
             "path": "src-ui",
             "package": "AC - UI",
             "versionName": "Summer '20 release",
-            "versionNumber": "49.4.0.NEXT",
+            "versionNumber": "49.5.0.NEXT",
             "default": false
         },
         {

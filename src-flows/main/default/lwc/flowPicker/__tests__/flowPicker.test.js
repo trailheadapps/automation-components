@@ -184,7 +184,7 @@ describe('c-flow-picker', () => {
         const element = createElement('c-flow-picker', {
             is: FlowPicker
         });
-        element.componentWidth = 5;
+        element.componentWidth = 4;
         document.body.appendChild(element);
 
         return Promise.resolve().then(() => expect(element).toBeAccessible());
