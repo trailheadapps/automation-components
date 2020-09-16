@@ -8,6 +8,7 @@ import { getPicklistValues } from 'lightning/uiObjectInfoApi';
 const getPicklistValuesAdapter = registerApexTestWireAdapter(getPicklistValues);
 
 const SAMPLE_VALUES = ['a', 'b', 'c'];
+const SAMPLE_ICONS = ['standard:account', 'standard:address', 'standard:app'];
 const SAMPLE_PICKLIST_FIELD_NAME = 'Opportunity.StageName';
 const MASTER_RECORD_TYPE_ID = '012000000000000AAA';
 const MOCK_RECORD_TYPE_ID = 'mockRecordTypeId';
@@ -198,5 +199,60 @@ describe('c-quick-choice', () => {
                 expect(config.fieldApiName).toBe(SAMPLE_PICKLIST_FIELD_NAME);
             });
         });
+    });
+
+    it('is accessible in picklist mode', () => {
+        const element = createElement('c-quick-choice', {
+            is: QuickChoice
+        });
+
+        element.displayMode = 'picklist';
+        element.inputSource = 'list';
+        element.choiceValues = SAMPLE_VALUES;
+        document.body.appendChild(element);
+
+        return Promise.resolve().then(() => expect(element).toBeAccessible());
+    });
+
+    it('is accessible in radio mode', () => {
+        const element = createElement('c-quick-choice', {
+            is: QuickChoice
+        });
+
+        element.displayMode = 'radio';
+        element.inputSource = 'list';
+        element.choiceValues = SAMPLE_VALUES;
+        document.body.appendChild(element);
+
+        return Promise.resolve().then(() => expect(element).toBeAccessible());
+    });
+
+    it('is accessible in cards mode without icons', () => {
+        const element = createElement('c-quick-choice', {
+            is: QuickChoice
+        });
+
+        element.required = true;
+        element.displayMode = 'cards';
+        element.inputSource = 'list';
+        element.choiceValues = SAMPLE_VALUES;
+        document.body.appendChild(element);
+
+        return Promise.resolve().then(() => expect(element).toBeAccessible());
+    });
+
+    it('is accessible in cards mode with icons', () => {
+        const element = createElement('c-quick-choice', {
+            is: QuickChoice
+        });
+
+        element.required = true;
+        element.displayMode = 'cards';
+        element.inputSource = 'list';
+        element.choiceValues = SAMPLE_VALUES;
+        element.choiceIcons = SAMPLE_ICONS;
+        document.body.appendChild(element);
+
+        return Promise.resolve().then(() => expect(element).toBeAccessible());
     });
 });

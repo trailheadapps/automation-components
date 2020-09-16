@@ -179,4 +179,14 @@ describe('c-flow-picker', () => {
             });
         });
     });
+
+    it('is accessible', () => {
+        const element = createElement('c-flow-picker', {
+            is: FlowPicker
+        });
+        element.componentWidth = 5;
+        document.body.appendChild(element);
+
+        return Promise.resolve().then(() => expect(element).toBeAccessible());
+    });
 });
