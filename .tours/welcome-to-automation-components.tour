@@ -1,0 +1,16 @@
+{
+  "title": "👋 Welcome to Automation Components",
+  "steps": [
+    {
+      "file": "sfdx-project.json",
+      "line": 2,
+      "description": "Automation Components are available as collection of 9 independant [Second-Generation Managed Packages](https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_dev2gp.htm).\n\nThese packages contain a set of reusable and production-ready extensions that include [invocable actions](https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_classes_annotation_InvocableMethod.htm), [Flow screen components](https://developer.salesforce.com/docs/component-library/documentation/en/lwc/lwc.use_flow) and [Flow local actions](https://developer.salesforce.com/docs/atlas.en-us.lightning.meta/lightning/components_config_for_flow_actions.htm). These are intended as an easy to install, easy to use toolbox.\n\nMost importantly, Automation Components are designed to be used with declarative tools (Flow and Process Builder) so no code knowledge is required unless your wish to extend them."
+    },
+    {
+      "file": "sfdx-project.json",
+      "line": 4,
+      "description": "Package metadata is located in the `src-*` folders as indicated by the `path` property.\n\nFeel free to explore those folders and check out the other code tours."
+    }
+  ],
+  "isPrimary": true
+}
