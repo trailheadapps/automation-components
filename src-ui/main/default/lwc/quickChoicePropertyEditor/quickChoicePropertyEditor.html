@@ -1,0 +1,120 @@
+<template>
+    <c-flow-combobox
+        name="label"
+        label="Master Label"
+        value={label}
+        value-type={labelValueType}
+        builder-context={builderContext}
+        onvaluechanged={handleValueChanged}
+        required
+    ></c-flow-combobox>
+
+    <lightning-input
+        name="required"
+        data-type="Boolean"
+        label="Required"
+        checked={required}
+        onchange={handleChange}
+        type="checkbox"
+    ></lightning-input>
+
+    <c-flow-combobox
+        name="value"
+        label="Value"
+        value={value}
+        value-type={valueValueType}
+        builder-context={builderContext}
+        onvaluechanged={handleValueChanged}
+    ></c-flow-combobox>
+
+    <lightning-radio-group
+        name="inputSource"
+        data-type="String"
+        label="Input Source"
+        value={inputSource}
+        options={inputSourceOptions}
+        onchange={handleChange}
+        type="button"
+        required
+    ></lightning-radio-group>
+
+    <!-- Picklist input source options -->
+    <template if:true={isPicklistInputSource}>
+        <div
+            class="slds-var-p-left_small slds-var-m-vertical_small sub-options"
+        >
+            <c-flow-combobox
+                name="qualifiedPicklistFieldName"
+                label="Qualified Picklist Field Name"
+                value={qualifiedPicklistFieldName}
+                value-type={qualifiedPicklistFieldNameValueType}
+                builder-context={builderContext}
+                onvaluechanged={handleValueChanged}
+                required
+            ></c-flow-combobox>
+        </div>
+    </template>
+
+    <!-- List input source options -->
+    <template if:true={isListInputSource}>
+        <div
+            class="slds-var-p-left_small slds-var-m-vertical_small sub-options"
+        >
+            <c-flow-combobox
+                name="choiceLabels"
+                label="Choice Labels"
+                value={choiceLabels}
+                value-type={choiceLabelsValueType}
+                builder-context={builderContext}
+                onvaluechanged={handleValueChanged}
+                required
+            ></c-flow-combobox>
+            <c-flow-combobox
+                name="choiceValues"
+                label="Choice Values"
+                value={choiceValues}
+                value-type={choiceValuesValueType}
+                builder-context={builderContext}
+                onvaluechanged={handleValueChanged}
+                required
+            ></c-flow-combobox>
+        </div>
+    </template>
+
+    <lightning-radio-group
+        name="displayMode"
+        data-type="String"
+        label="Display Mode"
+        value={displayMode}
+        options={displayModeOptions}
+        onchange={handleChange}
+        type="button"
+        required
+    ></lightning-radio-group>
+
+    <!-- Cards display options -->
+    <template if:true={isCards}>
+        <div
+            class="slds-var-p-left_small slds-var-m-vertical_small sub-options"
+        >
+            <lightning-slider
+                name="numberOfColumns"
+                data-type="Number"
+                label="Number of Columns"
+                value={numberOfColumns}
+                onchange={handleChange}
+                min="1"
+                max="2"
+            ></lightning-slider>
+
+            <c-flow-combobox
+                name="choiceIcons"
+                label="Choice Icons"
+                value={choiceIcons}
+                value-type={choiceIconsValueType}
+                builder-context={builderContext}
+                onvaluechanged={handleValueChanged}
+            ></c-flow-combobox>
+        </div>
+    </template>
+</template>

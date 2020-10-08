@@ -203,7 +203,7 @@ export default class QuickChoice extends LightningElement {
     get columnClass() {
         // Force single column display for cards on mobile
         const isDualColumns =
-            FORM_FACTOR === 'Small' ? false : this.numberOfColumns;
+            FORM_FACTOR === 'Small' ? false : this.numberOfColumns === 2;
         return isDualColumns
             ? 'slds-col slds-size_1-of-2 slds-var-m-bottom_x-small'
             : 'slds-col slds-size_1-of-1 slds-var-m-bottom_x-small';
