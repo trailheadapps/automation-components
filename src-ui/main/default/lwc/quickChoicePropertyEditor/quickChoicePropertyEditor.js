@@ -30,7 +30,19 @@ export default class QuickChoiceEditor extends LightningElement {
     @api
     validate() {
         const validity = [];
-        // TODO: check for validity
+        // Check validity of all inputs
+        const inputCmps = this.template.querySelectorAll(
+            'lightning-input, lightning-radio-group, lightning-slider, c-flow-combobox'
+        );
+        inputCmps.forEach((inputCmp) => {
+            inputCmp.reportValidity();
+            if (!inputCmp.checkValidity()) {
+                validity.push({
+                    key: inputCmp.label,
+                    errorString: `Value for '${inputCmp.label}' is invalid.`
+                });
+            }
+        });
         return validity;
     }
 

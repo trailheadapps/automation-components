@@ -31,6 +31,7 @@ export default class FlowCombobox extends LightningElement {
     _builderContext;
     _staticOptions;
 
+    isValid = true;
     hasError = false;
     isMenuOpen = false;
     isDataSelected = false;
@@ -98,13 +99,21 @@ export default class FlowCombobox extends LightningElement {
 
     @api
     reportValidity() {
+        this.isValid = true;
+        const inputCmp = this.template.querySelector('lightning-input');
+        if (inputCmp) {
+            inputCmp.reportValidity();
+            this.isValid = inputCmp.checkValidity();
+        }
         if (this.hasError) {
-            return false;
+            this.isValid = false;
         }
-        if (this.required && !this.isDataSelected) {
-            return false;
-        }
-        return true;
+        return this.isValid;
+    }
+
+    @api
+    checkValidity() {
+        return this.isValid;
     }
 
     @wire(getObjectInfo, { objectApiName: '$_selectedObjectType' })
