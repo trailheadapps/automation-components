@@ -11,7 +11,6 @@ import {
     removeFormatting,
     escapeRegExp
 } from 'c/flowComboboxUtils';
-import UserPreferencesShowCityToGuestUsers from '@salesforce/schema/User.UserPreferencesShowCityToGuestUsers';
 
 export default class FlowCombobox extends LightningElement {
     @api name;
