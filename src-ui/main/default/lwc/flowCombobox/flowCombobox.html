@@ -1,0 +1,158 @@
+<template>
+    <div class={formElementClass}>
+        <div class="slds-form-element__control">
+            <div class="slds-combobox_container">
+                <div
+                    class={dropdownClass}
+                    data-id="resultBox"
+                    aria-expanded="false"
+                    aria-haspopup="listbox"
+                    role="combobox"
+                >
+                    <div
+                        class="slds-form-element__control slds-input-has-icon slds-input-has-icon slds-input-has-icon_right"
+                        role="none"
+                    >
+                        <template if:false={displayPill}>
+                            <div onkeyup={handleSearchKeyUp}>
+                                <label
+                                    class="slds-form-element__label"
+                                    onclick={toggleMenu}
+                                    ><abbr
+                                        if:true={required}
+                                        class="slds-required"
+                                        title="required"
+                                        >*</abbr
+                                    >{label}</label
+                                >
+                                <lightning-input
+                                    class="value-input"
+                                    name="searchText"
+                                    type="search"
+                                    required={required}
+                                    data-input-name={name}
+                                    data-id="userinput"
+                                    variant="label-hidden"
+                                    value={_value}
+                                    onchange={handleSearchField}
+                                    onkeydown={handleKeyDown}
+                                    onclick={handleOpenOptions}
+                                ></lightning-input>
+                            </div>
+                        </template>
+                        <template if:true={displayPill}>
+                            <label
+                                class="slds-form-element__label slds-no-flex"
+                                onclick={toggleMenu}
+                                ><abbr
+                                    if:true={required}
+                                    class="slds-required"
+                                    title="required"
+                                    >*</abbr
+                                >{label}</label
+                            >
+                            <div
+                                data-input-name={name}
+                                class="slds-pill_container"
+                                onclick={handleOpenOptions}
+                            >
+                                <lightning-pill
+                                    label={_value}
+                                    onremove={resetData}
+                                    has-error={hasError}
+                                >
+                                    <lightning-icon
+                                        icon-name={pillIcon}
+                                        variant="circle"
+                                        alternative-text={pillIcon}
+                                    ></lightning-icon>
+                                </lightning-pill>
+                            </div>
+                        </template>
+                    </div>
+
+                    <div
+                        id="listbox-id-1"
+                        class="slds-dropdown slds-dropdown_length-with-icon-7 slds-dropdown_fluid"
+                        role="listbox"
+                    >
+                        <ul
+                            class="slds-listbox slds-listbox_vertical"
+                            role="presentation"
+                        >
+                            <template if:false={_options.length}>
+                                <div class="slds-var-p-around_small">
+                                    No data available
+                                </div>
+                            </template>
+                            <template
+                                for:each={_options}
+                                for:item="optionGroup"
+                            >
+                                <li role="presentation" key={optionGroup.type}>
+                                    <div
+                                        class="slds-var-p-around_xx-small slds-text-title_caps"
+                                    >
+                                        {optionGroup.type}
+                                    </div>
+                                    <template
+                                        for:each={optionGroup.options}
+                                        for:item="option"
+                                    >
+                                        <div
+                                            key={option.key}
+                                            class="slds-media slds-media_center slds-listbox__option slds-listbox__option_entity slds-listbox__option_has-meta"
+                                            role="option"
+                                        >
+                                            <span class="slds-media__figure">
+                                                <span
+                                                    class="slds-icon_container"
+                                                >
+                                                    <lightning-icon
+                                                        icon-name={option.optionIcon}
+                                                        size="x-small"
+                                                    ></lightning-icon>
+                                                </span>
+                                            </span>
+                                            <span
+                                                data-value={option.value}
+                                                data-flow-type={option.flowType}
+                                                data-object-type={option.objectType}
+                                                data-icon-name={option.optionIcon}
+                                                onclick={handleOptionClick}
+                                                class="slds-media__body"
+                                            >
+                                                <span
+                                                    class="slds-listbox__option-text_entity no-pointer-event"
+                                                    >{option.label}</span
+                                                >
+                                                <span
+                                                    class="slds-listbox__option-meta no-pointer-event"
+                                                    >{option.displayType}</span
+                                                >
+                                            </span>
+                                            <lightning-icon
+                                                if:true={option.isObject}
+                                                data-option-value={option.value}
+                                                data-object-type={option.objectType}
+                                                icon-name="utility:chevronright"
+                                                size="x-small"
+                                                onclick={handleOpenObject}
+                                            ></lightning-icon>
+                                        </div>
+                                    </template>
+                                </li>
+                            </template>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <template if:true={hasError}>
+            <div class="slds-form-element__help">
+                This Flow doesn't have a defined resource with that name. If
+                you're trying to enter a literal value, don't use &#123;!&#125;
+            </div>
+        </template>
+    </div>
+</template>

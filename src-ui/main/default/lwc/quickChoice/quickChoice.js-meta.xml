@@ -9,7 +9,10 @@
         <target>lightning__FlowScreen</target>
     </targets>
     <targetConfigs>
-        <targetConfig targets="lightning__FlowScreen">
+        <targetConfig
+            targets="lightning__FlowScreen"
+            configurationEditor="c-quick-choice-property-editor"
+        >
             <property name="value" label="Value" type="String" />
             <property
                 name="choiceValues"
