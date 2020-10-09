@@ -14,6 +14,10 @@
         "test:unit:coverage": "sfdx-lwc-jest --coverage",
         "prettier": "prettier --write \"**/*.{cls,cmp,component,css,html,js,json,md,page,trigger,xml,yaml,yml}\"",
         "prettier:verify": "prettier --list-different \"**/*.{cls,cmp,component,css,html,js,json,md,page,trigger,xml,yaml,yml}\"",
+        "prettier:apex:local": "prettier --apex-standalone-parser built-in --write \"**/*.{cls,cmp,component,css,html,js,json,md,page,trigger,xml,yaml,yml}\"",
+        "prettier:verify:apex:local": "prettier --apex-standalone-parser built-in --list-different \"**/*.{cls,cmp,component,css,html,js,json,md,page,trigger,xml,yaml,yml}\"",
+        "apex:local:start": "node node_modules/prettier-plugin-apex/bin/start-apex-server.js",
+        "apex:local:stop": "node node_modules/prettier-plugin-apex/bin/stop-apex-server.js",
         "postinstall": "node bin/check-version.js"
     },
     "author": "salesforce.com",
@@ -28,13 +32,14 @@
     },
     "devDependencies": {
         "@prettier/plugin-xml": "^0.12.0",
+        "@sa11y/jest": "^0.1.4-beta.0",
         "@salesforce/eslint-config-lwc": "^0.7.0",
         "@salesforce/eslint-plugin-aura": "^1.4.0",
         "@salesforce/sfdx-lwc-jest": "^0.10.1",
         "eslint": "^7.10.0",
         "eslint-config-prettier": "^6.12.0",
         "husky": "^4.3.0",
-        "lint-staged": "^10.3.0",
+        "lint-staged": "^10.4.0",
         "prettier": "^2.1.2",
         "prettier-plugin-apex": "^1.7.0",
         "semver": "^7.3.2"
