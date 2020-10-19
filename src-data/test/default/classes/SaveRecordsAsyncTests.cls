@@ -23,7 +23,7 @@ global class SaveRecordsAsyncTests {
 
     @isTest
     global static void UpsertRecordsQueueable_execute_works() {
-        Account acc = new Account(Name = 'Sample');
+        Account acc = new Account(Name = 'Mock');
         List<Account> accounts = new List<Account>();
         accounts.add(acc);
 
