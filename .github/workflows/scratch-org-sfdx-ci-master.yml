@@ -41,9 +41,7 @@ jobs:
 
             # Wait for Apex parser server startup
             - name: Wait for Apex parser server startup
-              uses: maddox/actions/sleep@master
-              with:
-                  args: 5
+              run: timeout 22 bash -c 'until printf "" 2>>/dev/null >>/dev/tcp/$0/$1; do sleep 1; done' 127.0.0.1 2117
 
             # Prettier formatting
             - name: 'Code formatting verification with Prettier'

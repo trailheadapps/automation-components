@@ -2,6 +2,9 @@ import { LightningElement, api, wire } from 'lwc';
 import getFlowNames from '@salesforce/apex/FlowPickerController.getFlowNames';
 import { FlowAttributeChangeEvent } from 'lightning/flowSupport';
 
+/**
+ * This component requires that the Flow_Picker permission set be assigned to the end user
+ */
 export default class FlowPicker extends LightningElement {
     @api label = 'Select a Flow';
     @api selectedFlowApiName;
