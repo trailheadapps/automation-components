@@ -77,6 +77,12 @@
         "AC - Strings": "0Ho5w000000TN49CAG",
         "AC - UI": "0Ho5w000000TN4ECAW",
         "AC - Utilities": "0Ho5w000000TN4JCAW",
-        "AC - Utilities@50.0.0-1": "04t5w000005ufnJAAQ"
+        "AC - Utilities@50.0.0-1": "04t5w000005ufnJAAQ",
+        "AC - Messaging@50.0.0-1": "04t5w000005ufnEAAQ",
+        "AC - Strings@50.0.0-1": "04t5w000005ufn9AAA",
+        "AC - UI@50.0.0-1": "04t5w000005ufmzAAA",
+        "AC - Collections@50.0.0-1": "04t5w000005ufmuAAA",
+        "AC - Flows@50.0.0-1": "04t5w000005ufn4AAA",
+        "AC - Security@50.0.0-1": "04t5w000005ufmpAAA"
     }
 }
