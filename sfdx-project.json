@@ -4,8 +4,7 @@
             "path": "src-apex-formula-evaluator",
             "package": "AC - Apex Formula Evaluator",
             "versionName": "Winter '21 release",
-            "versionNumber": "50.0.0.NEXT",
-            "default": false
+            "versionNumber": "50.0.0.NEXT"
         },
         {
             "path": "src-collections",
@@ -18,50 +17,43 @@
             "path": "src-data",
             "package": "AC - Data",
             "versionName": "Winter '21 release",
-            "versionNumber": "50.0.0.NEXT",
-            "default": false
+            "versionNumber": "50.0.0.NEXT"
         },
         {
             "path": "src-flows",
             "package": "AC - Flows",
             "versionName": "Winter '21 release",
-            "versionNumber": "50.0.0.NEXT",
-            "default": false
+            "versionNumber": "50.0.0.NEXT"
         },
         {
             "path": "src-messaging",
             "package": "AC - Messaging",
             "versionName": "Winter '21 release",
-            "versionNumber": "50.0.0.NEXT",
-            "default": false
+            "versionNumber": "50.0.0.NEXT"
         },
         {
             "path": "src-security",
             "package": "AC - Security",
             "versionName": "Winter '21 release",
-            "versionNumber": "50.0.0.NEXT",
-            "default": false
+            "versionNumber": "50.0.0.NEXT"
         },
         {
             "path": "src-strings",
             "package": "AC - Strings",
             "versionName": "Winter '21 release",
-            "versionNumber": "50.0.0.NEXT",
-            "default": false
+            "versionNumber": "50.0.0.NEXT"
         },
         {
             "path": "src-ui",
             "package": "AC - UI",
             "versionName": "Winter '21 release",
-            "versionNumber": "50.0.0.NEXT",
-            "default": false
+            "versionNumber": "50.0.0.NEXT"
         },
         {
             "path": "src-utilities",
             "package": "AC - Utilities",
             "versionName": "Winter '21 release",
-            "versionNumber": "50.0.0.NEXT",
-            "default": false
+            "versionNumber": "50.0.0.NEXT"
         }
     ],
     "namespace": "",
@@ -77,6 +69,7 @@
         "AC - Strings": "0Ho5w000000TN49CAG",
         "AC - UI": "0Ho5w000000TN4ECAW",
         "AC - Utilities": "0Ho5w000000TN4JCAW",
+        "AC - Data@50.0.0-2": "04t5w000005ufnTAAQ",
         "AC - Apex Formula Evaluator@50.0.0-1": "04t5w000005ufmkAAA",
         "AC - Utilities@50.0.0-1": "04t5w000005ufnJAAQ",
         "AC - Messaging@50.0.0-1": "04t5w000005ufnEAAQ",
