@@ -2,6 +2,7 @@
   "title": "Flow Local Actions",
   "steps": [
     {
+      "title": "Introducing Flow local actions",
       "file": "src-ui/main/default/aura/minimizeUtilityItem/minimizeUtilityItem.cmp",
       "line": 3,
       "description": "[Flow local actions](https://developer.salesforce.com/docs/atlas.en-us.lightning.meta/lightning/components_config_for_flow_actions.htm) let you execute client-side logic in your flow like minimizing a utility bar item or opening a tab.\n\nThese are implemented with Aura components that implement the `lightning:availableForFlowActions` interface and have no visible UI.",
@@ -17,11 +18,13 @@
       }
     },
     {
+      "title": "Execution",
       "file": "src-ui/main/default/aura/minimizeUtilityItem/minimizeUtilityItemController.js",
       "line": 2,
-      "description": "Flow local actions are trigger via the `invoke()` controller function."
+      "description": "Flow local actions are executed via the `invoke()` controller function."
     },
     {
+      "title": "Client-side actions",
       "file": "src-ui/main/default/aura/minimizeUtilityItem/minimizeUtilityItemController.js",
       "line": 15,
       "description": "Flow local actions rely on JS code interacting with service components like `lightning:utilityBarAPI` to perform client-side actions."

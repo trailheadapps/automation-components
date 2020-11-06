@@ -2,16 +2,19 @@
   "title": "Invocable Actions",
   "steps": [
     {
+      "title": "Introducing Invocable Actions",
       "file": "src-apex-formula-evaluator/main/default/classes/EvaluateFormula.cls",
       "line": 14,
-      "description": "All [invocable actions](https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_classes_annotation_InvocableMethod.htm) from Automation Components follow a similar signature:\n```\n@InvocableMethod(label='some_label' category='some_category')\nglobal static List<OutputParameters> bulkInvoke(List<InputParameters> inputs)\n```\n\nRules:\n- method is always named `bulkInvoke`.\n- method input is always a `List<InputParameters>`.\n- method output is always a `List<OutputParameters>` or `void`."
+      "description": "All [Invocable Actions](https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_classes_annotation_InvocableMethod.htm) from Automation Components follow a similar signature:\n```\n@InvocableMethod(label='some_label' category='some_category')\nglobal static List<OutputParameters> bulkInvoke(List<InputParameters> inputs)\n```\n\nRules:\n- method is always named `bulkInvoke`.\n- method input is always a `List<InputParameters>`.\n- method output is always a `List<OutputParameters>` or `void`."
     },
     {
+      "title": "Parameters",
       "file": "src-apex-formula-evaluator/main/default/classes/EvaluateFormula.cls",
       "line": 42,
       "description": "`InputParameters` and `OutputParameters` are always inner classes of the class that contain the invocable action.\n\nThese are wrappers for the input and output parameters exposed in Flow and Process Builder."
     },
     {
+      "title": "Bulkification",
       "file": "src-apex-formula-evaluator/main/default/classes/EvaluateFormula.cls",
       "line": 22,
       "description": "All invocable actions support bulkification by calling multiple times a private `invoke` method that executes individual actions.\n\nThis is where the core code of the action lives."

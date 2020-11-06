@@ -2,11 +2,19 @@
   "title": "Quick Choice",
   "steps": [
     {
-      "file": "src-ui/main/default/lwc/quickChoice/quickChoice.js",
-      "line": 41,
-      "description": "The Quick Choice flow screen component uses one of three templates (cards, picklist or radio) depending on the value of the `displayMode` public property.\n\nThe [`render()`](https://developer.salesforce.com/docs/component-library/documentation/en/lwc/lwc.reference_lifecycle_hooks) lifecyle hook function is where the [template is selected](https://developer.salesforce.com/docs/component-library/documentation/en/lwc/lwc.create_render). The method returns the file name of the HTML file that is used as the component template.\n\nHaving multiple template for the same component helps us reduce the volume of markdown (fewer conditions) while sharing the same JS logic."
+      "title": "Custom Property Editor",
+      "file": "src-ui/main/default/lwc/quickChoice/quickChoice.js-meta.xml",
+      "line": 14,
+      "description": "The Quick Choice flow screen component uses a [Custom Property Editor](https://developer.salesforce.com/docs/component-library/documentation/en/lwc/use_flow_custom_property_editor). This replaces the default configuration fields with a custom component and provides flow admins with a user-friendly configuration experience (field order, various input types, dependent fields...)."
     },
     {
+      "title": "Multiple templates",
+      "file": "src-ui/main/default/lwc/quickChoice/quickChoice.js",
+      "line": 41,
+      "description": "The component uses one of three templates (cards, picklist or radio) depending on the value of the `displayMode` public property.\n\nThe [`render()`](https://developer.salesforce.com/docs/component-library/documentation/en/lwc/lwc.reference_lifecycle_hooks) lifecyle hook function is where the [template is selected](https://developer.salesforce.com/docs/component-library/documentation/en/lwc/lwc.create_render). The method returns the file name of the HTML file that is used as the component template.\n\nHaving multiple template for the same component helps us reduce the volume of markup (fewer conditions) while sharing the same JS logic."
+    },
+    {
+      "title": "Loading Picklist Data",
       "file": "src-ui/main/default/lwc/quickChoice/quickChoice.js",
       "line": 61,
       "description": "If Quick Choice is configured to load picklist values for a field, we uses the [`getPicklistValues()`](https://developer.salesforce.com/docs/component-library/documentation/en/lwc/lwc.reference_wire_adapters_picklist_values) wire adapter from the UI API to load the values.\nThis allows us to have no Apex and to benefit from the Lightning Data Service cache."

@@ -2,19 +2,10 @@
   "title": "Flow Screen Components",
   "steps": [
     {
+      "title": "Introducing Flow screen components",
       "file": "src-ui/main/default/lwc/quickChoice/quickChoice.js-meta.xml",
       "line": 9,
-      "description": "Flow screen components can either be Aura or Lightning web components.\n\n[Flow screen Lightning web components](https://developer.salesforce.com/docs/component-library/documentation/en/lwc/lwc.use_flow) must have the `lightning__FlowScreen` target specified in their metadata.",
-      "selection": {
-        "start": {
-          "line": 9,
-          "character": 17
-        },
-        "end": {
-          "line": 9,
-          "character": 38
-        }
-      }
+      "description": "Flow screen components can either be Aura or Lightning web components.\n\n[Flow screen Lightning web components](https://developer.salesforce.com/docs/component-library/documentation/en/lwc/lwc.use_flow) must have the `lightning__FlowScreen` target specified in their metadata."
     }
   ]
 }
