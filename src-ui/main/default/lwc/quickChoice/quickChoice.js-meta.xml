@@ -11,7 +11,7 @@
     <targetConfigs>
         <targetConfig
             targets="lightning__FlowScreen"
-            configurationEditor="c-quick-choice-property-editor"
+            configurationEditor="autocomp-quick-choice-property-editor"
         >
             <property name="value" label="Value" type="String" />
             <property
