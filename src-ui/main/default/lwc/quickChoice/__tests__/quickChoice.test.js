@@ -116,7 +116,7 @@ describe('c-quick-choice', () => {
     });
 
     describe('validation', () => {
-        it('validate when required value is present', () => {
+        it('validates when required value is present', () => {
             // Create initial element
             const element = createElement('c-quick-choice', {
                 is: QuickChoice
