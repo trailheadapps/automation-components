@@ -50,7 +50,7 @@ jobs:
             # Add namespace to CPEs
             - name: Add namespace to Custom Property Editors
               run: |
-                  sed -i 's,configurationEditor="c-,configurationEditor="autocomp-,' **/*.js-meta.xml
+                  find . -type f -name "**/*.js-meta.xml" -print0 | xargs -0 sed -i 's,configurationEditor="c-,configurationEditor="autocomp-,'
 
             # Create package version and extract its id
             - name: Create package version
