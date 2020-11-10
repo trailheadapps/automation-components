@@ -47,6 +47,11 @@ jobs:
               run: |
                   sed -i 's,"namespace": "","namespace": "autocomp",' sfdx-project.json
 
+            # Add namespace to CPEs
+            - name: Add namespace to Custom Property Editors
+              run: |
+                  sed -i 's,configurationEditor="c-,configurationEditor="autocomp-,' **/*.js-meta.xml
+
             # Create package version and extract its id
             - name: Create package version
               id: createPackageVersion
