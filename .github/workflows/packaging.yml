@@ -96,10 +96,14 @@ jobs:
             - name: Promote package version
               run: sfdx force:package:version:promote --package ${{ steps.createPackageVersion.outputs.packageVersionId }} -n
 
-            # Remove namespace from project config
-            - name: Remove namespace from project config
+            # Revert namespace change in project config
+            - name: Revert namespace change in project config
               run: |
                   sed -i 's,"namespace": "autocomp","namespace": "",' sfdx-project.json
+
+            # Revert namespace changes in CPEs
+            - name: Revert namespace changes in Custom Property Editors
+              run: git checkout **/*.js-meta.xml
 
             # Create PR for new package version
             - name: 'Create PR for new package version'
