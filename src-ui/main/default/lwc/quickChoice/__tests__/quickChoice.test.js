@@ -24,7 +24,7 @@ describe('c-quick-choice', () => {
     });
 
     describe('rendering', () => {
-        it('renders picklist', () => {
+        it('renders a picklist', () => {
             // Create initial element
             const element = createElement('c-quick-choice', {
                 is: QuickChoice
@@ -40,7 +40,7 @@ describe('c-quick-choice', () => {
             expect(comboboxElement).not.toBeNull();
         });
 
-        it('renders radio', () => {
+        it('renders radio buttons', () => {
             // Create initial element
             const element = createElement('c-quick-choice', {
                 is: QuickChoice

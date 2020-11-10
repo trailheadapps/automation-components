@@ -47,7 +47,7 @@
             "path": "src-ui",
             "package": "AC - UI",
             "versionName": "Winter '21 release",
-            "versionNumber": "50.0.0.NEXT"
+            "versionNumber": "50.1.0.NEXT"
         },
         {
             "path": "src-utilities",
