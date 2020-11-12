@@ -59,15 +59,15 @@ export default class QuickChoiceEditor extends LightningElement {
     setInputVariableValue(varName, valueDataType, value) {
         // Clone input variables to avoid proxy issues when modifying object properties
         const variables = JSON.parse(JSON.stringify(this._inputVariables));
-        // Find variable
-        const index = variables.findIndex(({ name }) => name === varName);
         // Prepare updated variable
         const updatedVariable = {
             name: varName,
             value,
             valueDataType
         };
-        // Save variable
+        // Search for existing variable to replace
+        const index = variables.findIndex(({ name }) => name === varName);
+        // Save updated variable
         if (index === -1) {
             variables.push(updatedVariable);
         } else {
