@@ -9,14 +9,16 @@
         required
     ></c-flow-combobox>
 
-    <lightning-input
-        name="required"
-        data-type="Boolean"
-        label="Required"
-        checked={required}
-        onchange={handleChange}
-        type="checkbox"
-    ></lightning-input>
+    <div class="slds-var-p-top_x-small">
+        <lightning-input
+            name="required"
+            data-type="Boolean"
+            label="Required"
+            checked={required}
+            onchange={handleChange}
+            type="checkbox"
+        ></lightning-input>
+    </div>
 
     <c-flow-combobox
         name="value"
