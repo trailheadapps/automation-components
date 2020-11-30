@@ -17,15 +17,15 @@ sfdx force:org:create -s -f config/project-scratch-def.json -d 30 -a $ORG_ALIAS 
 echo "" && \
 
 echo "Pushing source..." && \
-sfdx force:source:push -u $ORG_ALIAS && \
+sfdx force:source:push && \
 echo "" && \
 
 echo "Assigning permission sets..." && \
-sfdx force:user:permset:assign -n Streaming_Monitor -u $ORG_ALIAS && \
+sfdx force:user:permset:assign -n Streaming_Monitor && \
 echo "" && \
 
 echo "Opening org..." && \
-sfdx force:org:open -p /lightning/page/home -u $ORG_ALIAS && \
+sfdx force:org:open -p /lightning/page/home && \
 echo ""
 
 EXIT_CODE="$?"

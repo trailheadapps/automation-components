@@ -18,12 +18,12 @@ call :checkForError
 @echo:
 
 echo Pushing source...
-cmd.exe /c sfdx force:source:push -f -u %ORG_ALIAS%
+cmd.exe /c sfdx force:source:push
 call :checkForError
 @echo:
 
 echo Assigning permissions...
-cmd.exe /c sfdx force:user:permset:assign -n Streaming_Monitor -u %ORG_ALIAS%
+cmd.exe /c sfdx force:user:permset:assign -n Streaming_Monitor
 call :checkForError
 @echo:
 
@@ -32,7 +32,7 @@ rem Report install success if no error
 if ["%errorlevel%"]==["0"] (
   echo Installation completed.
   @echo:
-  cmd.exe /c sfdx force:org:open -p lightning/page/home -u %ORG_ALIAS%
+  cmd.exe /c sfdx force:org:open -p lightning/page/home
 )
 
 :: ======== FN ======
