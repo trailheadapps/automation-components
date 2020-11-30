@@ -20,13 +20,13 @@ Check out the community site [unofficialsf.com](https://unofficialsf.com/) for m
 
 -   [Optional installation instructions](#optional-installation-instructions)
 
+-   [Code tours](#code-tours)
+
 ## Installing the components using Managed Packages
 
 Follow this set of instructions if you want to deploy the components to your production org or to a development environment that's more permanent than a Scratch org. You can use a non source-tracked orgs such as a free [Developer Edition Org](https://developer.salesforce.com/signup), a [Trailhead Playground](https://trailhead.salesforce.com/) or a production org.
 
 1. Log in to your org
-
-1. If you are setting up a Developer Edition: go to **Setup**, under **My Domain**, [register a My Domain](https://help.salesforce.com/articleView?id=domain_name_setup.htm&type=5).
 
 1. Click links from the table to install the managed packages in your org.
 
@@ -102,8 +102,6 @@ This includes non source-tracked orgs such as a [free Developer Edition Org](htt
     sfdx force:auth:web:login -s -a mydevorg
     ```
 
-1. If you are setting up a Developer Edition: go to **Setup**, under **My Domain**, [register a My Domain](https://help.salesforce.com/articleView?id=domain_name_setup.htm&type=5).
-
 1. Run this command in a terminal to deploy the app.
 
     ```
@@ -143,3 +141,7 @@ Prettier and ESLint will now run automatically every time you commit changes. Th
 npm run lint:lwc
 npm run prettier
 ```
+
+## Code Tours
+
+Code Tours are guided walkthroughs that will help you understand the app code better. To be able to run them, install the [CodeTour VSCode extension](https://marketplace.visualstudio.com/items?itemName=vsls-contrib.codetour).
