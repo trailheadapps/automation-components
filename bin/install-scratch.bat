@@ -13,7 +13,7 @@ cmd.exe /c sfdx force:org:delete -p -u %ORG_ALIAS% 2>NUL
 @echo:
 
 echo Creating scratch org...
-cmd.exe /c sfdx force:org:create -s -f config/project-scratch-def.json -a %ORG_ALIAS% -d 30
+cmd.exe /c sfdx force:org:create -s -f config/project-scratch-def.json -d 30 -a %ORG_ALIAS%
 call :checkForError
 @echo:
 
@@ -22,7 +22,7 @@ cmd.exe /c sfdx force:source:push
 call :checkForError
 @echo:
 
-echo Assigning permissions...
+echo Assigning permission sets...
 cmd.exe /c sfdx force:user:permset:assign -n Streaming_Monitor
 call :checkForError
 @echo:
