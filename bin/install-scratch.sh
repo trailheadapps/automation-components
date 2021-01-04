@@ -22,10 +22,6 @@ echo "Pushing source..." && \
 sfdx force:source:push && \
 echo "" && \
 
-echo "Assigning permission sets..." && \
-sfdx force:user:permset:assign -n Streaming_Monitor && \
-echo "" && \
-
 echo "Opening org..." && \
 sfdx force:org:open -p /lightning/page/home && \
 echo ""
