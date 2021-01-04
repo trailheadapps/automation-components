@@ -107,6 +107,16 @@ jobs:
             - name: 'Authenticate Dev Hub'
               run: 'sfdx force:auth:sfdxurl:store -f ./DEVHUB_SFDX_URL.txt -a devhub -d'
 
+            # Add namespace to project config
+            - name: Add namespace to project config
+              run: |
+                  sed -i 's,"namespace": "","namespace": "autocomp",' sfdx-project.json
+
+            # Add namespace to CPEs
+            - name: Add namespace to Custom Property Editors
+              run: |
+                  find . -type f -name "*.js-meta.xml" -print0 | xargs -0 sed -i 's,configurationEditor="c-,configurationEditor="autocomp-,'
+
             # Create scratch org
             - name: 'Create scratch org'
               run: 'sfdx force:org:create -f config/project-scratch-def.json -a scratch-org -s -d 1'
