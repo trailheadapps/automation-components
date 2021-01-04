@@ -170,6 +170,13 @@ export default class QuickChoiceEditor extends LightningElement {
         return this.getInputVariableValueDataType('qualifiedPicklistFieldName');
     }
 
+    get recordTypeId() {
+        return this.getInputVariableValue('recordTypeId');
+    }
+    get recordTypeIdValueType() {
+        return this.getInputVariableValueDataType('recordTypeIdValueType');
+    }
+
     get required() {
         return this.getInputVariableValue('required');
     }

@@ -23,11 +23,6 @@ cmd.exe /c sfdx force:source:push
 call :checkForError
 @echo:
 
-echo Assigning permission sets...
-cmd.exe /c sfdx force:user:permset:assign -n Streaming_Monitor
-call :checkForError
-@echo:
-
 rem Report install success if no error
 @echo:
 if ["%errorlevel%"]==["0"] (
