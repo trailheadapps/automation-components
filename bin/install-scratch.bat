@@ -14,7 +14,7 @@ cmd.exe /c sfdx force:org:delete -p -u %ORG_ALIAS% 2>NUL
 @echo:
 
 echo Creating scratch org...
-cmd.exe /c sfdx force:org:create -s -f config/project-scratch-def.json -d 30 -a %ORG_ALIAS%
+cmd.exe /c sfdx force:org:create -s -f config/project-scratch-def.json -d 30 -c -a %ORG_ALIAS%
 call :checkForError
 @echo:
 

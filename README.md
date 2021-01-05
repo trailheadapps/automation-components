@@ -69,7 +69,7 @@ Follow this set of instructions if you want to deploy the components to your pro
 1. Create a scratch org and provide it with an alias (**automation** in the command below):
 
     ```
-    sfdx force:org:create -s -f config/project-scratch-def.json -a automation
+    sfdx force:org:create -s -f config/project-scratch-def.json -c -a automation
     ```
 
 1. Push the app to your scratch org:
