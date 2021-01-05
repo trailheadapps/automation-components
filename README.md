@@ -4,6 +4,12 @@
 
 Automation Components provides a set of reusable and production-ready extensions that include invocable actions, flow screen components and local actions. These are intended as an easy to install, easy to use toolbox. Read more in this [blog post](https://developer.salesforce.com/blogs/2020/05/introducing-automation-components.html).
 
+<div>
+    <img src="https://res.cloudinary.com/hy4kyit2a/f_auto,fl_lossy,q_70,w_50/learn/projects/quick-start-explore-the-automation-comps-sample-app/22dec7d6cee3233fd30d1515dc0d850b_badge.png" align="left" alt="Trailhead Badge"/>
+    Learn more about this app by completing the <a href="https://trailhead.salesforce.com/en/content/learn/projects/quick-start-explore-the-automation-comps-sample-app">Quick Start: Explore the Automation Components Sample App</a> Trailhead project.
+    <br/>
+</div>
+
 This is an Open Source project. A special thanks to the project contributors.
 
 Check out the community site [unofficialsf.com](https://unofficialsf.com/) for more Automation developer resources.
