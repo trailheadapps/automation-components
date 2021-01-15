@@ -64,7 +64,7 @@ Follow this set of instructions if you want to deploy the components to your pro
 1. If you haven't already done so, authorize your hub org and provide it with an alias (**myhuborg** in the command below):
 
     ```
-    sfdx force:auth:web:login -d -a myhuborg
+    sfdx auth:web:login -d -a myhuborg
     ```
 
 1. Clone this repository:
@@ -107,7 +107,7 @@ This includes non source-tracked orgs such as a [free Developer Edition Org](htt
 1. Authorize your Trailhead Playground or Developer org and provide it with an alias (**mydevorg** in the command below):
 
     ```
-    sfdx force:auth:web:login -s -a mydevorg
+    sfdx auth:web:login -s -a mydevorg
     ```
 
 1. Run this command in a terminal to deploy the app.
