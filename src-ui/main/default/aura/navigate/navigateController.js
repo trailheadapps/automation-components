@@ -23,7 +23,7 @@
                 break;
 
             case 'namedpage':
-                pageReference = helper.getNamePageReference(component);
+                pageReference = helper.getNamedPageReference(component);
                 break;
 
             case 'tab':
