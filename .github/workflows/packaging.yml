@@ -77,7 +77,7 @@ jobs:
 
             # Create scratch org
             - name: Create scratch org
-              run: sfdx force:org:create -f config/project-scratch-def.json -a scratch-org -s -d 1 --nonamespace
+              run: sfdx force:org:create -f config/project-scratch-def.json -a scratch-org -s -d 1 --nonamespace -c
 
             # Install new package in scratch org
             - name: Install new package version in scratch org
