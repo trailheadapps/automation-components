@@ -55,7 +55,7 @@
             "package": "AC - UI",
             "versionName": "Spring '21 release",
             "versionNumber": "51.0.0.NEXT",
-            "ancestorVersion": "51.4.0.1"
+            "ancestorVersion": "50.4.0.1"
         },
         {
             "path": "src-utilities",
