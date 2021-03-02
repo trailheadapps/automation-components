@@ -91,6 +91,10 @@
         "AC - UI@50.2.0-1": "04t5w000000auQdAAI",
         "AC - UI@50.3.0-1": "04t5w000000auQiAAI",
         "AC - UI@50.4.0-1": "04t5w000005mQP0AAM",
-        "AC - Apex Formula Evaluator@51.0.0-3": "04t5w000005mQe6AAE"
+        "AC - Apex Formula Evaluator@51.0.0-3": "04t5w000005mQe6AAE",
+        "AC - Utilities@51.0.0-3": "04t5w000005mQe1AAE",
+        "AC - Data@51.0.0-3": "04t5w000005mQdrAAE",
+        "AC - Strings@51.0.0-3": "04t5w000005mQd9AAE",
+        "AC - Messaging@51.0.0-3": "04t5w000005mQdmAAE"
     }
 }
