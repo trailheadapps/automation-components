@@ -22,8 +22,8 @@ jobs:
               run: |
                   echo "Skipping CI run for automated PRs."
 
-    # Formatting and linting only runs on human-submitted PRs
-    formatting-and-linting:
+    # Formatting, linting and LWC tests only runs on human-submitted PRs
+    formatting-and-lwc-tests:
         if: "github.actor != 'trailheadapps-bot'"
         runs-on: ubuntu-latest
         steps:
@@ -84,7 +84,7 @@ jobs:
 
     scratch-org-test:
         runs-on: ubuntu-latest
-        needs: formatting-and-linting
+        needs: formatting-and-lwc-tests
         steps:
             # Install Salesforce CLI
             - name: 'Install Salesforce CLI'
