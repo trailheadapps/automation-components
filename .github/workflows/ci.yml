@@ -199,5 +199,5 @@ jobs:
               if: ${{ steps.checkForChanges.outputs.changes != '[]' }}
               with:
                   token: ${{ secrets.REPO_ACCESS_TOKEN }}
-                  event-type: release-package-version-event
+                  event-type: start-packaging
                   client-payload: '{ "ref": "${{ github.ref }}", "sha": "${{ github.sha }}", "packageNames": ${{ steps.checkForChanges.outputs.changes }} }'
