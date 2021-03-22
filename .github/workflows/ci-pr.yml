@@ -1,18 +1,30 @@
 # Unique name for this workflow
-name: Salesforce DX Prerelease PR (scratch org)
+name: CI on Pull Request
 
 # Definition when the workflow should run
 on:
     pull_request:
         types: [opened, edited, synchronize, reopened]
-        branches:
+        branches-ignore:
             - prerelease/spring[2-9][0-9]
             - prerelease/summer[2-9][0-9]
             - prerelease/winter[2-9][0-9]
+            - auto/package-version*
 
 # Jobs to be executed
 jobs:
+    # Dummy job used to skip CI run on automated PRs
+    skip-ci:
+        if: "github.actor == 'trailheadapps-bot'"
+        runs-on: ubuntu-latest
+        steps:
+            - name: Noop
+              run: |
+                  echo "Skipping CI run for automated PRs."
+
+    # Formatting and linting only runs on human-submitted PRs
     formatting-and-linting:
+        if: "github.actor != 'trailheadapps-bot'"
         runs-on: ubuntu-latest
         steps:
             # Checkout the source code
@@ -107,7 +119,7 @@ jobs:
 
             # Create scratch org
             - name: 'Create scratch org'
-              run: sfdx force:org:create -f config/project-scratch-def.json -a scratch-org -s -d 1 -c release=Preview
+              run: sfdx force:org:create -f config/project-scratch-def.json -a scratch-org -s -d 1 -c
 
             # Deploy source to scratch org
             - name: 'Push source to scratch org'

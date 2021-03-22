@@ -1,30 +1,18 @@
 # Unique name for this workflow
-name: Salesforce DX PR (scratch org)
+name: CI
 
 # Definition when the workflow should run
 on:
-    pull_request:
-        types: [opened, edited, synchronize, reopened]
-        branches-ignore:
-            - prerelease/spring[2-9][0-9]
-            - prerelease/summer[2-9][0-9]
-            - prerelease/winter[2-9][0-9]
-            - auto/package-version*
+    push:
+        branches:
+            - master
+        paths-ignore:
+            - 'sfdx-project.json'
+            - 'README.md'
 
 # Jobs to be executed
 jobs:
-    # Dummy job used to skip CI run on automated PRs
-    skip-ci:
-        if: "github.actor == 'trailheadapps-bot'"
-        runs-on: ubuntu-latest
-        steps:
-            - name: Noop
-              run: |
-                  echo "Skipping CI run for automated PRs."
-
-    # Formatting and linting only runs on human-submitted PRs
     formatting-and-linting:
-        if: "github.actor != 'trailheadapps-bot'"
         runs-on: ubuntu-latest
         steps:
             # Checkout the source code
@@ -139,3 +127,77 @@ jobs:
             - name: 'Delete scratch org'
               if: always()
               run: sfdx force:org:delete -p -u scratch-org
+
+    trigger-packaging:
+        runs-on: ubuntu-latest
+        needs: scratch-org-test
+        steps:
+            # Checkout the source code with history
+            - name: 'Checkout source code'
+              uses: actions/checkout@v2
+
+            # Check for package changes using git diff
+            - name: 'Check for package changes'
+              id: checkForChanges
+              run: |
+                  git fetch origin ${{ github.event.before }} --depth=1
+                  changedPaths=$( git diff-tree --name-only ${{ github.event.before }} $GITHUB_SHA )
+
+                  set +e
+                  changedPackages=()
+
+                  if [ $(echo "$changedPaths" | grep -c '^src-apex-formula-evaluator$') == 1 ]; then
+                      changedPackages+=( 'AC - Apex Formula Evaluator' )
+                  fi
+
+                  if [ $(echo "$changedPaths" | grep -c '^src-collections$') == 1 ]; then
+                      changedPackages+=( 'AC - Collections' )
+                  fi
+
+                  if [ $(echo "$changedPaths" | grep -c '^src-data$') == 1 ]; then
+                      changedPackages+=( 'AC - Data' )
+                  fi
+
+                  if [ $(echo "$changedPaths" | grep -c '^src-flows$') == 1 ]; then
+                      changedPackages+=( 'AC - Flows' )
+                  fi
+
+                  if [ $(echo "$changedPaths" | grep -c '^src-messaging$') == 1 ]; then
+                      changedPackages+=( 'AC - Messaging' )
+                  fi
+
+                  if [ $(echo "$changedPaths" | grep -c '^src-security$') == 1 ]; then
+                      changedPackages+=( 'AC - Security' )
+                  fi
+
+                  if [ $(echo "$changedPaths" | grep -c '^src-strings$') == 1 ]; then
+                      changedPackages+=( 'AC - Strings' )
+                  fi
+
+                  if [ $(echo "$changedPaths" | grep -c '^src-ui$') == 1 ]; then
+                      changedPackages+=( 'AC - UI' )
+                  fi
+
+                  if [ $(echo "$changedPaths" | grep -c '^src-utilities$') == 1 ]; then
+                      changedPackages+=( 'AC - Utilities' )
+                  fi
+
+                  echo "Changed packages (${#changedPackages[@]}):"
+                  for i in ${changedPackages[@]}; do
+                      echo "- $i"
+                  done
+
+                  changedPackagesJson='[]'
+                  if (( ${#changedPackages[@]} > 0 )); then
+                      changedPackagesJson=$(printf '%s\n' "${changedPackages[@]}" | jq -R . | jq -c -s .)
+                  fi
+                  echo "::set-output name=changes::$changedPackagesJson"
+
+            # Trigger packaging workflow if needed
+            - name: 'Trigger packaging workflow if needed'
+              uses: peter-evans/repository-dispatch@v1.1.0
+              if: ${{ steps.checkForChanges.outputs.changes != '[]' }}
+              with:
+                  token: ${{ secrets.REPO_ACCESS_TOKEN }}
+                  event-type: release-package-version-event
+                  client-payload: '{ "ref": "${{ github.ref }}", "sha": "${{ github.sha }}", "packageNames": ${{ steps.checkForChanges.outputs.changes }} }'
