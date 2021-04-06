@@ -1,6 +1,6 @@
 # Automation Components
 
-[![CI Workflow](https://github.com/trailheadapps/automation-components/workflows/CI/badge.svg)](https://github.com/trailheadapps/automation-components/actions?query=workflow%3ACI) [![Packaging Workflow](https://github.com/trailheadapps/automation-components/workflows/Packaging/badge.svg)](https://github.com/trailheadapps/automation-components/actions?query=workflow%3A%22Packaging%22) [![codecov](https://codecov.io/gh/trailheadapps/automation-components/branch/master/graph/badge.svg)](https://codecov.io/gh/trailheadapps/automation-components)
+[![CI Workflow](https://github.com/trailheadapps/automation-components/workflows/CI/badge.svg)](https://github.com/trailheadapps/automation-components/actions?query=workflow%3ACI) [![Packaging Workflow](https://github.com/trailheadapps/automation-components/workflows/Packaging/badge.svg)](https://github.com/trailheadapps/automation-components/actions?query=workflow%3A%22Packaging%22) [![codecov](https://codecov.io/gh/trailheadapps/automation-components/branch/main/graph/badge.svg)](https://codecov.io/gh/trailheadapps/automation-components)
 
 Automation Components provides a set of reusable and production-ready extensions that include invocable actions, flow screen components and local actions. These are intended as an easy to install, easy to use toolbox. Read more in this [blog post](https://developer.salesforce.com/blogs/2020/05/introducing-automation-components.html).
 
