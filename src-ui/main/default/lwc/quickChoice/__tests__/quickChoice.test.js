@@ -7,7 +7,7 @@ import { getPicklistValues } from 'lightning/uiObjectInfoApi';
 // Register as Apex wire adapter.
 const getPicklistValuesAdapter = registerApexTestWireAdapter(getPicklistValues);
 
-const SAMPLE_VALUES = ['a', 'b', 'c'];
+const SAMPLE_VALUES = ['a', 'b', 'd'];
 const SAMPLE_ICONS = ['standard:account', 'standard:address', 'standard:app'];
 const SAMPLE_PICKLIST_FIELD_NAME = 'Opportunity.StageName';
 const MASTER_RECORD_TYPE_ID = '012000000000000AAA';
