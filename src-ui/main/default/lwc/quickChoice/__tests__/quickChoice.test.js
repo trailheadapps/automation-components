@@ -34,9 +34,8 @@ describe('c-quick-choice', () => {
             element.choiceValues = SAMPLE_VALUES;
             document.body.appendChild(element);
 
-            const comboboxElement = element.shadowRoot.querySelector(
-                'lightning-combobox'
-            );
+            const comboboxElement =
+                element.shadowRoot.querySelector('lightning-combobox');
             expect(comboboxElement).not.toBeNull();
         });
 
