@@ -525,12 +525,8 @@ export default class FlowCombobox extends LightningElement {
     }
 
     handleOptionClick(event) {
-        const {
-            value,
-            objectType,
-            flowType,
-            iconName
-        } = event.currentTarget.dataset;
+        const { value, objectType, flowType, iconName } =
+            event.currentTarget.dataset;
         if (this.value && this.value.endsWith(value) && objectType) {
             this.doOpenObject(event, value, objectType);
         } else {

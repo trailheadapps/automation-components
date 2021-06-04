@@ -48,9 +48,8 @@ describe('c-flow-picker', () => {
                 mockEventHandler
             );
 
-            const comboboxElement = element.shadowRoot.querySelector(
-                'lightning-combobox'
-            );
+            const comboboxElement =
+                element.shadowRoot.querySelector('lightning-combobox');
             comboboxElement.dispatchEvent(
                 new CustomEvent('change', {
                     detail: { value: FLOW_ATTRIBUTE_VALUE },
