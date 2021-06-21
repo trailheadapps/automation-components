@@ -1,11 +1,7 @@
 import { createElement } from 'lwc';
 import { FlowAttributeChangeEventName } from 'lightning/flowSupport';
 import FlowPicker from 'c/flowPicker';
-import { registerApexTestWireAdapter } from '@salesforce/sfdx-lwc-jest';
 import getFlowNames from '@salesforce/apex/FlowPickerController.getFlowNames';
-
-// Register as Apex wire adapter. Some tests verify that provisioned values trigger desired behavior.
-const getFlowNamesAdapter = registerApexTestWireAdapter(getFlowNames);
 
 const FLOW_ATTRIBUTE_NAME = 'selectedFlowApiName';
 const FLOW_ATTRIBUTE_VALUE = 'MockFlowAttributeValue';
@@ -115,7 +111,7 @@ describe('c-flow-picker', () => {
             // ending the test and fail the test if the promise rejects.
             return Promise.resolve().then(() => {
                 // Get the config of the last wire call
-                const config = getFlowNamesAdapter.getLastConfig();
+                const config = getFlowNames.getLastConfig();
 
                 // Inspect filter parameters
                 expect(config).not.toBe(null);
@@ -139,7 +135,7 @@ describe('c-flow-picker', () => {
             // ending the test and fail the test if the promise rejects.
             return Promise.resolve().then(() => {
                 // Get the config of the last wire call
-                const config = getFlowNamesAdapter.getLastConfig();
+                const config = getFlowNames.getLastConfig();
 
                 // Inspect filter parameters
                 expect(config).not.toBe(null);
@@ -163,7 +159,7 @@ describe('c-flow-picker', () => {
             // ending the test and fail the test if the promise rejects.
             return Promise.resolve().then(() => {
                 // Get the config of the last wire call
-                const config = getFlowNamesAdapter.getLastConfig();
+                const config = getFlowNames.getLastConfig();
 
                 // Inspect filter parameters
                 expect(config).not.toBe(null);
