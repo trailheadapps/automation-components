@@ -1,11 +1,7 @@
 import { createElement } from 'lwc';
 import { FlowAttributeChangeEventName } from 'lightning/flowSupport';
 import QuickChoice from 'c/quickChoice';
-import { registerApexTestWireAdapter } from '@salesforce/sfdx-lwc-jest';
 import { getPicklistValues } from 'lightning/uiObjectInfoApi';
-
-// Register as Apex wire adapter.
-const getPicklistValuesAdapter = registerApexTestWireAdapter(getPicklistValues);
 
 const SAMPLE_VALUES = ['a', 'b', 'd'];
 const SAMPLE_ICONS = ['standard:account', 'standard:address', 'standard:app'];
@@ -165,7 +161,7 @@ describe('c-quick-choice', () => {
             // ending the test and fail the test if the promise rejects.
             return Promise.resolve().then(() => {
                 // Get the config of the last wire call
-                const config = getPicklistValuesAdapter.getLastConfig();
+                const config = getPicklistValues.getLastConfig();
 
                 // Inspect filter parameters
                 expect(config).not.toBe(null);
@@ -190,7 +186,7 @@ describe('c-quick-choice', () => {
             // ending the test and fail the test if the promise rejects.
             return Promise.resolve().then(() => {
                 // Get the config of the last wire call
-                const config = getPicklistValuesAdapter.getLastConfig();
+                const config = getPicklistValues.getLastConfig();
 
                 // Inspect filter parameters
                 expect(config).not.toBe(null);
