@@ -1,0 +1,24 @@
+# Unique name for this workflow
+name: Manual Packaging
+
+# Definition when the workflow should run
+on:
+    workflow_dispatch:
+        inputs:
+            packageNames:
+                description: 'Name of packages that will be released'
+                required: true
+                default: '[]'
+
+# Jobs to be executed
+jobs:
+    trigger-packaging:
+        runs-on: ubuntu-latest
+        steps:
+            # Trigger packaging workflow
+            - name: 'Trigger packaging workflow'
+              uses: peter-evans/repository-dispatch@v1.1.0
+              with:
+                  token: ${{ secrets.REPO_ACCESS_TOKEN }}
+                  event-type: start-packaging
+                  client-payload: '{ "ref": "${{ github.ref }}", "sha": "${{ github.sha }}", "packageNames": ${{ github.event.inputs.packageNames }} }'
