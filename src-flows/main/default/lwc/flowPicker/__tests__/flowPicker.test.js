@@ -6,6 +6,20 @@ import getFlowNames from '@salesforce/apex/FlowPickerController.getFlowNames';
 const FLOW_ATTRIBUTE_NAME = 'selectedFlowApiName';
 const FLOW_ATTRIBUTE_VALUE = 'MockFlowAttributeValue';
 
+// Mock getFlowNames Apex wire adapter
+jest.mock(
+    '@salesforce/apex/FlowPickerController.getFlowNames',
+    () => {
+        const {
+            createApexTestWireAdapter
+        } = require('@salesforce/sfdx-lwc-jest');
+        return {
+            default: createApexTestWireAdapter(jest.fn())
+        };
+    },
+    { virtual: true }
+);
+
 describe('c-flow-picker', () => {
     afterEach(() => {
         // The jsdom instance is shared across test cases in a single file so reset the DOM
