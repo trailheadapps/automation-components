@@ -12,8 +12,8 @@
             "path": "src-collections",
             "package": "AC - Collections",
             "versionName": "Summer '21 release",
-            "versionNumber": "52.1.0.NEXT",
-            "ancestorVersion": "52.0.0.1"
+            "versionNumber": "52.2.0.NEXT",
+            "ancestorVersion": "52.1.0.1"
         },
         {
             "path": "src-data",
@@ -26,7 +26,7 @@
             "path": "src-flows",
             "package": "AC - Flows",
             "versionName": "Summer '21 release",
-            "versionNumber": "52.1.0.NEXT",
+            "versionNumber": "52.2.0.NEXT",
             "ancestorVersion": "52.0.0.1"
         },
         {
