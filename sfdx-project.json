@@ -89,6 +89,7 @@
         "AC - Security@52.0.0-1": "04t5w000005mR7LAAU",
         "AC - UI@52.1.0-1": "04t5w000005mR8EAAU",
         "AC - Flows@52.1.0-1": "04t5w000005mR8JAAU",
-        "AC - Messaging@52.1.0-1": "04t5w000005mR9MAAU"
+        "AC - Messaging@52.1.0-1": "04t5w000005mR9MAAU",
+        "AC - Flows@52.2.0-1": "04t5w000005mRA0AAM"
     }
 }
