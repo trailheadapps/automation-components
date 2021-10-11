@@ -3,66 +3,66 @@
         {
             "path": "src-apex-formula-evaluator",
             "package": "AC - Apex Formula Evaluator",
-            "versionName": "Summer '21 release",
-            "versionNumber": "52.1.0.NEXT",
-            "ancestorVersion": "52.0.0.1"
+            "versionName": "Winter '22 release",
+            "versionNumber": "53.0.0.NEXT",
+            "ancestorVersion": "52.1.0.1"
         },
         {
             "default": true,
             "path": "src-collections",
             "package": "AC - Collections",
-            "versionName": "Summer '21 release",
-            "versionNumber": "52.2.0.NEXT",
-            "ancestorVersion": "52.1.0.1"
+            "versionName": "Winter '22 release",
+            "versionNumber": "53.0.0.NEXT",
+            "ancestorVersion": "52.2.0.1"
         },
         {
             "path": "src-data",
             "package": "AC - Data",
-            "versionName": "Summer '21 release",
-            "versionNumber": "52.1.0.NEXT",
-            "ancestorVersion": "52.0.0.1"
+            "versionName": "Winter '22 release",
+            "versionNumber": "53.0.0.NEXT",
+            "ancestorVersion": "52.1.0.1"
         },
         {
             "path": "src-flows",
             "package": "AC - Flows",
-            "versionName": "Summer '21 release",
-            "versionNumber": "52.2.0.NEXT",
-            "ancestorVersion": "52.0.0.1"
+            "versionName": "Winter '22 release",
+            "versionNumber": "53.0.0.NEXT",
+            "ancestorVersion": "52.2.0.1"
         },
         {
             "path": "src-messaging",
             "package": "AC - Messaging",
-            "versionName": "Summer '21 release",
-            "versionNumber": "52.2.0.NEXT",
-            "ancestorVersion": "52.1.0.1"
+            "versionName": "Winter '22 release",
+            "versionNumber": "53.0.0.NEXT",
+            "ancestorVersion": "52.2.0.1"
         },
         {
             "path": "src-security",
             "package": "AC - Security",
-            "versionName": "Summer '21 release",
-            "versionNumber": "52.1.0.NEXT",
-            "ancestorVersion": "52.0.0.1"
+            "versionName": "Winter '22 release",
+            "versionNumber": "53.0.0.NEXT",
+            "ancestorVersion": "52.1.0.1"
         },
         {
             "path": "src-strings",
             "package": "AC - Strings",
-            "versionName": "Summer '21 release",
-            "versionNumber": "52.1.0.NEXT",
-            "ancestorVersion": "52.0.0.1"
+            "versionName": "Winter '22 release",
+            "versionNumber": "53.0.0.NEXT",
+            "ancestorVersion": "52.1.0.1"
         },
         {
             "path": "src-ui",
             "package": "AC - UI",
-            "versionName": "Summer '21 release",
-            "versionNumber": "52.2.0.NEXT",
-            "ancestorVersion": "52.1.0.1"
+            "versionName": "Winter '22 release",
+            "versionNumber": "53.0.0.NEXT",
+            "ancestorVersion": "52.2.0.1"
         },
         {
             "path": "src-utilities",
             "package": "AC - Utilities",
-            "versionName": "Summer '21 release",
-            "versionNumber": "52.1.0.NEXT",
-            "ancestorVersion": "52.0.0.1"
+            "versionName": "Winter '22 release",
+            "versionNumber": "53.0.0.NEXT",
+            "ancestorVersion": "52.1.0.1"
         }
     ],
     "namespace": "",
@@ -78,19 +78,14 @@
         "AC - Strings": "0Ho5w000000TN49CAG",
         "AC - UI": "0Ho5w000000TN4ECAW",
         "AC - Utilities": "0Ho5w000000TN4JCAW",
-        "AC - Utilities@52.0.0-1": "04t5w000005mR7uAAE",
-        "AC - Data@52.0.0-1": "04t5w000005mR7kAAE",
-        "AC - Strings@52.0.0-1": "04t5w000005mR7VAAU",
-        "AC - Messaging@52.0.0-1": "04t5w000005mR7fAAE",
-        "AC - Collections@52.0.0-1": "04t5w000005mR7zAAE",
-        "AC - UI@52.0.0-1": "04t5w000005mR7pAAE",
         "AC - Apex Formula Evaluator@52.0.0-1": "04t5w000005mR7QAAU",
-        "AC - Flows@52.0.0-1": "04t5w000005mR7aAAE",
-        "AC - Security@52.0.0-1": "04t5w000005mR7LAAU",
-        "AC - UI@52.1.0-1": "04t5w000005mR8EAAU",
-        "AC - Flows@52.1.0-1": "04t5w000005mR8JAAU",
-        "AC - Messaging@52.1.0-1": "04t5w000005mR9MAAU",
+        "AC - Collections@52.0.0-1": "04t5w000005mR7zAAE",
+        "AC - Data@52.0.0-1": "04t5w000005mR7kAAE",
         "AC - Flows@52.2.0-1": "04t5w000005mRA0AAM",
-        "AC - UI@52.2.0-1": "04t5w000005mRF5AAM"
+        "AC - Messaging@52.1.0-1": "04t5w000005mR9MAAU",
+        "AC - Security@52.0.0-1": "04t5w000005mR7LAAU",
+        "AC - Strings@52.0.0-1": "04t5w000005mR7VAAU",
+        "AC - UI@52.2.0-1": "04t5w000005mRF5AAM",
+        "AC - Utilities@52.0.0-1": "04t5w000005mR7uAAE"
     }
 }
