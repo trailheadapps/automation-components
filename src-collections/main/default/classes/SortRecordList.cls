@@ -1,6 +1,7 @@
 global with sharing class SortRecordList {
     /**
      * Sorts a record list
+     * @deprecated Use the native flow Collection Sort element
      * Inputs:
      *   List<SObject> collection
      *   String sortKeys - Array of objects in JSON format: [{ "field":"Name", "direction":"desc" }]
