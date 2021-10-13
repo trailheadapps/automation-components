@@ -64,9 +64,7 @@ global with sharing class AggregateRecordList {
                     aggregate = values[0];
                 }
                 for (Decimal value : values) {
-                    if (aggregate > value) {
-                        aggregate = value;
-                    }
+                    aggregate = Math.min(aggregate, value);
                 }
             }
             when MAX {
@@ -74,9 +72,7 @@ global with sharing class AggregateRecordList {
                     aggregate = values[0];
                 }
                 for (Decimal value : values) {
-                    if (aggregate < value) {
-                        aggregate = value;
-                    }
+                    aggregate = Math.max(aggregate, value);
                 }
             }
         }
