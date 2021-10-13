@@ -1,8 +1,8 @@
 @isTest(isParallel=true)
 global class AggregateRecordListTests {
     @isTest
-    global static void bulkInvoke_works_with_add() {
-        AggregateRecordList.InputParameters input = getInput('add');
+    global static void bulkInvoke_works_with_sum() {
+        AggregateRecordList.InputParameters input = getInput('sum');
         List<AggregateRecordList.InputParameters> inputs = new List<AggregateRecordList.InputParameters>{
             input
         };
@@ -19,20 +19,6 @@ global class AggregateRecordListTests {
         System.assertEquals(
             String.valueOf(SampleDataFactory.GLOBAL_EMPLOYEE_COUNT),
             outputs[0].stringResult
-        );
-    }
-
-    @isTest
-    global static void invoke_works_with_multiply() {
-        AggregateRecordList.InputParameters input = getInput('multiply');
-
-        AggregateRecordList.OutputParameters output = AggregateRecordList.invoke(
-            input
-        );
-
-        System.assertEquals(
-            SampleDataFactory.GLOBAL_EMPLOYEE_MULTIPLY,
-            output.decimalResult
         );
     }
 
@@ -95,7 +81,7 @@ global class AggregateRecordListTests {
 
     @isTest
     global static void invoke_works_with_null_values_with_default() {
-        AggregateRecordList.InputParameters input = getInput('add');
+        AggregateRecordList.InputParameters input = getInput('sum');
         input.collection.add(new Account(Name = 'account3'));
         input.defaultValueForNullFields = 100;
 
@@ -111,7 +97,7 @@ global class AggregateRecordListTests {
 
     @isTest
     global static void invoke_fails_with_null_values_without_default() {
-        AggregateRecordList.InputParameters input = getInput('add');
+        AggregateRecordList.InputParameters input = getInput('sum');
         input.collection.add(new Account(Name = 'account3'));
 
         try {
@@ -139,7 +125,7 @@ global class AggregateRecordListTests {
         AggregateRecordList.InputParameters input = new AggregateRecordList.InputParameters();
         input.collection = SampleDataFactory.SAMPLE_ACCOUNTS;
         input.fieldName = 'Name';
-        input.operation = 'add';
+        input.operation = 'sum';
 
         try {
             AggregateRecordList.invoke(input);

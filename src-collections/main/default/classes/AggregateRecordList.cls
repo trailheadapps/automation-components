@@ -46,13 +46,7 @@ global with sharing class AggregateRecordList {
         // Calculate aggregate value
         Decimal aggregate = 0;
         switch on aggregateOperation {
-            when MULTIPLY {
-                aggregate = 1;
-                for (Decimal value : values) {
-                    aggregate *= value;
-                }
-            }
-            when ADD {
+            when SUM {
                 for (Decimal value : values) {
                     aggregate += value;
                 }
@@ -155,8 +149,7 @@ global with sharing class AggregateRecordList {
     }
 
     private enum Operation {
-        MULTIPLY,
-        ADD,
+        SUM,
         AVERAGE,
         MIN,
         MAX
