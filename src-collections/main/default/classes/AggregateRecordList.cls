@@ -90,30 +90,27 @@ global with sharing class AggregateRecordList {
     ) {
         List<Decimal> values = new List<Decimal>();
         for (SObject record : collection) {
-            Decimal value;
-            Object rawValue = record.get(fieldName);
+            Object rawValue = (record.get(fieldName) == null)
+                ? defaultValueForNullFields
+                : record.get(fieldName);
             if (rawValue == null) {
-                if (defaultValueForNullFields == null) {
-                    throw new InvocableException(
-                        'No default value specified for null "' +
-                        fieldName +
-                        '" field.'
-                    );
-                } else {
-                    value = defaultValueForNullFields;
-                }
-            } else {
-                try {
-                    value = Decimal.valueOf(String.valueOf(rawValue));
-                } catch (Exception e) {
-                    throw new InvocableException(
-                        'Failed to convert ' +
-                        fieldName +
-                        ' field value "' +
-                        rawValue +
-                        '" into a decimal.'
-                    );
-                }
+                throw new InvocableException(
+                    'No default value specified for null "' +
+                    fieldName +
+                    '" field.'
+                );
+            }
+            Decimal value;
+            try {
+                value = Decimal.valueOf(String.valueOf(rawValue));
+            } catch (Exception e) {
+                throw new InvocableException(
+                    'Failed to convert ' +
+                    fieldName +
+                    ' field value "' +
+                    rawValue +
+                    '" into a decimal.'
+                );
             }
             values.add(value);
         }
