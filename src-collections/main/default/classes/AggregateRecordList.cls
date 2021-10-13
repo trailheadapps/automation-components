@@ -34,7 +34,7 @@ global with sharing class AggregateRecordList {
             throw new InvocableException(
                 'Unsupported operation "' +
                 input.operation +
-                '" for RecordListCalculate'
+                '" for AggregateRecordList'
             );
         }
         // Get field values
