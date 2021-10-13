@@ -12,8 +12,8 @@
             "path": "src-collections",
             "package": "AC - Collections",
             "versionName": "Winter '22 release",
-            "versionNumber": "53.0.0.NEXT",
-            "ancestorVersion": "52.2.0.1"
+            "versionNumber": "53.1.0.NEXT",
+            "ancestorVersion": "53.0.0.1"
         },
         {
             "path": "src-data",
