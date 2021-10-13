@@ -1,6 +1,6 @@
 global with sharing class AggregateRecordList {
     /**
-     * Calulates an aggregate operation on a list of records
+     * Calculates an aggregate operation on a list of records
      * Inputs:
      *   List<SObject> collection
      *   String fieldName
@@ -11,7 +11,7 @@ global with sharing class AggregateRecordList {
      *   String stringResult
      */
     @InvocableMethod(
-        label='Calulates an aggregate operation on a list of records'
+        label='Calculates an aggregate operation on a list of records'
         category='Collections'
     )
     global static List<OutputParameters> bulkInvoke(
