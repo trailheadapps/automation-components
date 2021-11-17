@@ -1,4 +1,4 @@
-global class GetFlowMetadata {
+global with sharing class GetFlowMetadata {
     @TestVisible
     private final static String BASE_QUERY = 'SELECT Id, ApiName, Label, ActiveVersionId, Description, DurableId, LatestVersionId, NamespacePrefix, ProcessType FROM FlowDefinitionView';
 
