@@ -8,19 +8,12 @@
         </legend>
         <div class="slds-form-element__control cards-container">
             <div
-                class="
-                    slds-grid
-                    slds-gutters_medium
-                    slds-wrap
-                    slds-grid_vertical-align-center
-                "
+                class="slds-grid slds-gutters_medium slds-wrap slds-grid_vertical-align-center"
             >
                 <template for:each={options} for:item="option">
                     <div key={option.value} class={columnClass}>
                         <div
-                            class="
-                                slds-visual-picker slds-visual-picker_vertical
-                            "
+                            class="slds-visual-picker slds-visual-picker_vertical"
                         >
                             <input
                                 type="radio"
@@ -34,22 +27,10 @@
                                 <!-- With icons-->
                                 <template if:true={hasIcons}>
                                     <span
-                                        class="
-                                            slds-visual-picker__figure
-                                            slds-visual-picker__text
-                                            slds-box slds-box_link
-                                            slds-media slds-media_center
-                                            card-with-icon
-                                        "
+                                        class="slds-visual-picker__figure slds-visual-picker__text slds-box slds-box_link slds-media slds-media_center card-with-icon"
                                     >
                                         <div
-                                            class="
-                                                slds-media__figure
-                                                slds-media__figure_fixed-width
-                                                slds-align_absolute-center
-                                                slds-var-p-right_small
-                                                slds-border_right
-                                            "
+                                            class="slds-media__figure slds-media__figure_fixed-width slds-align_absolute-center slds-var-p-right_small slds-border_right"
                                         >
                                             <span class="slds-icon_container">
                                                 <lightning-icon
@@ -66,10 +47,7 @@
                                             >
                                             <span
                                                 if:true={option.label}
-                                                class="
-                                                    slds-text-title
-                                                    slds-var-m-top_x-small
-                                                "
+                                                class="slds-text-title slds-var-m-top_x-small"
                                                 >{option.label}</span
                                             >
                                         </div>
@@ -79,10 +57,7 @@
                                 <!-- Without icons-->
                                 <template if:false={hasIcons}>
                                     <span
-                                        class="
-                                            slds-visual-picker__figure
-                                            slds-visual-picker__text
-                                        "
+                                        class="slds-visual-picker__figure slds-visual-picker__text"
                                     >
                                         <span>
                                             <span
@@ -91,10 +66,7 @@
                                             >
                                             <span
                                                 if:true={option.label}
-                                                class="
-                                                    slds-text-title
-                                                    slds-var-m-top_x-small
-                                                "
+                                                class="slds-text-title slds-var-m-top_x-small"
                                                 >{option.label}</span
                                             >
                                         </span>
@@ -103,10 +75,7 @@
 
                                 <!-- Selected option marker -->
                                 <span
-                                    class="
-                                        icon-container
-                                        slds-visual-picker__text-check
-                                    "
+                                    class="icon-container slds-visual-picker__text-check"
                                 >
                                     <lightning-icon
                                         icon-name="utility:check"
