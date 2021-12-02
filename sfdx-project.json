@@ -54,8 +54,8 @@
             "path": "src-ui",
             "package": "AC - UI",
             "versionName": "Winter '22 release",
-            "versionNumber": "53.0.0.NEXT",
-            "ancestorVersion": "52.2.0.1"
+            "versionNumber": "53.1.0.NEXT",
+            "ancestorVersion": "53.0.0.2"
         },
         {
             "path": "src-utilities",
