@@ -3,71 +3,71 @@
         {
             "path": "src-apex-formula-evaluator",
             "package": "AC - Apex Formula Evaluator",
-            "versionName": "Winter '22 release",
-            "versionNumber": "53.0.0.NEXT",
-            "ancestorVersion": "52.1.0.1"
+            "versionName": "Spring '22 release",
+            "versionNumber": "54.0.0.NEXT",
+            "ancestorVersion": "HIGHEST"
         },
         {
             "default": true,
             "path": "src-collections",
             "package": "AC - Collections",
-            "versionName": "Winter '22 release",
-            "versionNumber": "53.0.0.NEXT",
-            "ancestorVersion": "52.0.0.1"
+            "versionName": "Spring '22 release",
+            "versionNumber": "54.0.0.NEXT",
+            "ancestorVersion": "HIGHEST"
         },
         {
             "path": "src-data",
             "package": "AC - Data",
-            "versionName": "Winter '22 release",
-            "versionNumber": "53.0.0.NEXT",
-            "ancestorVersion": "52.1.0.1"
+            "versionName": "Spring '22 release",
+            "versionNumber": "54.0.0.NEXT",
+            "ancestorVersion": "HIGHEST"
         },
         {
             "path": "src-flows",
             "package": "AC - Flows",
-            "versionName": "Winter '22 release",
-            "versionNumber": "53.0.0.NEXT",
-            "ancestorVersion": "52.2.0.1"
+            "versionName": "Spring '22 release",
+            "versionNumber": "54.0.0.NEXT",
+            "ancestorVersion": "HIGHEST"
         },
         {
             "path": "src-messaging",
             "package": "AC - Messaging",
-            "versionName": "Winter '22 release",
-            "versionNumber": "53.0.0.NEXT",
-            "ancestorVersion": "52.2.0.1"
+            "versionName": "Spring '22 release",
+            "versionNumber": "54.0.0.NEXT",
+            "ancestorVersion": "HIGHEST"
         },
         {
             "path": "src-security",
             "package": "AC - Security",
-            "versionName": "Winter '22 release",
-            "versionNumber": "53.0.0.NEXT",
-            "ancestorVersion": "52.1.0.1"
+            "versionName": "Spring '22 release",
+            "versionNumber": "54.0.0.NEXT",
+            "ancestorVersion": "HIGHEST"
         },
         {
             "path": "src-strings",
             "package": "AC - Strings",
-            "versionName": "Winter '22 release",
-            "versionNumber": "53.0.0.NEXT",
-            "ancestorVersion": "52.1.0.1"
+            "versionName": "Spring '22 release",
+            "versionNumber": "54.0.0.NEXT",
+            "ancestorVersion": "HIGHEST"
         },
         {
             "path": "src-ui",
             "package": "AC - UI",
-            "versionName": "Winter '22 release",
-            "versionNumber": "53.1.0.NEXT",
-            "ancestorVersion": "53.0.0.2"
+            "versionName": "Spring '22 release",
+            "versionNumber": "54.0.0.NEXT",
+            "ancestorVersion": "HIGHEST"
         },
         {
             "path": "src-utilities",
             "package": "AC - Utilities",
-            "versionName": "Winter '22 release",
-            "versionNumber": "53.0.0.NEXT",
-            "ancestorVersion": "52.1.0.1"
+            "versionName": "Spring '22 release",
+            "versionNumber": "54.0.0.NEXT",
+            "ancestorVersion": "HIGHEST"
         }
     ],
     "namespace": "",
     "sfdcLoginUrl": "https://login.salesforce.com",
-    "sourceApiVersion": "52.0",
+    "sourceApiVersion": "54.0",
     "packageAliases": {
         "AC - Apex Formula Evaluator": "0Ho5w000000TN4OCAW",
         "AC - Collections": "0Ho5w000000TN3kCAG",
