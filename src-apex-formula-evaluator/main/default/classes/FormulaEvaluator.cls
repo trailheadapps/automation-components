@@ -159,6 +159,7 @@ global with sharing class FormulaEvaluator {
         return evaluateFormula(formula, 'STRING');
     }
 
+    @SuppressWarnings('PMD.ApexSOQLInjection')
     global static String updateFormulaFields(
         String objectName,
         String objectId,
@@ -170,25 +171,23 @@ global with sharing class FormulaEvaluator {
             fields
         );
 
-        String queryString = 'SELECT ';
-
+        List<String> escapedFields = new List<String>();
         for (String field : fields) {
-            queryString = queryString + field + ', ';
+            escapedFields.add(String.escapeSingleQuotes(field));
         }
 
-        queryString = queryString.removeEnd(', ');
-
-        if (String.isEmpty(objectId)) {
-            queryString = queryString + ' FROM ' + objectName + ' LIMIT 1';
-        } else {
-            queryString =
-                queryString +
-                ' FROM ' +
-                objectName +
+        String queryString =
+            'SELECT ' +
+            String.join(escapedFields, ',') +
+            ' FROM ' +
+            String.escapeSingleQuotes(objectName);
+        if (!String.isEmpty(objectId)) {
+            queryString +=
                 ' WHERE Id =\'' +
-                objectId +
-                '\' LIMIT 1';
+                String.escapeSingleQuotes(objectId) +
+                '\'';
         }
+        queryString += ' LIMIT 1';
 
         List<sObject> objectInfo = Database.query(queryString);
 

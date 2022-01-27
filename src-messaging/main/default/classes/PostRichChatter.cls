@@ -1,4 +1,4 @@
-global class PostRichChatter {
+global with sharing class PostRichChatter {
     private final static Pattern SPAN = Pattern.compile('<\\/?span[^>]*>');
     private final static Pattern ANCHOR = Pattern.compile(
         '(<a href="([^"]+)" target="_blank">([^<]+)<\\/a>)'
@@ -88,11 +88,21 @@ global class PostRichChatter {
      * Get an Id from a group name or username
      */
     private static Id getGroupOrUserFromName(String name) {
-        List<Group> groups = [SELECT Id FROM Group WHERE Name = :name];
+        List<Group> groups = [
+            SELECT Id
+            FROM Group
+            WHERE Name = :name
+            WITH SECURITY_ENFORCED
+        ];
         if (groups.size() > 0) {
             return groups[0].Id;
         }
-        List<User> users = [SELECT Id FROM User WHERE Username = :name];
+        List<User> users = [
+            SELECT Id
+            FROM User
+            WHERE Username = :name
+            WITH SECURITY_ENFORCED
+        ];
         if (users.size() > 0) {
             return users[0].Id;
         }

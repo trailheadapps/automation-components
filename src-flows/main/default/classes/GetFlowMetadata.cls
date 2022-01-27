@@ -28,6 +28,7 @@ global with sharing class GetFlowMetadata {
         return outputs;
     }
 
+    @SuppressWarnings('PMD.ApexSOQLInjection')
     private static OutputParameters invoke(InputParameters input) {
         // Find flow
         String query = getQuery(input);
