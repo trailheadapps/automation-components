@@ -107,7 +107,7 @@ jobs:
                   for f in src-*; do
                       if [ -d "$f" ]; then
                           echo "PMD is scanning $f"
-                          ~/pmd/bin/run.sh pmd -d "$f" -R pmd/ruleset.xml -f text
+                          ~/pmd/bin/run.sh pmd -d "$f" -R pmd/ruleset.xml -f text --no-cache
                       fi
                   done
 
