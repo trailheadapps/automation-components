@@ -96,6 +96,8 @@ jobs:
             - name: 'Run PMD scan'
               uses: pmd/pmd-github-action@v1.1.0
               id: pmd
+              with:
+                  rulesets: 'ruleset.xml'
 
             # Check for PMD violations
             - name: 'Check for PMD violations'
