@@ -76,6 +76,22 @@ jobs:
         needs: format-lint-lwc-tests
         if: ${{ github.actor != 'dependabot[bot]' }}
         steps:
+            # Checkout the source code
+            - name: 'Checkout source code'
+              uses: actions/checkout@v2
+
+            # Run PMD scan
+            - name: 'Run PMD scan'
+              uses: pmd/pmd-github-action@v1.1.0
+              id: pmd
+              with:
+                  rulesets: 'ruleset.xml'
+
+            # Check for PMD violations
+            - name: 'Check for PMD violations'
+              if: steps.pmd.outputs.violations != 0
+              run: exit 1
+
             # Install Salesforce CLI
             - name: 'Install Salesforce CLI'
               run: |
@@ -84,10 +100,6 @@ jobs:
                   tar xJf sfdx-linux-x64.tar.xz -C ~/sfdx --strip-components 1
                   echo "$HOME/sfdx/bin" >> $GITHUB_PATH
                   ~/sfdx/bin/sfdx version
-
-            # Checkout the source code
-            - name: 'Checkout source code'
-              uses: actions/checkout@v2
 
             # Store secret for dev hub
             - name: 'Populate auth file with DEVHUB_SFDX_URL secret'

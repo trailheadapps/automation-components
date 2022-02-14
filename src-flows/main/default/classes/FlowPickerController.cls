@@ -1,5 +1,6 @@
 global with sharing class FlowPickerController {
     @AuraEnabled(cacheable=true)
+    @SuppressWarnings('PMD.ApexSOQLInjection')
     global static List<FlowDefinitionView> getFlowNames(
         List<FilterParameter> filterParams
     ) {

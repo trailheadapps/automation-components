@@ -1,4 +1,4 @@
-global class ExecuteSOQLQuery {
+global with sharing class ExecuteSOQLQuery {
     /**
      * Executes a SOQL query
      * Inputs:
