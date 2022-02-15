@@ -90,6 +90,13 @@
         "AC - Collections@53.0.0-1": "04t5w000005hiUHAAY",
         "AC - Flows@53.0.0-2": "04t5w000005hikHAAQ",
         "AC - UI@53.0.0-2": "04t5w000005hipCAAQ",
-        "AC - UI@54.0.0-1": "04t5w000005hjJOAAY"
+        "AC - UI@54.0.0-1": "04t5w000005hjJOAAY",
+        "AC - Collections@54.0.0-1": "04t5w000005hjJYAAY",
+        "AC - Flows@54.0.0-1": "04t5w000005hjJiAAI",
+        "AC - Apex Formula Evaluator@54.0.0-1": "04t5w000005hjJdAAI",
+        "AC - Data@54.0.0-1": "04t5w000005hjJEAAY",
+        "AC - Strings@54.0.0-1": "04t5w000005hjJ9AAI",
+        "AC - Utilities@54.0.0-1": "04t5w000005hjJTAAY",
+        "AC - Messaging@54.0.0-1": "04t5w000005hjJJAAY"
     }
 }
