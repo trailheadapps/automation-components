@@ -31,9 +31,16 @@ global with sharing class ExtractStringsFromRecords {
             String fieldValue = String.valueOf(record.get(fieldName));
             values.add(fieldValue);
         }
+        // Remove duplicates
+        if (input.removeDuplicates) {
+            values = new List<String>(new Set<String>(values));
+        }
+        // Join values
+        String joinedValues = String.join(values, input.joinDelimiter);
         // Return output
         OutputParameters output = new OutputParameters();
         output.values = values;
+        output.joinedValues = joinedValues;
         return output;
     }
 
@@ -45,16 +52,19 @@ global with sharing class ExtractStringsFromRecords {
         global List<SObject> collection;
         @InvocableVariable(required=true)
         global String fieldName;
+        @InvocableVariable(label='Remove duplicates')
+        global Boolean removeDuplicates = false;
+        @InvocableVariable(label='Join delimiter')
+        global String joinDelimiter = ',';
     }
 
     /**
      * Wrapper class for output parameters
      */
     global class OutputParameters {
-        global OutputParameters() {
-            values = new List<String>();
-        }
         @InvocableVariable
         global List<String> values;
+        @InvocableVariable
+        global String joinedValues;
     }
 }
