@@ -18,7 +18,7 @@ global class ExtractStringsFromRecordsTests {
     private static final String DELIMITER = '-TEST-';
 
     @isTest
-    global static void bulkInvoke_works_with_duplicates() {
+    global static void bulkInvoke_works() {
         ExtractStringsFromRecords.InputParameters input = new ExtractStringsFromRecords.InputParameters();
         input.collection = SAMPLE_ACCOUNTS;
         input.fieldName = 'AccountNumber';
