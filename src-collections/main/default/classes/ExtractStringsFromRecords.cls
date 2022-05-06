@@ -50,7 +50,7 @@ global with sharing class ExtractStringsFromRecords {
     global class InputParameters {
         @InvocableVariable(required=true)
         global List<SObject> collection;
-        @InvocableVariable(required=true)
+        @InvocableVariable(label='Field name' required=true)
         global String fieldName;
         @InvocableVariable(label='Remove duplicates')
         global Boolean removeDuplicates = false;
@@ -64,7 +64,7 @@ global with sharing class ExtractStringsFromRecords {
     global class OutputParameters {
         @InvocableVariable
         global List<String> values;
-        @InvocableVariable
+        @InvocableVariable(label='Joined values')
         global String joinedValues;
     }
 }
