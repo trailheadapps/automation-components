@@ -86,6 +86,7 @@
         "AC - Data@54.0.0-1": "04t5w000005hjJEAAY",
         "AC - Strings@54.0.0-1": "04t5w000005hjJ9AAI",
         "AC - Utilities@54.0.0-1": "04t5w000005hjJTAAY",
-        "AC - Messaging@54.0.0-1": "04t5w000005hjJJAAY"
+        "AC - Messaging@54.0.0-1": "04t5w000005hjJJAAY",
+        "AC - Collections@54.1.0-1": "04t5w000005hje9AAA"
     }
 }
