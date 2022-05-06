@@ -62,6 +62,13 @@ global with sharing class ExtractStringsFromRecords {
      * Wrapper class for output parameters
      */
     global class OutputParameters {
+        /**
+         * @deprecated unused global that cannot be removed from package
+         */
+        global OutputParameters() {
+            values = new List<String>();
+        }
+
         @InvocableVariable
         global List<String> values;
         @InvocableVariable(label='Joined values')
