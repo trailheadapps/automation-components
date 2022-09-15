@@ -10,7 +10,7 @@ on:
 # Jobs to be executed
 jobs:
     release-package-version:
-        runs-on: ubuntu-latest
+        runs-on: trailheadapps-Ubuntu
         strategy:
             matrix:
                 package: ${{ github.event.client_payload.packageNames }}

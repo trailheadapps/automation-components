@@ -13,7 +13,7 @@ on:
 # Jobs to be executed
 jobs:
     trigger-packaging:
-        runs-on: ubuntu-latest
+        runs-on: trailheadapps-Ubuntu
         steps:
             # Trigger packaging workflow
             - name: 'Trigger packaging workflow'
