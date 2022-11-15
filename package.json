@@ -14,8 +14,8 @@
         "prettier:verify": "prettier --check \"**/*.{cls,cmp,component,css,html,js,json,md,page,trigger,xml,yaml,yml}\"",
         "prettier:apex:local": "prettier --apex-standalone-parser built-in --write \"**/*.{cls,cmp,component,css,html,js,json,md,page,trigger,xml,yaml,yml}\"",
         "prettier:verify:apex:local": "prettier --apex-standalone-parser built-in --list-different \"**/*.{cls,cmp,component,css,html,js,json,md,page,trigger,xml,yaml,yml}\"",
-        "apex:local:start": "node node_modules/prettier-plugin-apex/bin/start-apex-server.js",
-        "apex:local:stop": "node node_modules/prettier-plugin-apex/bin/stop-apex-server.js",
+        "apex:local:start": "node node_modules/prettier-plugin-apex/dist/bin/start-apex-server.js",
+        "apex:local:stop": "node node_modules/prettier-plugin-apex/dist/bin/stop-apex-server.js",
         "postinstall": "husky install",
         "precommit": "lint-staged"
     },
@@ -50,7 +50,7 @@
         "husky": "^8.0.1",
         "lint-staged": "^13.0.3",
         "prettier": "^2.7.1",
-        "prettier-plugin-apex": "^1.10.0"
+        "prettier-plugin-apex": "^1.11.0"
     },
     "volta": {
         "node": "14.17.3",
