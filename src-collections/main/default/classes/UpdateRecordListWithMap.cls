@@ -32,9 +32,9 @@ global with sharing class UpdateRecordListWithMap {
         } catch (Exception e) {
             throw new InvalidKeyValuePairsException(
                 'Failed to parse key value pairs "' +
-                input.keyValuePairs +
-                '" JSON: ' +
-                e.getMessage()
+                    input.keyValuePairs +
+                    '" JSON: ' +
+                    e.getMessage()
             );
         }
 

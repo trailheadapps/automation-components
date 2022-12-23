@@ -429,14 +429,10 @@ global with sharing class FormulaEvaluator {
         for (String str : stringList) {
             context.outputString = context.outputString.replace(
                 str,
-                ' _S' +
-                context.referencesString.size() +
-                'S_ '
+                ' _S' + context.referencesString.size() + 'S_ '
             );
             context.referencesString.put(
-                '_S' +
-                context.referencesString.size() +
-                'S_',
+                '_S' + context.referencesString.size() + 'S_',
                 str.substring(1, str.length() - 1)
             );
         }
@@ -481,12 +477,8 @@ global with sharing class FormulaEvaluator {
 
         for (String op : RegExps.COMPARE_OPERATORS.keyset()) {
             context.outputString = context.outputString.replaceAll(
-                '\\s*' +
-                op +
-                '\\s*',
-                ' ' +
-                RegExps.COMPARE_OPERATORS.get(op) +
-                ' '
+                '\\s*' + op + '\\s*',
+                ' ' + RegExps.COMPARE_OPERATORS.get(op) + ' '
             );
         }
 

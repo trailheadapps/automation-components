@@ -32,9 +32,7 @@ global with sharing class DedupeRecordList {
                 }
             } catch (Exception e) {
                 throw new InvocableException(
-                    'Failed to read value from ' +
-                    input.fieldName +
-                    ' field',
+                    'Failed to read value from ' + input.fieldName + ' field',
                     e
                 );
             }

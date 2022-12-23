@@ -74,9 +74,7 @@ global class LaunchAutolaunchedFlow {
         // If name or value is present but the other is null, throw error
         if (name != null && value == null) {
             throw new InvocableException(
-                'Parameter ' +
-                index +
-                ' does not have a value assigned'
+                'Parameter ' + index + ' does not have a value assigned'
             );
         } else if (name == null && value != null) {
             throw new InvocableException(

@@ -6,9 +6,7 @@ global class RegExpsParserContextTests {
         final String value = 'testValue';
 
         RegExps.ParserContext context = new RegExps.ParserContext(
-            ' ' +
-            origin +
-            ' ',
+            ' ' + origin + ' ',
             'outputType',
             1
         );
@@ -24,9 +22,7 @@ global class RegExpsParserContextTests {
         final Boolean value = false;
 
         RegExps.ParserContext context = new RegExps.ParserContext(
-            ' ' +
-            origin +
-            ' ',
+            ' ' + origin + ' ',
             'outputType',
             1
         );
@@ -42,9 +38,7 @@ global class RegExpsParserContextTests {
         final Decimal value = 3.14;
 
         RegExps.ParserContext context = new RegExps.ParserContext(
-            ' ' +
-            origin +
-            ' ',
+            ' ' + origin + ' ',
             'outputType',
             1
         );
@@ -60,9 +54,7 @@ global class RegExpsParserContextTests {
         final DateTime value = DateTime.now();
 
         RegExps.ParserContext context = new RegExps.ParserContext(
-            ' ' +
-            origin +
-            ' ',
+            ' ' + origin + ' ',
             'outputType',
             1
         );
@@ -77,9 +69,7 @@ global class RegExpsParserContextTests {
         final String origin = 'testNull';
 
         RegExps.ParserContext context = new RegExps.ParserContext(
-            ' ' +
-            origin +
-            ' ',
+            ' ' + origin + ' ',
             'outputType',
             1
         );

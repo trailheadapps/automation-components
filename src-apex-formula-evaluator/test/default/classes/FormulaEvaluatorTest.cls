@@ -280,9 +280,7 @@ global with sharing class FormulaEvaluatorTest {
         System.assertEquals(
             String.valueOf(opp.Id),
             FormulaEvaluator.parseFormula(
-                'CONVERTID("' +
-                opp.Id +
-                '")',
+                'CONVERTID("' + opp.Id + '")',
                 stringContext
             )
         );
