@@ -28,7 +28,7 @@ global class GetFlowMetadataTests {
 
         String query = GetFlowMetadata.getQuery(input);
 
-        System.assertEquals(QUERY_API_NAME, query);
+        Assert.areEqual(QUERY_API_NAME, query);
     }
 
     @isTest
@@ -38,7 +38,7 @@ global class GetFlowMetadataTests {
 
         String query = GetFlowMetadata.getQuery(input);
 
-        System.assertEquals(QUERY_ID, query);
+        Assert.areEqual(QUERY_ID, query);
     }
 
     @isTest
@@ -49,7 +49,7 @@ global class GetFlowMetadataTests {
 
         String query = GetFlowMetadata.getQuery(input);
 
-        System.assertEquals(QUERY_ID_AND_API_NAME, query);
+        Assert.areEqual(QUERY_ID_AND_API_NAME, query);
     }
 
     @isTest
@@ -58,9 +58,9 @@ global class GetFlowMetadataTests {
 
         try {
             GetFlowMetadata.getQuery(input);
-            System.assert(false, 'Expected InvocableException');
+            Assert.fail('Expected InvocableException');
         } catch (GetFlowMetadata.InvocableException e) {
-            System.assert(e.getMessage().contains('must be provided'));
+            Assert.isTrue(e.getMessage().contains('must be provided'));
         }
     }
 }

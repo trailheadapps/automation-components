@@ -15,9 +15,9 @@ global class ExecuteSOQLQueryTests {
             inputs
         );
 
-        System.assertEquals(1, outputs.size());
+        Assert.areEqual(1, outputs.size());
         List<Account> accounts = (List<Account>) outputs[0].records;
-        System.assertEquals(1, accounts.size());
-        System.assertEquals(acc.Name, accounts[0].Name);
+        Assert.areEqual(1, accounts.size());
+        Assert.areEqual(acc.Name, accounts[0].Name);
     }
 }

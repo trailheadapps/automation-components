@@ -18,9 +18,9 @@ global class JoinRecordListsTests {
         Integer totalRecords =
             SampleDataFactory.SAMPLE_ACCOUNTS.size() +
             SampleDataFactory.SAMPLE_ACCOUNTS2.size();
-        System.assertEquals(inputs.size(), outputs.size());
-        System.assertEquals(outputs[0].collection.size(), totalRecords);
+        Assert.areEqual(inputs.size(), outputs.size());
+        Assert.areEqual(outputs[0].collection.size(), totalRecords);
         Account acc = (Account) outputs[0].collection[2];
-        System.assertEquals(SampleDataFactory.ACCOUNT_NAME + 3, acc.Name);
+        Assert.areEqual(SampleDataFactory.ACCOUNT_NAME + 3, acc.Name);
     }
 }

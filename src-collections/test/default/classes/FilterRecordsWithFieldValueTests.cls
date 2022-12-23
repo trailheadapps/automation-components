@@ -14,12 +14,12 @@ global class FilterRecordsWithFieldValueTests {
             inputs
         );
 
-        System.assertEquals(inputs.size(), outputs.size());
-        System.assertEquals(1, outputs[0].collection.size());
+        Assert.areEqual(inputs.size(), outputs.size());
+        Assert.areEqual(1, outputs[0].collection.size());
         Account acc = (Account) outputs[0].collection[0];
-        System.assertEquals(SampleDataFactory.ACCOUNT_NAME + 1, acc.Name);
-        System.assertEquals(1, outputs[0].filteredRecordCount);
-        System.assertEquals(2, outputs[0].totalRecordCount);
-        System.assertEquals(1, outputs[0].filteredRecordCount);
+        Assert.areEqual(SampleDataFactory.ACCOUNT_NAME + 1, acc.Name);
+        Assert.areEqual(1, outputs[0].filteredRecordCount);
+        Assert.areEqual(2, outputs[0].totalRecordCount);
+        Assert.areEqual(1, outputs[0].filteredRecordCount);
     }
 }

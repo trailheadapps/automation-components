@@ -15,12 +15,12 @@ global class UpdateRecordListWithMapTests {
             inputs
         );
 
-        System.assertEquals(inputs.size(), outputs.size());
-        System.assertEquals(2, outputs[0].collection.size());
+        Assert.areEqual(inputs.size(), outputs.size());
+        Assert.areEqual(2, outputs[0].collection.size());
         Account acc = (Account) outputs[0].collection[0];
-        System.assertEquals(SampleDataFactory.ACCOUNT_NAME + 1, acc.Name);
-        System.assertEquals(1, acc.NumberOfEmployees);
-        System.assertEquals('Hot', acc.Rating);
+        Assert.areEqual(SampleDataFactory.ACCOUNT_NAME + 1, acc.Name);
+        Assert.areEqual(1, acc.NumberOfEmployees);
+        Assert.areEqual('Hot', acc.Rating);
     }
 
     @isTest
@@ -33,9 +33,9 @@ global class UpdateRecordListWithMapTests {
         };
         try {
             UpdateRecordListWithMap.bulkInvoke(inputs);
-            System.assert(false, 'Expected InvalidKeyValuePairsException');
+            Assert.fail('Expected InvalidKeyValuePairsException');
         } catch (UpdateRecordListWithMap.InvalidKeyValuePairsException e) {
-            System.assert(e.getMessage().contains('Failed to parse'));
+            Assert.isTrue(e.getMessage().contains('Failed to parse'));
         }
     }
 }

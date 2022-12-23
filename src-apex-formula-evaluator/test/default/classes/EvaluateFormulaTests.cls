@@ -34,7 +34,7 @@ global class EvaluateFormulaTests {
             inputs
         );
 
-        System.assertEquals(inputs.size(), outputs.size());
-        System.assertEquals('true', outputs[0].result);
+        Assert.areEqual(inputs.size(), outputs.size());
+        Assert.areEqual('true', outputs[0].result);
     }
 }

@@ -24,12 +24,12 @@ global class CalculateBusinessHoursTests {
             inputs
         );
 
-        System.assertEquals(1, outputs.size());
+        Assert.areEqual(1, outputs.size());
         CalculateBusinessHours.OutputParameters output = outputs[0];
-        System.assertEquals(24 * 60 * 60 * 1000, output.durationMs);
-        System.assertEquals(24 * 60 * 60, output.durationSec);
-        System.assertEquals(24 * 60, output.durationMin);
-        System.assertEquals(24, output.durationHours);
-        System.assertEquals(1, output.durationDays);
+        Assert.areEqual(24 * 60 * 60 * 1000, output.durationMs);
+        Assert.areEqual(24 * 60 * 60, output.durationSec);
+        Assert.areEqual(24 * 60, output.durationMin);
+        Assert.areEqual(24, output.durationHours);
+        Assert.areEqual(1, output.durationDays);
     }
 }

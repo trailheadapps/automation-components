@@ -20,8 +20,8 @@ global class FormatStringListAsCsvTests {
             inputs
         );
 
-        System.assertEquals(1, outputs.size());
-        System.assertEquals(CSV, outputs[0].csvString);
+        Assert.areEqual(1, outputs.size());
+        Assert.areEqual(CSV, outputs[0].csvString);
     }
 
     @isTest
@@ -37,7 +37,7 @@ global class FormatStringListAsCsvTests {
             inputs
         );
 
-        System.assertEquals(1, outputs.size());
-        System.assertEquals(DSV, outputs[0].csvString);
+        Assert.areEqual(1, outputs.size());
+        Assert.areEqual(DSV, outputs[0].csvString);
     }
 }

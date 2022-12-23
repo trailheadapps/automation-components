@@ -8,7 +8,7 @@ global class RegExpsTests {
             1
         );
         RegExps.clearParentesis(context);
-        System.assertEquals('_N0N_ OR _N0N_', context.outputString);
+        Assert.areEqual('_N0N_ OR _N0N_', context.outputString);
 
         context = new RegExps.ParserContext(
             '(_D0D_) OR (_D0D_)',
@@ -16,7 +16,7 @@ global class RegExpsTests {
             1
         );
         RegExps.clearParentesis(context);
-        System.assertEquals('_D0D_ OR _D0D_', context.outputString);
+        Assert.areEqual('_D0D_ OR _D0D_', context.outputString);
 
         context = new RegExps.ParserContext(
             '(_B0B_) OR (_B1B_)',
@@ -24,7 +24,7 @@ global class RegExpsTests {
             1
         );
         RegExps.clearParentesis(context);
-        System.assertEquals('_B0B_ OR _B1B_', context.outputString);
+        Assert.areEqual('_B0B_ OR _B1B_', context.outputString);
 
         context = new RegExps.ParserContext(
             '(_S0S_) OR (_S0S_)',
@@ -32,7 +32,7 @@ global class RegExpsTests {
             1
         );
         RegExps.clearParentesis(context);
-        System.assertEquals('_S0S_ OR _S0S_', context.outputString);
+        Assert.areEqual('_S0S_ OR _S0S_', context.outputString);
 
         context = new RegExps.ParserContext(
             '(_T0T_) OR (_T0T_)',
@@ -40,7 +40,7 @@ global class RegExpsTests {
             1
         );
         RegExps.clearParentesis(context);
-        System.assertEquals('_T0T_ OR _T0T_', context.outputString);
+        Assert.areEqual('_T0T_ OR _T0T_', context.outputString);
 
         context = new RegExps.ParserContext(
             '(invalid) OR (invalid)',
@@ -48,7 +48,7 @@ global class RegExpsTests {
             1
         );
         RegExps.clearParentesis(context);
-        System.assertEquals('(invalid) OR (invalid)', context.outputString);
+        Assert.areEqual('(invalid) OR (invalid)', context.outputString);
     }
 
     @isTest
@@ -59,7 +59,7 @@ global class RegExpsTests {
             1
         );
         RegExps.clearParentesis(context, 'NULL');
-        System.assertEquals('_N0N_ OR _N0N_', context.outputString);
+        Assert.areEqual('_N0N_ OR _N0N_', context.outputString);
 
         context = new RegExps.ParserContext(
             '(_D0D_) OR (_D0D_)',
@@ -67,7 +67,7 @@ global class RegExpsTests {
             1
         );
         RegExps.clearParentesis(context, 'NUMBER');
-        System.assertEquals('_D0D_ OR _D0D_', context.outputString);
+        Assert.areEqual('_D0D_ OR _D0D_', context.outputString);
 
         context = new RegExps.ParserContext(
             '(_B0B_) OR (_B1B_)',
@@ -75,7 +75,7 @@ global class RegExpsTests {
             1
         );
         RegExps.clearParentesis(context, 'BOOLEAN');
-        System.assertEquals('_B0B_ OR _B1B_', context.outputString);
+        Assert.areEqual('_B0B_ OR _B1B_', context.outputString);
 
         context = new RegExps.ParserContext(
             '(_S0S_) OR (_S0S_)',
@@ -83,7 +83,7 @@ global class RegExpsTests {
             1
         );
         RegExps.clearParentesis(context, 'STRING');
-        System.assertEquals('_S0S_ OR _S0S_', context.outputString);
+        Assert.areEqual('_S0S_ OR _S0S_', context.outputString);
 
         context = new RegExps.ParserContext(
             '(_T0T_) OR (_T0T_)',
@@ -91,7 +91,7 @@ global class RegExpsTests {
             1
         );
         RegExps.clearParentesis(context, 'DATETIME');
-        System.assertEquals('_T0T_ OR _T0T_', context.outputString);
+        Assert.areEqual('_T0T_ OR _T0T_', context.outputString);
     }
 
     @isTest
@@ -102,27 +102,27 @@ global class RegExpsTests {
             1
         );
         RegExps.wrapParentesis(context, null);
-        System.assertEquals('( _N0N_ )', context.outputString);
+        Assert.areEqual('( _N0N_ )', context.outputString);
 
         context = new RegExps.ParserContext('_D0D_', 'outputType', 1);
         RegExps.wrapParentesis(context, null);
-        System.assertEquals('( _D0D_ )', context.outputString);
+        Assert.areEqual('( _D0D_ )', context.outputString);
 
         context = new RegExps.ParserContext('_B0B_', 'outputType', 1);
         RegExps.wrapParentesis(context, null);
-        System.assertEquals('( _B0B_ )', context.outputString);
+        Assert.areEqual('( _B0B_ )', context.outputString);
 
         context = new RegExps.ParserContext('_S0S_', 'outputType', 1);
         RegExps.wrapParentesis(context, null);
-        System.assertEquals('( _S0S_ )', context.outputString);
+        Assert.areEqual('( _S0S_ )', context.outputString);
 
         context = new RegExps.ParserContext('_T0T_', 'outputType', 1);
         RegExps.wrapParentesis(context, null);
-        System.assertEquals('( _T0T_ )', context.outputString);
+        Assert.areEqual('( _T0T_ )', context.outputString);
 
         context = new RegExps.ParserContext('invalid', 'outputType', 1);
         RegExps.wrapParentesis(context, null);
-        System.assertEquals('invalid', context.outputString);
+        Assert.areEqual('invalid', context.outputString);
     }
 
     @isTest
@@ -133,33 +133,33 @@ global class RegExpsTests {
             1
         );
         RegExps.wrapParentesis(context, 'NULL');
-        System.assertEquals('( _N0N_ )', context.outputString);
+        Assert.areEqual('( _N0N_ )', context.outputString);
 
         context = new RegExps.ParserContext('_D0D_', 'outputType', 1);
         RegExps.wrapParentesis(context, 'NUMBER');
-        System.assertEquals('( _D0D_ )', context.outputString);
+        Assert.areEqual('( _D0D_ )', context.outputString);
 
         context = new RegExps.ParserContext('_B0B_', 'outputType', 1);
         RegExps.wrapParentesis(context, 'BOOLEAN');
-        System.assertEquals('( _B0B_ )', context.outputString);
+        Assert.areEqual('( _B0B_ )', context.outputString);
 
         context = new RegExps.ParserContext('_S0S_', 'outputType', 1);
         RegExps.wrapParentesis(context, 'STRING');
-        System.assertEquals('( _S0S_ )', context.outputString);
+        Assert.areEqual('( _S0S_ )', context.outputString);
 
         context = new RegExps.ParserContext('_T0T_', 'outputType', 1);
         RegExps.wrapParentesis(context, 'DATETIME');
-        System.assertEquals('( _T0T_ )', context.outputString);
+        Assert.areEqual('( _T0T_ )', context.outputString);
     }
 
     @isTest
     global static void getValueReferenceType_works() {
-        System.assertEquals('NULL', RegExps.getValueReferenceType('N'));
-        System.assertEquals('NUMBER', RegExps.getValueReferenceType('D'));
-        System.assertEquals('BOOLEAN', RegExps.getValueReferenceType('B'));
-        System.assertEquals('STRING', RegExps.getValueReferenceType('S'));
-        System.assertEquals('DATETIME', RegExps.getValueReferenceType('T'));
-        System.assertEquals('NONE', RegExps.getValueReferenceType(' '));
+        Assert.areEqual('NULL', RegExps.getValueReferenceType('N'));
+        Assert.areEqual('NUMBER', RegExps.getValueReferenceType('D'));
+        Assert.areEqual('BOOLEAN', RegExps.getValueReferenceType('B'));
+        Assert.areEqual('STRING', RegExps.getValueReferenceType('S'));
+        Assert.areEqual('DATETIME', RegExps.getValueReferenceType('T'));
+        Assert.areEqual('NONE', RegExps.getValueReferenceType(' '));
     }
 
     @isTest
@@ -174,7 +174,7 @@ global class RegExpsTests {
 
         context.referencesNULL.add(TOKEN);
         String output = RegExps.iterativePlaceholderDiscover(TOKEN, context);
-        System.assertEquals('NULL', output);
+        Assert.areEqual('NULL', output);
     }
 
     @isTest
@@ -191,11 +191,11 @@ global class RegExpsTests {
 
         context.referencesDecimal.put(TOKEN, VALUE1);
         String output = RegExps.iterativePlaceholderDiscover(TOKEN, context);
-        System.assertEquals(String.valueOf(VALUE1), output);
+        Assert.areEqual(String.valueOf(VALUE1), output);
 
         context.replacements.put(TOKEN, VALUE2);
         output = RegExps.iterativePlaceholderDiscover(TOKEN, context);
-        System.assertEquals(VALUE2, output);
+        Assert.areEqual(VALUE2, output);
     }
 
     @isTest
@@ -212,11 +212,11 @@ global class RegExpsTests {
 
         context.referencesBoolean.put(TOKEN, VALUE1);
         String output = RegExps.iterativePlaceholderDiscover(TOKEN, context);
-        System.assertEquals(String.valueOf(VALUE1), output);
+        Assert.areEqual(String.valueOf(VALUE1), output);
 
         context.replacements.put(TOKEN, VALUE2);
         output = RegExps.iterativePlaceholderDiscover(TOKEN, context);
-        System.assertEquals(VALUE2, output);
+        Assert.areEqual(VALUE2, output);
     }
 
     @isTest
@@ -233,11 +233,11 @@ global class RegExpsTests {
 
         context.referencesString.put(TOKEN, VALUE1);
         String output = RegExps.iterativePlaceholderDiscover(TOKEN, context);
-        System.assertEquals(VALUE1, output);
+        Assert.areEqual(VALUE1, output);
 
         context.replacements.put(TOKEN, VALUE2);
         output = RegExps.iterativePlaceholderDiscover(TOKEN, context);
-        System.assertEquals(VALUE2, output);
+        Assert.areEqual(VALUE2, output);
     }
 
     @isTest
@@ -254,11 +254,11 @@ global class RegExpsTests {
 
         context.referencesDateTime.put(TOKEN, VALUE1);
         String output = RegExps.iterativePlaceholderDiscover(TOKEN, context);
-        System.assertEquals(String.valueOf(VALUE1), output);
+        Assert.areEqual(String.valueOf(VALUE1), output);
 
         context.replacements.put(TOKEN, VALUE2);
         output = RegExps.iterativePlaceholderDiscover(TOKEN, context);
-        System.assertEquals(VALUE2, output);
+        Assert.areEqual(VALUE2, output);
     }
 
     @isTest
@@ -269,7 +269,7 @@ global class RegExpsTests {
             1
         );
         String output = RegExps.iterativePlaceholderDiscover('_T0T_', context);
-        System.assertEquals('_T0T_', output);
+        Assert.areEqual('_T0T_', output);
     }
 
     @isTest
@@ -281,9 +281,9 @@ global class RegExpsTests {
                 1
             );
             RegExps.evaluateFlowExpressions(context);
-            System.assert(false, 'Expected ExpressionParsingException');
+            Assert.fail('Expected ExpressionParsingException');
         } catch (RegExps.ExpressionParsingException e) {
-            System.assert(e.getMessage().contains('Different return types'));
+            Assert.isTrue(e.getMessage().contains('Different return types'));
         }
     }
 
@@ -297,7 +297,7 @@ global class RegExpsTests {
 
         RegExps.evaluateFlowExpressions(context);
 
-        System.assertEquals(' _N0N_ ', context.outputString);
+        Assert.areEqual(' _N0N_ ', context.outputString);
     }
 
     @isTest
@@ -317,7 +317,7 @@ global class RegExpsTests {
 
         RegExps.evaluateFlowExpressions(context);
 
-        System.assertEquals(
+        Assert.areEqual(
             value1,
             context.referencesString.get(context.outputString.trim())
         );
@@ -329,7 +329,7 @@ global class RegExpsTests {
 
         RegExps.evaluateFlowExpressions(context);
 
-        System.assertEquals(
+        Assert.areEqual(
             value2,
             context.referencesString.get(context.outputString.trim())
         );
@@ -352,7 +352,7 @@ global class RegExpsTests {
 
         RegExps.evaluateFlowExpressions(context);
 
-        System.assertEquals(
+        Assert.areEqual(
             value1,
             context.referencesDecimal.get(context.outputString.trim())
         );
@@ -364,7 +364,7 @@ global class RegExpsTests {
 
         RegExps.evaluateFlowExpressions(context);
 
-        System.assertEquals(
+        Assert.areEqual(
             value2,
             context.referencesDecimal.get(context.outputString.trim())
         );
@@ -387,7 +387,7 @@ global class RegExpsTests {
 
         RegExps.evaluateFlowExpressions(context);
 
-        System.assertEquals(
+        Assert.areEqual(
             value1,
             context.referencesDateTime.get(context.outputString.trim())
         );
@@ -399,7 +399,7 @@ global class RegExpsTests {
 
         RegExps.evaluateFlowExpressions(context);
 
-        System.assertEquals(
+        Assert.areEqual(
             value2,
             context.referencesDateTime.get(context.outputString.trim())
         );

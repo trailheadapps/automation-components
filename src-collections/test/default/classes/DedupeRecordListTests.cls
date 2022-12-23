@@ -13,9 +13,9 @@ global class DedupeRecordListTests {
             inputs
         );
 
-        System.assertEquals(inputs.size(), outputs.size());
+        Assert.areEqual(inputs.size(), outputs.size());
         List<Account> dedupedList = outputs[0].collection;
-        System.assertEquals(
+        Assert.areEqual(
             SampleDataFactory.SAMPLE_ACCOUNTS.size(),
             dedupedList.size()
         );
@@ -37,9 +37,9 @@ global class DedupeRecordListTests {
         );
 
         List<Account> dedupedList = output.collection;
-        System.assertEquals(2, dedupedList.size());
-        System.assertEquals(accounts[0].Name, dedupedList[0].Name);
-        System.assertEquals(accounts[2].Name, dedupedList[1].Name);
+        Assert.areEqual(2, dedupedList.size());
+        Assert.areEqual(accounts[0].Name, dedupedList[0].Name);
+        Assert.areEqual(accounts[2].Name, dedupedList[1].Name);
     }
 
     @isTest
@@ -50,9 +50,9 @@ global class DedupeRecordListTests {
 
         try {
             DedupeRecordList.invoke(input);
-            System.assert(false, 'Expected InvocableException');
+            Assert.fail('Expected InvocableException');
         } catch (DedupeRecordList.InvocableException e) {
-            System.assert(e.getMessage().contains('Failed to read'));
+            Assert.isTrue(e.getMessage().contains('Failed to read'));
         }
     }
 }

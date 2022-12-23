@@ -25,9 +25,9 @@ global class GenerateFlowLinkTests {
             inputs
         );
 
-        System.assertEquals(1, outputs.size());
+        Assert.areEqual(1, outputs.size());
         GenerateFlowLink.OutputParameters output = outputs[0];
-        System.assertEquals(URL_NO_PARAMS, output.flowLink);
+        Assert.areEqual(URL_NO_PARAMS, output.flowLink);
     }
 
     @isTest
@@ -49,9 +49,9 @@ global class GenerateFlowLinkTests {
             inputs
         );
 
-        System.assertEquals(1, outputs.size());
+        Assert.areEqual(1, outputs.size());
         GenerateFlowLink.OutputParameters output = outputs[0];
-        System.assertEquals(URL_ALL_PARAMS, output.flowLink);
+        Assert.areEqual(URL_ALL_PARAMS, output.flowLink);
     }
 
     @isTest
@@ -66,9 +66,9 @@ global class GenerateFlowLinkTests {
 
         try {
             GenerateFlowLink.bulkInvoke(inputs);
-            System.assert(false, 'Expected InvocableException');
+            Assert.fail('Expected InvocableException');
         } catch (GenerateFlowLink.InvocableException e) {
-            System.assert(
+            Assert.isTrue(
                 e.getMessage()
                     .contains('You did not specify a name for parameter')
             );
@@ -87,9 +87,9 @@ global class GenerateFlowLinkTests {
 
         try {
             GenerateFlowLink.bulkInvoke(inputs);
-            System.assert(false, 'Expected InvocableException');
+            Assert.fail('Expected InvocableException');
         } catch (GenerateFlowLink.InvocableException e) {
-            System.assert(
+            Assert.isTrue(
                 e.getMessage().contains('does not have a value assigned')
             );
         }
