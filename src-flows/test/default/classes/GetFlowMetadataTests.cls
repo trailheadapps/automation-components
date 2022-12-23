@@ -4,31 +4,24 @@ global class GetFlowMetadataTests {
     private static final String FLOW_ID = 'MockId';
 
     private static final String QUERY_API_NAME =
-        GetFlowMetadata.BASE_QUERY +
-        ' WHERE ApiName = \'' +
-        FLOW_API_NAME +
-        '\'';
+        GetFlowMetadata.BASE_QUERY + ' WHERE ApiName = :apiName';
     private static final String QUERY_ID =
-        GetFlowMetadata.BASE_QUERY +
-        ' WHERE DurableId = \'' +
-        FLOW_ID +
-        '\'';
+        GetFlowMetadata.BASE_QUERY + ' WHERE DurableId = :definitionId';
     private static final String QUERY_ID_AND_API_NAME =
         GetFlowMetadata.BASE_QUERY +
-        ' WHERE DurableId = \'' +
-        FLOW_ID +
-        '\' AND ApiName = \'' +
-        FLOW_API_NAME +
-        '\'';
+        ' WHERE DurableId = :definitionId AND ApiName = :apiName';
 
     @isTest
     global static void getQuery_works_with_flowApiName() {
         GetFlowMetadata.InputParameters input = new GetFlowMetadata.InputParameters();
         input.flowApiName = FLOW_API_NAME;
 
-        String query = GetFlowMetadata.getQuery(input);
+        GetFlowMetadata.QueryInfo queryInfo = GetFlowMetadata.prepareQuery(
+            input
+        );
 
-        System.assertEquals(QUERY_API_NAME, query);
+        Assert.areEqual(QUERY_API_NAME, queryInfo.query);
+        Assert.areEqual(FLOW_API_NAME, queryInfo.params.get('apiName'));
     }
 
     @isTest
@@ -36,9 +29,12 @@ global class GetFlowMetadataTests {
         GetFlowMetadata.InputParameters input = new GetFlowMetadata.InputParameters();
         input.flowDefinitionId = FLOW_ID;
 
-        String query = GetFlowMetadata.getQuery(input);
+        GetFlowMetadata.QueryInfo queryInfo = GetFlowMetadata.prepareQuery(
+            input
+        );
 
-        System.assertEquals(QUERY_ID, query);
+        Assert.areEqual(QUERY_ID, queryInfo.query);
+        Assert.areEqual(FLOW_ID, queryInfo.params.get('definitionId'));
     }
 
     @isTest
@@ -47,9 +43,13 @@ global class GetFlowMetadataTests {
         input.flowApiName = FLOW_API_NAME;
         input.flowDefinitionId = FLOW_ID;
 
-        String query = GetFlowMetadata.getQuery(input);
+        GetFlowMetadata.QueryInfo queryInfo = GetFlowMetadata.prepareQuery(
+            input
+        );
 
-        System.assertEquals(QUERY_ID_AND_API_NAME, query);
+        Assert.areEqual(QUERY_ID_AND_API_NAME, queryInfo.query);
+        Assert.areEqual(FLOW_API_NAME, queryInfo.params.get('apiName'));
+        Assert.areEqual(FLOW_ID, queryInfo.params.get('definitionId'));
     }
 
     @isTest
@@ -57,10 +57,10 @@ global class GetFlowMetadataTests {
         GetFlowMetadata.InputParameters input = new GetFlowMetadata.InputParameters();
 
         try {
-            GetFlowMetadata.getQuery(input);
-            System.assert(false, 'Expected InvocableException');
+            GetFlowMetadata.prepareQuery(input);
+            Assert.fail('Expected InvocableException');
         } catch (GetFlowMetadata.InvocableException e) {
-            System.assert(e.getMessage().contains('must be provided'));
+            Assert.isTrue(e.getMessage().contains('must be provided'));
         }
     }
 }
