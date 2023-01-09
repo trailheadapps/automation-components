@@ -16,9 +16,9 @@ global class SaveRecordsAsyncTests {
             inputs
         );
 
-        System.assertEquals(1, outputs.size());
+        Assert.areEqual(1, outputs.size());
         Id jobId = outputs[0].jobId;
-        System.assertNotEquals(null, jobId);
+        Assert.isNotNull(jobId);
     }
 
     @isTest
@@ -35,6 +35,6 @@ global class SaveRecordsAsyncTests {
         Test.stopTest();
 
         Account[] newAccounts = [SELECT Name FROM Account];
-        System.assertEquals(1, newAccounts.size());
+        Assert.areEqual(1, newAccounts.size());
     }
 }

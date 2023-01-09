@@ -16,8 +16,8 @@ global class SortRecordListTests {
             inputs
         );
 
-        System.assertEquals(inputs.size(), outputs.size());
-        System.assertEquals(0, outputs[0].collection.size());
+        Assert.areEqual(inputs.size(), outputs.size());
+        Assert.areEqual(0, outputs[0].collection.size());
     }
 
     @isTest
@@ -31,8 +31,8 @@ global class SortRecordListTests {
             inputs
         );
 
-        System.assertEquals(inputs.size(), outputs.size());
-        System.assertEquals(1, outputs[0].collection.size());
+        Assert.areEqual(inputs.size(), outputs.size());
+        Assert.areEqual(1, outputs[0].collection.size());
     }
 
     @isTest
@@ -46,13 +46,13 @@ global class SortRecordListTests {
             inputs
         );
 
-        System.assertEquals(inputs.size(), outputs.size());
-        System.assertEquals(
+        Assert.areEqual(inputs.size(), outputs.size());
+        Assert.areEqual(
             inputs[0].collection.size(),
             outputs[0].collection.size()
         );
         Account acc = (Account) outputs[0].collection[1];
-        System.assertEquals(SampleDataFactory.ACCOUNT_NAME + 1, acc.Name);
+        Assert.areEqual(SampleDataFactory.ACCOUNT_NAME + 1, acc.Name);
     }
 
     @isTest
@@ -66,13 +66,13 @@ global class SortRecordListTests {
             inputs
         );
 
-        System.assertEquals(inputs.size(), outputs.size());
-        System.assertEquals(
+        Assert.areEqual(inputs.size(), outputs.size());
+        Assert.areEqual(
             inputs[0].collection.size(),
             outputs[0].collection.size()
         );
         Account acc = (Account) outputs[0].collection[1];
-        System.assertEquals(SampleDataFactory.ACCOUNT_NAME + 1, acc.Name);
+        Assert.areEqual(SampleDataFactory.ACCOUNT_NAME + 1, acc.Name);
     }
 
     @isTest
@@ -86,13 +86,13 @@ global class SortRecordListTests {
             inputs
         );
 
-        System.assertEquals(inputs.size(), outputs.size());
-        System.assertEquals(
+        Assert.areEqual(inputs.size(), outputs.size());
+        Assert.areEqual(
             inputs[0].collection.size(),
             outputs[0].collection.size()
         );
         Task task = (Task) outputs[0].collection[1];
-        System.assertEquals(SampleDataFactory.TASK_NAME + 1, task.Subject);
+        Assert.areEqual(SampleDataFactory.TASK_NAME + 1, task.Subject);
     }
 
     @isTest
@@ -106,8 +106,8 @@ global class SortRecordListTests {
             inputs
         );
 
-        System.assertEquals(inputs.size(), outputs.size());
-        System.assertEquals(
+        Assert.areEqual(inputs.size(), outputs.size());
+        Assert.areEqual(
             inputs[0].collection.size(),
             outputs[0].collection.size()
         );
@@ -122,9 +122,9 @@ global class SortRecordListTests {
 
         try {
             SortRecordList.bulkInvoke(inputs);
-            System.assert(false, 'Expected InvalidSortKeyException');
+            Assert.fail('Expected InvalidSortKeyException');
         } catch (SortRecordList.InvalidSortKeyException e) {
-            System.assert(e.getMessage().contains('Failed to parse sort keys'));
+            Assert.isTrue(e.getMessage().contains('Failed to parse sort keys'));
         }
     }
 
@@ -137,9 +137,9 @@ global class SortRecordListTests {
 
         try {
             SortRecordList.bulkInvoke(inputs);
-            System.assert(false, 'Expected UnsupportedSortTypeException');
+            Assert.fail('Expected UnsupportedSortTypeException');
         } catch (SortRecordList.UnsupportedSortTypeException e) {
-            System.assert(e.getMessage().contains('Unsupported sort type'));
+            Assert.isTrue(e.getMessage().contains('Unsupported sort type'));
         }
     }
 

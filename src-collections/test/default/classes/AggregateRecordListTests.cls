@@ -11,12 +11,12 @@ global class AggregateRecordListTests {
             inputs
         );
 
-        System.assertEquals(inputs.size(), outputs.size());
-        System.assertEquals(
+        Assert.areEqual(inputs.size(), outputs.size());
+        Assert.areEqual(
             SampleDataFactory.GLOBAL_EMPLOYEE_COUNT,
             outputs[0].decimalResult
         );
-        System.assertEquals(
+        Assert.areEqual(
             String.valueOf(SampleDataFactory.GLOBAL_EMPLOYEE_COUNT),
             outputs[0].stringResult
         );
@@ -30,7 +30,7 @@ global class AggregateRecordListTests {
             input
         );
 
-        System.assertEquals(
+        Assert.areEqual(
             SampleDataFactory.GLOBAL_EMPLOYEE_AVERAGE,
             output.decimalResult
         );
@@ -47,7 +47,7 @@ global class AggregateRecordListTests {
             input
         );
 
-        System.assertEquals(0, output.decimalResult);
+        Assert.areEqual(0, output.decimalResult);
     }
 
     @isTest
@@ -58,7 +58,7 @@ global class AggregateRecordListTests {
             input
         );
 
-        System.assertEquals(
+        Assert.areEqual(
             SampleDataFactory.GLOBAL_EMPLOYEE_MIN,
             output.decimalResult
         );
@@ -73,7 +73,7 @@ global class AggregateRecordListTests {
             input
         );
 
-        System.assertEquals(
+        Assert.areEqual(
             SampleDataFactory.GLOBAL_EMPLOYEE_MAX,
             output.decimalResult
         );
@@ -89,7 +89,7 @@ global class AggregateRecordListTests {
             input
         );
 
-        System.assertEquals(
+        Assert.areEqual(
             SampleDataFactory.GLOBAL_EMPLOYEE_COUNT + 100,
             output.decimalResult
         );
@@ -102,9 +102,9 @@ global class AggregateRecordListTests {
 
         try {
             AggregateRecordList.invoke(input);
-            System.assert(false, 'Expected InvocableException');
+            Assert.fail('Expected InvocableException');
         } catch (AggregateRecordList.InvocableException e) {
-            System.assert(e.getMessage().contains('No default value'));
+            Assert.isTrue(e.getMessage().contains('No default value'));
         }
     }
 
@@ -114,9 +114,9 @@ global class AggregateRecordListTests {
 
         try {
             AggregateRecordList.invoke(input);
-            System.assert(false, 'Expected InvocableException');
+            Assert.fail('Expected InvocableException');
         } catch (AggregateRecordList.InvocableException e) {
-            System.assert(e.getMessage().contains('Unsupported operation'));
+            Assert.isTrue(e.getMessage().contains('Unsupported operation'));
         }
     }
 
@@ -129,9 +129,9 @@ global class AggregateRecordListTests {
 
         try {
             AggregateRecordList.invoke(input);
-            System.assert(false, 'Expected InvocableException');
+            Assert.fail('Expected InvocableException');
         } catch (AggregateRecordList.InvocableException e) {
-            System.assert(e.getMessage().contains('Failed to convert Name'));
+            Assert.isTrue(e.getMessage().contains('Failed to convert Name'));
         }
     }
 

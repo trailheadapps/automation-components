@@ -12,10 +12,10 @@ global class GetRandomValueTests {
             inputs
         );
 
-        System.assertEquals(1, outputs.size());
+        Assert.areEqual(1, outputs.size());
         GetRandomValue.OutputParameters output = outputs[0];
-        System.assert(output.randomNumber >= 0);
-        System.assert(output.randomNumber < 1);
+        Assert.isTrue(output.randomNumber >= 0);
+        Assert.isTrue(output.randomNumber < 1);
     }
 
     @isTest
@@ -31,9 +31,9 @@ global class GetRandomValueTests {
             inputs
         );
 
-        System.assertEquals(1, outputs.size());
+        Assert.areEqual(1, outputs.size());
         GetRandomValue.OutputParameters output = outputs[0];
-        System.assert(output.randomNumber >= 666);
+        Assert.isTrue(output.randomNumber >= 666);
     }
 
     @isTest
@@ -49,10 +49,10 @@ global class GetRandomValueTests {
             inputs
         );
 
-        System.assertEquals(1, outputs.size());
+        Assert.areEqual(1, outputs.size());
         GetRandomValue.OutputParameters output = outputs[0];
-        System.assert(output.randomNumber >= 0);
-        System.assert(output.randomNumber < 666);
+        Assert.isTrue(output.randomNumber >= 0);
+        Assert.isTrue(output.randomNumber < 666);
     }
 
     @isTest
@@ -69,10 +69,10 @@ global class GetRandomValueTests {
             inputs
         );
 
-        System.assertEquals(1, outputs.size());
+        Assert.areEqual(1, outputs.size());
         GetRandomValue.OutputParameters output = outputs[0];
-        System.assert(output.randomNumber >= 3);
-        System.assert(output.randomNumber < 4);
+        Assert.isTrue(output.randomNumber >= 3);
+        Assert.isTrue(output.randomNumber < 4);
     }
 
     @isTest
@@ -87,9 +87,9 @@ global class GetRandomValueTests {
             inputs
         );
 
-        System.assertEquals(1, outputs.size());
+        Assert.areEqual(1, outputs.size());
         GetRandomValue.OutputParameters output = outputs[0];
-        System.assertNotEquals(null, output.randomBoolean);
+        Assert.isNotNull(output.randomBoolean);
     }
 
     @isTest
@@ -102,12 +102,9 @@ global class GetRandomValueTests {
 
         try {
             GetRandomValue.bulkInvoke(inputs);
-            System.assert(false, 'Expected InvocableException');
+            Assert.fail('Expected InvocableException');
         } catch (GetRandomValue.InvocableException e) {
-            System.assertEquals(
-                'Unsupported type: invalidType',
-                e.getMessage()
-            );
+            Assert.areEqual('Unsupported type: invalidType', e.getMessage());
         }
     }
 }
