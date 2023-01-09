@@ -15,14 +15,14 @@ global class AddOrInsertRecordTests {
             inputs
         );
 
-        System.assertEquals(inputs.size(), outputs.size());
-        System.assertEquals(
+        Assert.areEqual(inputs.size(), outputs.size());
+        Assert.areEqual(
             SampleDataFactory.SAMPLE_ACCOUNTS.size() + 1,
             outputs[0].collection.size()
         );
         Account acc = (Account) outputs[0]
             .collection[SampleDataFactory.SAMPLE_ACCOUNTS.size()];
-        System.assertEquals(SampleDataFactory.ACCOUNT_NAME, acc.Name);
+        Assert.areEqual(SampleDataFactory.ACCOUNT_NAME, acc.Name);
     }
 
     @isTest
@@ -39,12 +39,12 @@ global class AddOrInsertRecordTests {
             inputs
         );
 
-        System.assertEquals(inputs.size(), outputs.size());
-        System.assertEquals(
+        Assert.areEqual(inputs.size(), outputs.size());
+        Assert.areEqual(
             SampleDataFactory.SAMPLE_ACCOUNTS.size() + 1,
             outputs[0].collection.size()
         );
         Account acc = (Account) outputs[0].collection[INSERT_INDEX];
-        System.assertEquals(SampleDataFactory.ACCOUNT_NAME, acc.Name);
+        Assert.areEqual(SampleDataFactory.ACCOUNT_NAME, acc.Name);
     }
 }

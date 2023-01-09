@@ -11,9 +11,9 @@ global class RegExpsParserContextTests {
             1
         );
         context.replace(origin, value);
-        System.assertEquals(' _S0S_ ', context.outputString);
-        System.assertEquals(origin, context.replacements.get('_S0S_'));
-        System.assertEquals(value, context.referencesString.get('_S0S_'));
+        Assert.areEqual(' _S0S_ ', context.outputString);
+        Assert.areEqual(origin, context.replacements.get('_S0S_'));
+        Assert.areEqual(value, context.referencesString.get('_S0S_'));
     }
 
     @isTest
@@ -27,9 +27,9 @@ global class RegExpsParserContextTests {
             1
         );
         context.replace(origin, value);
-        System.assertEquals(' _B0B_ ', context.outputString);
-        System.assertEquals(origin, context.replacements.get('_B0B_'));
-        System.assertEquals(value, context.referencesBoolean.get('_B0B_'));
+        Assert.areEqual(' _B0B_ ', context.outputString);
+        Assert.areEqual(origin, context.replacements.get('_B0B_'));
+        Assert.areEqual(value, context.referencesBoolean.get('_B0B_'));
     }
 
     @isTest
@@ -43,9 +43,9 @@ global class RegExpsParserContextTests {
             1
         );
         context.replace(origin, value);
-        System.assertEquals(' _D0D_ ', context.outputString);
-        System.assertEquals(origin, context.replacements.get('_D0D_'));
-        System.assertEquals(value, context.referencesDecimal.get('_D0D_'));
+        Assert.areEqual(' _D0D_ ', context.outputString);
+        Assert.areEqual(origin, context.replacements.get('_D0D_'));
+        Assert.areEqual(value, context.referencesDecimal.get('_D0D_'));
     }
 
     @isTest
@@ -59,9 +59,9 @@ global class RegExpsParserContextTests {
             1
         );
         context.replace(origin, value);
-        System.assertEquals(' _T0T_ ', context.outputString);
-        System.assertEquals(origin, context.replacements.get('_T0T_'));
-        System.assertEquals(value, context.referencesDateTime.get('_T0T_'));
+        Assert.areEqual(' _T0T_ ', context.outputString);
+        Assert.areEqual(origin, context.replacements.get('_T0T_'));
+        Assert.areEqual(value, context.referencesDateTime.get('_T0T_'));
     }
 
     @isTest
@@ -74,8 +74,8 @@ global class RegExpsParserContextTests {
             1
         );
         context.replace(origin);
-        System.assertEquals(' _N0N_ ', context.outputString);
-        System.assertEquals(origin, context.replacements.get('_N0N_'));
-        System.assertEquals('_N0N_', context.referencesNull.iterator().next());
+        Assert.areEqual(' _N0N_ ', context.outputString);
+        Assert.areEqual(origin, context.replacements.get('_N0N_'));
+        Assert.areEqual('_N0N_', context.referencesNull.iterator().next());
     }
 }

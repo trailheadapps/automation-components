@@ -15,8 +15,8 @@ global class GetRecordAtIndexTests {
             inputs
         );
 
-        System.assertEquals(inputs.size(), outputs.size());
+        Assert.areEqual(inputs.size(), outputs.size());
         Account acc = (Account) outputs[0].record;
-        System.assertEquals(SampleDataFactory.ACCOUNT_NAME + 2, acc.Name);
+        Assert.areEqual(SampleDataFactory.ACCOUNT_NAME + 2, acc.Name);
     }
 }

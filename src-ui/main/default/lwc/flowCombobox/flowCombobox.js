@@ -648,4 +648,8 @@ export default class FlowCombobox extends LightningElement {
             this.isMenuOpen ? 'slds-is-open' : ''
         }`;
     }
+
+    get hasNoOptions() {
+        return this._options.length === 0;
+    }
 }

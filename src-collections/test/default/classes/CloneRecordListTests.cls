@@ -12,13 +12,13 @@ global class CloneRecordListTests {
             inputs
         );
 
-        System.assertEquals(inputs.size(), outputs.size());
-        System.assertEquals(
+        Assert.areEqual(inputs.size(), outputs.size());
+        Assert.areEqual(
             SampleDataFactory.SAMPLE_ACCOUNTS.size(),
             outputs[0].collection.size()
         );
         Account inputAcc = (Account) inputs[0].collection[0];
         Account outputAcc = (Account) outputs[0].collection[0];
-        System.assertEquals(inputAcc.Name, outputAcc.Name);
+        Assert.areEqual(inputAcc.Name, outputAcc.Name);
     }
 }
