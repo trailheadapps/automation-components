@@ -41,7 +41,7 @@
     ></lightning-radio-group>
 
     <!-- Picklist input source options -->
-    <template if:true={isPicklistInputSource}>
+    <template lwc:if={isPicklistInputSource}>
         <div
             class="slds-var-p-left_small slds-var-m-vertical_small sub-options"
         >
@@ -66,7 +66,7 @@
     </template>
 
     <!-- List input source options -->
-    <template if:true={isListInputSource}>
+    <template lwc:if={isListInputSource}>
         <div
             class="slds-var-p-left_small slds-var-m-vertical_small sub-options"
         >
@@ -103,7 +103,7 @@
     ></lightning-radio-group>
 
     <!-- Cards display options -->
-    <template if:true={isCards}>
+    <template lwc:if={isCards}>
         <div
             class="slds-var-p-left_small slds-var-m-vertical_small sub-options"
         >
