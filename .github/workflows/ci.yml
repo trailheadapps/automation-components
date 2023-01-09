@@ -40,22 +40,11 @@ jobs:
               if: steps.cache-npm.outputs.cache-hit != 'true'
               run: npm ci
 
-            # Start local Apex parser server for Prettier
-            - name: 'Start local Apex parser server for Prettier'
-              run: npm run apex:local:start &
-
-            # Wait for Apex parser server startup
-            - name: 'Wait for Apex parser server startup'
-              run: timeout 22 bash -c 'until printf "" 2>>/dev/null >>/dev/tcp/$0/$1; do sleep 1; done' 127.0.0.1 2117
-
             # Prettier formatting
+            # For 10x performance gain, replace this with prettier:verify:apex:local
+            # (not allowed in our custom self-hosted GitHub Actions runner)
             - name: 'Code formatting verification with Prettier'
-              run: npm run prettier:verify:apex:local
-
-            # Stop local Apex parser server for Prettier
-            - name: 'Stop local Apex parser server for Prettier'
-              if: always()
-              run: npm run apex:local:stop
+              run: npm run prettier:verify
 
             # Lint LWC / Aura
             - name: 'Lint Lightning Web Components / Aura Components'
