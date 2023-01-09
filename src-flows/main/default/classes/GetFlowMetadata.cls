@@ -28,11 +28,14 @@ global with sharing class GetFlowMetadata {
         return outputs;
     }
 
-    @SuppressWarnings('PMD.ApexSOQLInjection')
     private static OutputParameters invoke(InputParameters input) {
         // Find flow
-        String query = getQuery(input);
-        FlowDefinitionView flow = Database.query(query);
+        QueryInfo queryInfo = prepareQuery(input);
+        FlowDefinitionView flow = Database.queryWithBinds(
+            queryInfo.query,
+            queryInfo.params,
+            AccessLevel.USER_MODE
+        );
         // Return output
         OutputParameters output = new OutputParameters();
         output.flowApiName = flow.ApiName;
@@ -47,34 +50,44 @@ global with sharing class GetFlowMetadata {
     }
 
     @TestVisible
-    private static String getQuery(InputParameters input) {
-        // Get and validate input
-        String apiName = input.flowApiName == null
-            ? null
-            : String.escapeSingleQuotes(input.flowApiName);
-        String definitionId = input.flowDefinitionId == null
-            ? null
-            : String.escapeSingleQuotes(input.flowDefinitionId);
+    private static QueryInfo prepareQuery(InputParameters input) {
+        // Get and validate inputs
+        String apiName = input.flowApiName;
+        String definitionId = input.flowDefinitionId;
         if (apiName == null && definitionId == null) {
             throw new InvocableException(
                 'At least one of apiName or definitionId must be provided.'
             );
         }
-        // Build flow query
-        String query = BASE_QUERY;
+        // Build query
+        Map<String, Object> params;
+        String query;
         if (apiName != null && definitionId != null) {
-            query +=
-                ' WHERE DurableId = \'' +
-                definitionId +
-                '\' AND ApiName = \'' +
-                apiName +
-                '\'';
+            query =
+                BASE_QUERY +
+                ' WHERE DurableId = :definitionId AND ApiName = :apiName';
+            params = new Map<String, Object>{
+                'definitionId' => definitionId,
+                'apiName' => apiName
+            };
         } else if (apiName != null) {
-            query += ' WHERE ApiName = \'' + apiName + '\'';
+            query = BASE_QUERY + ' WHERE ApiName = :apiName';
+            params = new Map<String, Object>{ 'apiName' => apiName };
         } else /** definitionId != null */ {
-            query += ' WHERE DurableId = \'' + definitionId + '\'';
+            query = BASE_QUERY + ' WHERE DurableId = :definitionId';
+            params = new Map<String, Object>{ 'definitionId' => definitionId };
         }
-        return query;
+        return new QueryInfo(query, params);
+    }
+
+    public class QueryInfo {
+        public String query { get; set; }
+        public Map<String, Object> params { get; set; }
+
+        public QueryInfo(String query, Map<String, Object> params) {
+            this.query = query;
+            this.params = params;
+        }
     }
 
     global class InvocableException extends Exception {

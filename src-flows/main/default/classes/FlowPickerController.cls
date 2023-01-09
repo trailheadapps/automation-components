@@ -83,8 +83,7 @@ global with sharing class FlowPickerController {
         }
 
         global Boolean hasMultipleValues() {
-            List<String> values = this.getValues();
-            return (values != null && values.size() > 1);
+            return this.getValues()?.size() > 1;
         }
     }
 }
