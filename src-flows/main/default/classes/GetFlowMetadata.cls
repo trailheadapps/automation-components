@@ -29,29 +29,7 @@ global with sharing class GetFlowMetadata {
     }
 
     private static OutputParameters invoke(InputParameters input) {
-        // Find flow
-        QueryInfo queryInfo = prepareQuery(input);
-        FlowDefinitionView flow = Database.queryWithBinds(
-            queryInfo.query,
-            queryInfo.params,
-            AccessLevel.USER_MODE
-        );
-        // Return output
-        OutputParameters output = new OutputParameters();
-        output.flowApiName = flow.ApiName;
-        output.flowDefinitionId = flow.DurableId;
-        output.activeVersionId = flow.ActiveVersionId;
-        output.description = flow.Description;
-        output.label = flow.Label;
-        output.latestVersionId = flow.LatestVersionId;
-        output.namespacePrefix = flow.NamespacePrefix;
-        output.flowType = flow.ProcessType;
-        return output;
-    }
-
-    @TestVisible
-    private static QueryInfo prepareQuery(InputParameters input) {
-        // Get and validate inputs
+        // Get and validate input
         String apiName = input.flowApiName;
         String definitionId = input.flowDefinitionId;
         if (apiName == null && definitionId == null) {
@@ -59,38 +37,44 @@ global with sharing class GetFlowMetadata {
                 'At least one of apiName or definitionId must be provided.'
             );
         }
-        // Build query
-        Map<String, Object> params;
-        String query;
-        if (apiName != null && definitionId != null) {
-            query =
-                BASE_QUERY +
-                ' WHERE DurableId = :definitionId AND ApiName = :apiName';
-            params = new Map<String, Object>{
-                'definitionId' => definitionId,
-                'apiName' => apiName
-            };
-        } else if (apiName != null) {
-            query = BASE_QUERY + ' WHERE ApiName = :apiName';
-            params = new Map<String, Object>{ 'apiName' => apiName };
-        } else /** definitionId != null */ {
-            query = BASE_QUERY + ' WHERE DurableId = :definitionId';
-            params = new Map<String, Object>{ 'definitionId' => definitionId };
+        // Find flow
+        String query = getQuery(apiName, definitionId);
+        FlowDefinitionView[] flows = Database.query(query);
+        if (flows.isEmpty()) {
+            throw new FlowNotfoundException(
+                'Failed to find flow matching ' + input
+            );
         }
-        return new QueryInfo(query, params);
+        // Return output
+        OutputParameters output = new OutputParameters();
+        output.flowApiName = flows[0].ApiName;
+        output.flowDefinitionId = flows[0].DurableId;
+        output.activeVersionId = flows[0].ActiveVersionId;
+        output.description = flows[0].Description;
+        output.label = flows[0].Label;
+        output.latestVersionId = flows[0].LatestVersionId;
+        output.namespacePrefix = flows[0].NamespacePrefix;
+        output.flowType = flows[0].ProcessType;
+        return output;
     }
 
-    public class QueryInfo {
-        public String query { get; set; }
-        public Map<String, Object> params { get; set; }
-
-        public QueryInfo(String query, Map<String, Object> params) {
-            this.query = query;
-            this.params = params;
+    @TestVisible
+    private static String getQuery(String apiName, String definitionId) {
+        String query = BASE_QUERY;
+        if (apiName != null && definitionId != null) {
+            query += ' WHERE DurableId = :definitionId AND ApiName = :apiName';
+        } else if (apiName != null) {
+            query += ' WHERE ApiName = :apiName';
+        } else /** definitionId != null */ {
+            query += ' WHERE DurableId = :definitionId';
         }
+        return query + ' LIMIT 1';
     }
 
     global class InvocableException extends Exception {
+    }
+
+    global class FlowNotfoundException extends Exception {
     }
 
     /**
