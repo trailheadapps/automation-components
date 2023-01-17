@@ -216,7 +216,7 @@ jobs:
                   if (( ${#changedPackages[@]} > 0 )); then
                       changedPackagesJson=$(printf '%s\n' "${changedPackages[@]}" | jq -R . | jq -c -s .)
                   fi
-                  echo "::set-output name=changes::$changedPackagesJson"
+                  echo "changes=$changedPackagesJson" >> $GITHUB_OUTPUT
 
             # Trigger packaging workflow if needed
             - name: 'Trigger packaging workflow if needed'
