@@ -15,12 +15,12 @@ global class RemoveRecordTests {
             inputs
         );
 
-        System.assertEquals(inputs.size(), outputs.size());
-        System.assertEquals(
+        Assert.areEqual(inputs.size(), outputs.size());
+        Assert.areEqual(
             SampleDataFactory.SAMPLE_ACCOUNTS.size() - 1,
             outputs[0].collection.size()
         );
         Account acc = (Account) outputs[0].collection[0];
-        System.assertEquals(SampleDataFactory.ACCOUNT_NAME + 1, acc.Name);
+        Assert.areEqual(SampleDataFactory.ACCOUNT_NAME + 1, acc.Name);
     }
 }

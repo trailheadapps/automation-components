@@ -18,7 +18,7 @@ global class PostRichChatterTests {
             inputs
         );
 
-        System.assertEquals(1, outputs.size());
+        Assert.areEqual(1, outputs.size());
         Id feedItemId = outputs[0].feedItemId;
 
         FeedItem feedItem = [
@@ -27,8 +27,8 @@ global class PostRichChatterTests {
             WHERE Id = :feedItemId
         ];
         String itemBody = feedItem.Body.unescapeHtml4().replace('&nbsp;', ' ');
-        System.assertEquals(BODY_OUTPUT, itemBody);
-        System.assertEquals(userId, feedItem.ParentId);
+        Assert.areEqual(BODY_OUTPUT, itemBody);
+        Assert.areEqual(userId, feedItem.ParentId);
     }
 
     @isTest(SeeAllData=true)
@@ -46,7 +46,7 @@ global class PostRichChatterTests {
             inputs
         );
 
-        System.assertEquals(1, outputs.size());
+        Assert.areEqual(1, outputs.size());
         Id feedItemId = outputs[0].feedItemId;
 
         FeedItem feedItem = [
@@ -55,8 +55,8 @@ global class PostRichChatterTests {
             WHERE Id = :feedItemId
         ];
         String itemBody = feedItem.Body.unescapeHtml4().replace('&nbsp;', ' ');
-        System.assertEquals(BODY_OUTPUT, itemBody);
-        System.assertEquals(testGroup.Id, feedItem.ParentId);
+        Assert.areEqual(BODY_OUTPUT, itemBody);
+        Assert.areEqual(testGroup.Id, feedItem.ParentId);
 
         delete testGroup;
     }
@@ -72,9 +72,9 @@ global class PostRichChatterTests {
 
         try {
             PostRichChatter.bulkInvoke(inputs);
-            System.assert(false, 'Expected InvalidNameException');
+            Assert.fail('Expected InvalidNameException');
         } catch (PostRichChatter.InvalidNameException e) {
-            System.assert(e.getMessage().contains('Couldn\'t find'));
+            Assert.isTrue(e.getMessage().contains('Couldn\'t find'));
         }
     }
 

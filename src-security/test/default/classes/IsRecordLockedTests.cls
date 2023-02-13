@@ -16,7 +16,7 @@ global class IsRecordLockedTests {
             inputs
         );
 
-        System.assertEquals(inputs.size(), outputs.size());
-        System.assert(outputs[0].isLocked);
+        Assert.areEqual(inputs.size(), outputs.size());
+        Assert.isTrue(outputs[0].isLocked);
     }
 }

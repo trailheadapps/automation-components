@@ -27,7 +27,7 @@ global class FlowPickerControllerTests {
 
         String query = FlowPickerController.getSearchQuery(params);
 
-        System.assertEquals(QUERY_NO_PARAM, query);
+        Assert.areEqual(QUERY_NO_PARAM, query);
     }
 
     @isTest
@@ -41,7 +41,7 @@ global class FlowPickerControllerTests {
 
         String query = FlowPickerController.getSearchQuery(params);
 
-        System.assertEquals(QUERY_NOT_NULL, query);
+        Assert.areEqual(QUERY_NOT_NULL, query);
     }
 
     @isTest
@@ -55,7 +55,7 @@ global class FlowPickerControllerTests {
 
         String query = FlowPickerController.getSearchQuery(params);
 
-        System.assertEquals(QUERY_SEARCH, query);
+        Assert.areEqual(QUERY_SEARCH, query);
     }
 
     @isTest
@@ -69,7 +69,7 @@ global class FlowPickerControllerTests {
 
         String query = FlowPickerController.getSearchQuery(params);
 
-        System.assertEquals(QUERY_MULTIPLE_VALUES, query);
+        Assert.areEqual(QUERY_MULTIPLE_VALUES, query);
     }
 
     @isTest
@@ -87,6 +87,6 @@ global class FlowPickerControllerTests {
 
         String query = FlowPickerController.getSearchQuery(params);
 
-        System.assertEquals(QUERY_MULTIPLE_EXPRESSIONS, query);
+        Assert.areEqual(QUERY_MULTIPLE_EXPRESSIONS, query);
     }
 }

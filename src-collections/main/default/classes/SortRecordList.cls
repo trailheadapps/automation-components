@@ -31,9 +31,9 @@ global with sharing class SortRecordList {
         } catch (Exception e) {
             throw new InvalidSortKeyException(
                 'Failed to parse sort keys "' +
-                input.sortKeys +
-                '" JSON: ' +
-                e.getMessage()
+                    input.sortKeys +
+                    '" JSON: ' +
+                    e.getMessage()
             );
         }
 
@@ -193,10 +193,7 @@ global with sharing class SortRecordList {
                 }
             } else {
                 throw new UnsupportedSortTypeException(
-                    'Unsupported sort type ' +
-                    fieldType +
-                    ' for field ' +
-                    field
+                    'Unsupported sort type ' + fieldType + ' for field ' + field
                 );
             }
 

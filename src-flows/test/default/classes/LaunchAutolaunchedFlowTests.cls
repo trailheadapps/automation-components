@@ -18,10 +18,10 @@ global class LaunchAutolaunchedFlowTests {
             inputs
         );
 
-        System.assertEquals(1, outputs.size());
+        Assert.areEqual(1, outputs.size());
         LaunchAutolaunchedFlow.OutputParameters output = outputs[0];
-        System.assertEquals(null, output.errorMessage);
-        System.assert(output.isSuccess);
+        Assert.areEqual(null, output.errorMessage);
+        Assert.isTrue(output.isSuccess);
     }
 
     @isTest
@@ -42,10 +42,10 @@ global class LaunchAutolaunchedFlowTests {
             inputs
         );
 
-        System.assertEquals(1, outputs.size());
+        Assert.areEqual(1, outputs.size());
         LaunchAutolaunchedFlow.OutputParameters output = outputs[0];
-        System.assertEquals(null, output.errorMessage);
-        System.assert(output.isSuccess);
+        Assert.areEqual(null, output.errorMessage);
+        Assert.isTrue(output.isSuccess);
     }
 
     @isTest
@@ -61,10 +61,10 @@ global class LaunchAutolaunchedFlowTests {
             inputs
         );
 
-        System.assertEquals(1, outputs.size());
+        Assert.areEqual(1, outputs.size());
         LaunchAutolaunchedFlow.OutputParameters output = outputs[0];
-        System.assert(!output.isSuccess);
-        System.assert(
+        Assert.isTrue(!output.isSuccess);
+        Assert.isTrue(
             output.errorMessage.contains(
                 'You did not specify a name for parameter'
             )
@@ -84,10 +84,10 @@ global class LaunchAutolaunchedFlowTests {
             inputs
         );
 
-        System.assertEquals(1, outputs.size());
+        Assert.areEqual(1, outputs.size());
         LaunchAutolaunchedFlow.OutputParameters output = outputs[0];
-        System.assert(!output.isSuccess);
-        System.assert(
+        Assert.isTrue(!output.isSuccess);
+        Assert.isTrue(
             output.errorMessage.contains('does not have a value assigned')
         );
     }

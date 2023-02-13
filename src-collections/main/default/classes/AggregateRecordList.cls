@@ -33,8 +33,8 @@ global with sharing class AggregateRecordList {
         } catch (System.NoSuchElementException e) {
             throw new InvocableException(
                 'Unsupported operation "' +
-                input.operation +
-                '" for AggregateRecordList'
+                    input.operation +
+                    '" for AggregateRecordList'
             );
         }
         // Get field values
@@ -96,8 +96,8 @@ global with sharing class AggregateRecordList {
             if (rawValue == null) {
                 throw new InvocableException(
                     'No default value specified for null "' +
-                    fieldName +
-                    '" field.'
+                        fieldName +
+                        '" field.'
                 );
             }
             Decimal value;
@@ -106,10 +106,10 @@ global with sharing class AggregateRecordList {
             } catch (Exception e) {
                 throw new InvocableException(
                     'Failed to convert ' +
-                    fieldName +
-                    ' field value "' +
-                    rawValue +
-                    '" into a decimal.'
+                        fieldName +
+                        ' field value "' +
+                        rawValue +
+                        '" into a decimal.'
                 );
             }
             values.add(value);

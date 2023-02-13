@@ -92,7 +92,7 @@ global with sharing class PostRichChatter {
             SELECT Id
             FROM Group
             WHERE Name = :name
-            WITH SECURITY_ENFORCED
+            WITH USER_MODE
         ];
         if (groups.size() > 0) {
             return groups[0].Id;
@@ -101,7 +101,7 @@ global with sharing class PostRichChatter {
             SELECT Id
             FROM User
             WHERE Username = :name
-            WITH SECURITY_ENFORCED
+            WITH USER_MODE
         ];
         if (users.size() > 0) {
             return users[0].Id;

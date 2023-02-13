@@ -1,7 +1,7 @@
 <template>
     <fieldset class="slds-form-element">
         <legend class="slds-form-element__legend slds-form-element__label">
-            <abbr if:true={required} title="required" class="slds-required"
+            <abbr lwc:if={required} title="required" class="slds-required"
                 >*</abbr
             >
             {label}
@@ -25,7 +25,7 @@
                             />
                             <label for={option.value}>
                                 <!-- With icons-->
-                                <template if:true={hasIcons}>
+                                <template lwc:if={hasIcons}>
                                     <span
                                         class="slds-visual-picker__figure slds-visual-picker__text slds-box slds-box_link slds-media slds-media_center card-with-icon"
                                     >
@@ -46,7 +46,7 @@
                                                 >{option.value}</span
                                             >
                                             <span
-                                                if:true={option.label}
+                                                lwc:if={option.label}
                                                 class="slds-text-title slds-var-m-top_x-small"
                                                 >{option.label}</span
                                             >
@@ -55,7 +55,7 @@
                                 </template>
 
                                 <!-- Without icons-->
-                                <template if:false={hasIcons}>
+                                <template lwc:else>
                                     <span
                                         class="slds-visual-picker__figure slds-visual-picker__text"
                                     >
@@ -65,7 +65,7 @@
                                                 >{option.value}</span
                                             >
                                             <span
-                                                if:true={option.label}
+                                                lwc:if={option.label}
                                                 class="slds-text-title slds-var-m-top_x-small"
                                                 >{option.label}</span
                                             >

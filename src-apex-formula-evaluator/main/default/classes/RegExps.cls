@@ -128,103 +128,67 @@ global class RegExps {
 
         public void replace(String origin, String value) {
             this.outputString = this.outputString.replace(
-                ' ' +
-                origin +
-                ' ',
-                ' _S' +
-                this.referencesString.size() +
-                'S_ '
+                ' ' + origin + ' ',
+                ' _S' + this.referencesString.size() + 'S_ '
             );
             this.replacements.put(
-                '_S' +
-                this.referencesString.size() +
-                'S_',
+                '_S' + this.referencesString.size() + 'S_',
                 origin
             );
             this.referencesString.put(
-                '_S' +
-                this.referencesString.size() +
-                'S_',
+                '_S' + this.referencesString.size() + 'S_',
                 value
             );
         }
         public void replace(String origin, Boolean value) {
             this.outputString = this.outputString.replace(
-                ' ' +
-                origin +
-                ' ',
-                ' _B' +
-                this.referencesBoolean.size() +
-                'B_ '
+                ' ' + origin + ' ',
+                ' _B' + this.referencesBoolean.size() + 'B_ '
             );
             this.replacements.put(
-                '_B' +
-                this.referencesBoolean.size() +
-                'B_',
+                '_B' + this.referencesBoolean.size() + 'B_',
                 origin
             );
             this.referencesBoolean.put(
-                '_B' +
-                this.referencesBoolean.size() +
-                'B_',
+                '_B' + this.referencesBoolean.size() + 'B_',
                 value
             );
         }
         public void replace(String origin, Decimal value) {
             this.outputString = this.outputString.replace(
-                ' ' +
-                origin +
-                ' ',
-                ' _D' +
-                this.referencesDecimal.size() +
-                'D_ '
+                ' ' + origin + ' ',
+                ' _D' + this.referencesDecimal.size() + 'D_ '
             );
             this.replacements.put(
-                '_D' +
-                this.referencesDecimal.size() +
-                'D_',
+                '_D' + this.referencesDecimal.size() + 'D_',
                 origin
             );
             this.referencesDecimal.put(
-                '_D' +
-                this.referencesDecimal.size() +
-                'D_',
+                '_D' + this.referencesDecimal.size() + 'D_',
                 value
             );
         }
         public void replace(String origin, DateTime value) {
             this.outputString = this.outputString.replace(
-                ' ' +
-                origin +
-                ' ',
-                ' _T' +
-                this.referencesDateTime.size() +
-                'T_ '
+                ' ' + origin + ' ',
+                ' _T' + this.referencesDateTime.size() + 'T_ '
             );
             this.replacements.put(
-                '_T' +
-                this.referencesDateTime.size() +
-                'T_',
+                '_T' + this.referencesDateTime.size() + 'T_',
                 origin
             );
             this.referencesDateTime.put(
-                '_T' +
-                this.referencesDateTime.size() +
-                'T_',
+                '_T' + this.referencesDateTime.size() + 'T_',
                 value
             );
         }
         public void replace(String origin) {
             this.outputString = this.outputString.replace(
                 origin,
-                '_N' +
-                this.referencesNull.size() +
-                'N_'
+                '_N' + this.referencesNull.size() + 'N_'
             );
             this.replacements.put(
-                '_N' +
-                this.referencesNull.size() +
-                'N_',
+                '_N' + this.referencesNull.size() + 'N_',
                 origin
             );
             this.referencesNull.add('_N' + this.referencesNull.size() + 'N_');
@@ -282,12 +246,12 @@ global class RegExps {
                     }
                     evaluableExpressions.add(
                         firstToken +
-                        ' ' +
-                        EXP_MATH_EXPRESSION_TOKEN_DELIMITER +
-                        pieceOfExpression.trim() +
-                        EXP_MATH_EXPRESSION_TOKEN_DELIMITER +
-                        ' ' +
-                        token
+                            ' ' +
+                            EXP_MATH_EXPRESSION_TOKEN_DELIMITER +
+                            pieceOfExpression.trim() +
+                            EXP_MATH_EXPRESSION_TOKEN_DELIMITER +
+                            ' ' +
+                            token
                     );
                 }
                 pieceOfExpression = null;
@@ -305,12 +269,12 @@ global class RegExps {
             }
             evaluableExpressions.add(
                 firstToken +
-                ' ' +
-                EXP_MATH_EXPRESSION_TOKEN_DELIMITER +
-                pieceOfExpression.trim() +
-                EXP_MATH_EXPRESSION_TOKEN_DELIMITER +
-                ' ' +
-                prevtoken
+                    ' ' +
+                    EXP_MATH_EXPRESSION_TOKEN_DELIMITER +
+                    pieceOfExpression.trim() +
+                    EXP_MATH_EXPRESSION_TOKEN_DELIMITER +
+                    ' ' +
+                    prevtoken
             );
         }
 
@@ -337,19 +301,19 @@ global class RegExps {
                 if (
                     Pattern.matches(
                         '^([+-])?\\s*' +
-                        EXP_NUMBER_TOKEN +
-                        '(\\s*[\\+\\-\\*/]\\s*([+-])?\\s*' +
-                        EXP_NUMBER_TOKEN +
-                        ')*',
+                            EXP_NUMBER_TOKEN +
+                            '(\\s*[\\+\\-\\*/]\\s*([+-])?\\s*' +
+                            EXP_NUMBER_TOKEN +
+                            ')*',
                         tmp
                     )
                 ) {
                     Pattern myPattern = pattern.compile(
                         '^([+-])\\s*' +
-                        EXP_NUMBER_TOKEN +
-                        '(\\s*(\\+\\-\\*/)\\s*([+-])?\\s*' +
-                        EXP_NUMBER_TOKEN +
-                        ')*'
+                            EXP_NUMBER_TOKEN +
+                            '(\\s*(\\+\\-\\*/)\\s*([+-])?\\s*' +
+                            EXP_NUMBER_TOKEN +
+                            ')*'
                     );
                     Matcher m = myPattern.matcher(tmp);
 
@@ -360,29 +324,19 @@ global class RegExps {
                             val = -1 * val;
                         }
                         exp = exp.replace(
-                            sign +
-                            ' ' +
-                            m.group(2),
-                            ' _D' +
-                            context.referencesDecimal.size() +
-                            'D_ '
+                            sign + ' ' + m.group(2),
+                            ' _D' + context.referencesDecimal.size() + 'D_ '
                         );
                         context.outputString = context.outputString.replace(
                             tmp,
                             exp.split(EXP_MATH_EXPRESSION_TOKEN_DELIMITER)[1]
                         );
                         context.replacements.put(
-                            '_D' +
-                            context.referencesDecimal.size() +
-                            'D_',
-                            sign +
-                            ' ' +
-                            m.group(2)
+                            '_D' + context.referencesDecimal.size() + 'D_',
+                            sign + ' ' + m.group(2)
                         );
                         context.referencesDecimal.put(
-                            '_D' +
-                            context.referencesDecimal.size() +
-                            'D_',
+                            '_D' + context.referencesDecimal.size() + 'D_',
                             val
                         );
                         break;
@@ -429,9 +383,7 @@ global class RegExps {
         }
 
         Pattern myPattern = pattern.compile(
-            '\\(\\s*(' +
-            EXP_OPERAND +
-            ')\\s*\\)'
+            '\\(\\s*(' + EXP_OPERAND + ')\\s*\\)'
         );
         Matcher m = myPattern.matcher(context.outputString);
 
@@ -521,9 +473,7 @@ global class RegExps {
 
             context.outputString = context.outputString.replace(
                 m.group(0),
-                '( ' +
-                name +
-                ' )'
+                '( ' + name + ' )'
             );
             context.replacements.put('( ' + name + ' )', m.group(0));
         }
@@ -543,25 +493,19 @@ global class RegExps {
                 val = -1 * val;
             }
             context.outputString = context.outputString.replace(
+                ' ' + m.group(0) + ' ',
                 ' ' +
-                m.group(0) +
-                ' ',
-                ' ' +
-                firstSign +
-                ' _D' +
-                context.referencesDecimal.size() +
-                'D_ '
+                    firstSign +
+                    ' _D' +
+                    context.referencesDecimal.size() +
+                    'D_ '
             );
             context.replacements.put(
-                '_D' +
-                context.referencesDecimal.size() +
-                'D_',
+                '_D' + context.referencesDecimal.size() + 'D_',
                 m.group(0)
             );
             context.referencesDecimal.put(
-                '_D' +
-                context.referencesDecimal.size() +
-                'D_',
+                '_D' + context.referencesDecimal.size() + 'D_',
                 val
             );
         }
@@ -624,29 +568,19 @@ global class RegExps {
             }
 
             expression = expression.replace(
-                ' ' +
-                m.group(0) +
-                ' ',
-                ' _D' +
-                context.referencesDecimal.size() +
-                'D_ '
+                ' ' + m.group(0) + ' ',
+                ' _D' + context.referencesDecimal.size() + 'D_ '
             );
             expression = expression.replace(
                 m.group(0),
-                ' _D' +
-                context.referencesDecimal.size() +
-                'D_ '
+                ' _D' + context.referencesDecimal.size() + 'D_ '
             );
             context.replacements.put(
-                '_D' +
-                context.referencesDecimal.size() +
-                'D_',
+                '_D' + context.referencesDecimal.size() + 'D_',
                 m.group(0)
             );
             context.referencesDecimal.put(
-                '_D' +
-                context.referencesDecimal.size() +
-                'D_',
+                '_D' + context.referencesDecimal.size() + 'D_',
                 val
             );
         }
@@ -657,25 +591,21 @@ global class RegExps {
 
         context.outputString = context.outputString.replace(
             toBeReplaced,
-            startingToken +
-            ' ' +
-            expression.trim() +
-            ' ' +
-            endingToken
+            startingToken + ' ' + expression.trim() + ' ' + endingToken
         );
     }
 
     global static void evaluateStringOperations(ParserContext context) {
         Pattern myPattern = pattern.compile(
             '(' +
-            EXP_NULL_TOKEN +
-            '|' +
-            EXP_STRING_TOKEN +
-            ')(\\s+\\+\\s+(' +
-            EXP_NULL_TOKEN +
-            '|' +
-            EXP_STRING_TOKEN +
-            '))+'
+                EXP_NULL_TOKEN +
+                '|' +
+                EXP_STRING_TOKEN +
+                ')(\\s+\\+\\s+(' +
+                EXP_NULL_TOKEN +
+                '|' +
+                EXP_STRING_TOKEN +
+                '))+'
         );
         Pattern tmpPattern = pattern.compile(EXP_STRING_TOKEN);
         Matcher m = myPattern.matcher(context.outputString);
@@ -699,8 +629,8 @@ global class RegExps {
     global static void evaluateMathFunctions(ParserContext context) {
         Pattern myPattern = pattern.compile(
             '(ABS|ROUND|CEIL|FLOOR|SQRT|ACOS|ASIN|ATAN|COS|SIN|TAN|COSH|SINH|TANH|EXP|LOG|LOG10|RINT|SIGNUM|INTEGER)\\s*\\(\\s*' +
-            EXP_OPERAND +
-            '\\s*\\)'
+                EXP_OPERAND +
+                '\\s*\\)'
         );
         Matcher m = myPattern.matcher(context.outputString);
 
@@ -711,10 +641,10 @@ global class RegExps {
             if (!valueRef.contains('N') && !valueRef.contains('D')) {
                 throw new ExpressionParsingException(
                     'Unsupported parameter type on function ' +
-                    func +
-                    '(): expected Number but received "' +
-                    getValueReferenceType(valueRef) +
-                    '".'
+                        func +
+                        '(): expected Number but received "' +
+                        getValueReferenceType(valueRef) +
+                        '".'
                 );
             }
 
@@ -773,10 +703,10 @@ global class RegExps {
 
         myPattern = pattern.compile(
             '(POW|MAX|MIN|MOD)\\s*\\(\\s*' +
-            EXP_OPERAND +
-            '\\s*\\,\\s*' +
-            EXP_OPERAND +
-            '\\s*\\)'
+                EXP_OPERAND +
+                '\\s*\\,\\s*' +
+                EXP_OPERAND +
+                '\\s*\\)'
         );
         m = myPattern.matcher(context.outputString);
 
@@ -788,19 +718,19 @@ global class RegExps {
             if (!valueRef1.contains('N') && !valueRef1.contains('D')) {
                 throw new ExpressionParsingException(
                     'Unsupported parameter type on function ' +
-                    func +
-                    '(): expected Number but received "' +
-                    getValueReferenceType(valueRef1) +
-                    '".'
+                        func +
+                        '(): expected Number but received "' +
+                        getValueReferenceType(valueRef1) +
+                        '".'
                 );
             }
             if (!valueRef2.contains('N') && !valueRef2.contains('D')) {
                 throw new ExpressionParsingException(
                     'Unsupported parameter type on function ' +
-                    func +
-                    '(): expected Number but received "' +
-                    getValueReferenceType(valueRef2) +
-                    '".'
+                        func +
+                        '(): expected Number but received "' +
+                        getValueReferenceType(valueRef2) +
+                        '".'
                 );
             }
 
@@ -832,8 +762,8 @@ global class RegExps {
     global static void evaluateTypeConversionFunctions(ParserContext context) {
         Pattern myPattern = pattern.compile(
             '(TEXT|DATETIME|INTEGER|DECIMAL|BOOLEAN|DATE)\\s*\\(\\s*' +
-            EXP_OPERAND +
-            '\\s*\\)'
+                EXP_OPERAND +
+                '\\s*\\)'
         );
         Matcher m = myPattern.matcher(context.outputString);
 
@@ -881,8 +811,8 @@ global class RegExps {
                     if (!Pattern.matches(RegExps.EXP_DATETIME, val)) {
                         throw new ExpressionParsingException(
                             'Cannot apply DATETIME() function: Invalid date/time value "' +
-                            val +
-                            '". Expected: YYYY-MM-DDTHH:MM:SS'
+                                val +
+                                '". Expected: YYYY-MM-DDTHH:MM:SS'
                         );
                     }
 
@@ -906,8 +836,8 @@ global class RegExps {
                 } else {
                     throw new ExpressionParsingException(
                         'Unsupported parameter type on function DATETIME(): expected String or DateTime but received "' +
-                        getValueReferenceType(valueRef) +
-                        '".'
+                            getValueReferenceType(valueRef) +
+                            '".'
                     );
                 }
 
@@ -931,10 +861,10 @@ global class RegExps {
                     } catch (Exception e) {
                         throw new ExpressionParsingException(
                             'Cannot apply ' +
-                            func +
-                            '() function: Invalid numeric value "' +
-                            strVal +
-                            '".'
+                                func +
+                                '() function: Invalid numeric value "' +
+                                strVal +
+                                '".'
                         );
                     }
                 } else if (valueRef.contains('D')) {
@@ -964,8 +894,8 @@ global class RegExps {
                     } else {
                         throw new ExpressionParsingException(
                             'Cannot apply BOOLEAN() function: Invalid boolean value "' +
-                            strVal +
-                            '".'
+                                strVal +
+                                '".'
                         );
                     }
                 } else if (valueRef.contains('B')) {
@@ -996,12 +926,12 @@ global class RegExps {
     global static void evaluateDateTimeFunctions(ParserContext context) {
         Pattern myPattern = pattern.compile(
             '(DATE)\\s*\\(\\s*' +
-            EXP_OPERAND +
-            '\\s*,\\s*' +
-            EXP_OPERAND +
-            '\\s*,\\s*' +
-            EXP_OPERAND +
-            '\\s*\\)'
+                EXP_OPERAND +
+                '\\s*,\\s*' +
+                EXP_OPERAND +
+                '\\s*,\\s*' +
+                EXP_OPERAND +
+                '\\s*\\)'
         );
         Matcher m = myPattern.matcher(context.outputString);
 
@@ -1010,24 +940,24 @@ global class RegExps {
             if (!yearRef.contains('N') && !yearRef.contains('D')) {
                 throw new ExpressionParsingException(
                     'Cannot apply DATE("YEAR",month,day) function: Expected Numeric year parameters, parameters but received "' +
-                    getValueReferenceType(yearRef) +
-                    '".'
+                        getValueReferenceType(yearRef) +
+                        '".'
                 );
             }
             String monthRef = m.group(3);
             if (!monthRef.contains('N') && !monthRef.contains('D')) {
                 throw new ExpressionParsingException(
                     'Cannot apply DATE(year,"MONTH",day) function: Expected Numeric year parameters, parameters but received "' +
-                    getValueReferenceType(monthRef) +
-                    '".'
+                        getValueReferenceType(monthRef) +
+                        '".'
                 );
             }
             String dayRef = m.group(4);
             if (!dayRef.contains('N') && !dayRef.contains('D')) {
                 throw new ExpressionParsingException(
                     'Cannot apply DATE(year,month,"DAY") function: Expected Numeric year parameters, parameters but received "' +
-                    getValueReferenceType(dayRef) +
-                    '".'
+                        getValueReferenceType(dayRef) +
+                        '".'
                 );
             }
             Decimal year = context.referencesDecimal.get(yearRef);
@@ -1052,18 +982,18 @@ global class RegExps {
 
         myPattern = pattern.compile(
             '(DATETIME)\\s*\\(\\s*' +
-            EXP_OPERAND +
-            '\\s*,\\s*' +
-            EXP_OPERAND +
-            '\\s*,\\s*' +
-            EXP_OPERAND +
-            '\\s*,\\s*' +
-            EXP_OPERAND +
-            '\\s*,\\s*' +
-            EXP_OPERAND +
-            '\\s*,\\s*' +
-            EXP_OPERAND +
-            '\\s*\\)'
+                EXP_OPERAND +
+                '\\s*,\\s*' +
+                EXP_OPERAND +
+                '\\s*,\\s*' +
+                EXP_OPERAND +
+                '\\s*,\\s*' +
+                EXP_OPERAND +
+                '\\s*,\\s*' +
+                EXP_OPERAND +
+                '\\s*,\\s*' +
+                EXP_OPERAND +
+                '\\s*\\)'
         );
         m = myPattern.matcher(context.outputString);
 
@@ -1072,48 +1002,48 @@ global class RegExps {
             if (!yearRef.contains('N') && !yearRef.contains('D')) {
                 throw new ExpressionParsingException(
                     'Cannot apply DATETIME("YEAR",month,day,hours,minutes,seconds) function: Expected Numeric year parameters, parameters but received "' +
-                    getValueReferenceType(yearRef) +
-                    '".'
+                        getValueReferenceType(yearRef) +
+                        '".'
                 );
             }
             String monthRef = m.group(3);
             if (!monthRef.contains('N') && !monthRef.contains('D')) {
                 throw new ExpressionParsingException(
                     'Cannot apply DATE(year,"MONTH",day,hours,minutes,seconds) function: Expected Numeric year parameters, parameters but received "' +
-                    getValueReferenceType(monthRef) +
-                    '".'
+                        getValueReferenceType(monthRef) +
+                        '".'
                 );
             }
             String dayRef = m.group(4);
             if (!dayRef.contains('N') && !dayRef.contains('D')) {
                 throw new ExpressionParsingException(
                     'Cannot apply DATE(year,month,day,hours,minutes,seconds) function: Expected Numeric year parameters, parameters but received "' +
-                    getValueReferenceType(dayRef) +
-                    '".'
+                        getValueReferenceType(dayRef) +
+                        '".'
                 );
             }
             String hoursRef = m.group(5);
             if (!dayRef.contains('N') && !dayRef.contains('D')) {
                 throw new ExpressionParsingException(
                     'Cannot apply DATE(year,month,day,"HOURS",minutes,seconds) function: Expected Numeric year parameters, parameters but received "' +
-                    getValueReferenceType(hoursRef) +
-                    '".'
+                        getValueReferenceType(hoursRef) +
+                        '".'
                 );
             }
             String minutesRef = m.group(6);
             if (!dayRef.contains('N') && !dayRef.contains('D')) {
                 throw new ExpressionParsingException(
                     'Cannot apply DATE(year,month,day,hours,"MINUTES",seconds) function: Expected Numeric year parameters, parameters but received "' +
-                    getValueReferenceType(minutesRef) +
-                    '".'
+                        getValueReferenceType(minutesRef) +
+                        '".'
                 );
             }
             String secondsRef = m.group(7);
             if (!dayRef.contains('N') && !dayRef.contains('D')) {
                 throw new ExpressionParsingException(
                     'Cannot apply DATE(year,month,day,hours,minutes,"SECONDS") function: Expected Numeric year parameters, parameters but received "' +
-                    getValueReferenceType(secondsRef) +
-                    '".'
+                        getValueReferenceType(secondsRef) +
+                        '".'
                 );
             }
             Decimal year = context.referencesDecimal.get(yearRef);
@@ -1153,8 +1083,8 @@ global class RegExps {
 
         myPattern = pattern.compile(
             '(DAY|MONTH|YEAR|HOURS|MINUTES|SECONDS)\\s*\\(\\s*' +
-            EXP_OPERAND +
-            '\\s*\\)'
+                EXP_OPERAND +
+                '\\s*\\)'
         );
         m = myPattern.matcher(context.outputString);
 
@@ -1165,10 +1095,10 @@ global class RegExps {
             if (!valueRef.contains('N') && !valueRef.contains('T')) {
                 throw new ExpressionParsingException(
                     'Cannot apply ' +
-                    func +
-                    '() function: Expected DateTime but received "' +
-                    getValueReferenceType(valueRef) +
-                    '".'
+                        func +
+                        '() function: Expected DateTime but received "' +
+                        getValueReferenceType(valueRef) +
+                        '".'
                 );
             }
             DateTime valDT = context.referencesDateTime.get(valueRef);
@@ -1215,10 +1145,10 @@ global class RegExps {
 
         myPattern = pattern.compile(
             '(ADDDAYS|ADDMONTHS|ADDYEARS|ADDHOURS|ADDMINUTES|ADDSECONDS)\\s*\\(\\s*' +
-            EXP_OPERAND +
-            '\\s*\\,\\s*' +
-            EXP_OPERAND +
-            '\\s*\\)'
+                EXP_OPERAND +
+                '\\s*\\,\\s*' +
+                EXP_OPERAND +
+                '\\s*\\)'
         );
         m = myPattern.matcher(context.outputString);
 
@@ -1230,19 +1160,19 @@ global class RegExps {
             if (!valueRef1.contains('N') && !valueRef1.contains('T')) {
                 throw new ExpressionParsingException(
                     'Cannot apply ' +
-                    func +
-                    '() function: Expected DateTime but received "' +
-                    getValueReferenceType(valueRef1) +
-                    '".'
+                        func +
+                        '() function: Expected DateTime but received "' +
+                        getValueReferenceType(valueRef1) +
+                        '".'
                 );
             }
             if (!valueRef2.contains('N') && !valueRef2.contains('D')) {
                 throw new ExpressionParsingException(
                     'Cannot apply ' +
-                    func +
-                    '() function: Expected Number but received "' +
-                    getValueReferenceType(valueRef2) +
-                    '".'
+                        func +
+                        '() function: Expected Number but received "' +
+                        getValueReferenceType(valueRef2) +
+                        '".'
                 );
             }
 
@@ -1365,28 +1295,28 @@ global class RegExps {
             '\\s+\\))';
         Pattern myPattern = pattern.compile(
             LEN_FN +
-            '|' +
-            SUBSTRING_FN +
-            '|' +
-            LEFT_RIGHT_FN +
-            '|' +
-            ISPICKVAL_FN +
-            '|' +
-            CONVERTID_FN +
-            '|' +
-            CONTAINS_FN +
-            '|' +
-            FIND_FN +
-            '|' +
-            LOWER_UPPER_FN +
-            '|' +
-            SUBSTITUTE_FN +
-            '|' +
-            TRIM_FN +
-            '|' +
-            VALUE_FN +
-            '|' +
-            CONCATENATE_FN
+                '|' +
+                SUBSTRING_FN +
+                '|' +
+                LEFT_RIGHT_FN +
+                '|' +
+                ISPICKVAL_FN +
+                '|' +
+                CONVERTID_FN +
+                '|' +
+                CONTAINS_FN +
+                '|' +
+                FIND_FN +
+                '|' +
+                LOWER_UPPER_FN +
+                '|' +
+                SUBSTITUTE_FN +
+                '|' +
+                TRIM_FN +
+                '|' +
+                VALUE_FN +
+                '|' +
+                CONCATENATE_FN
         );
         Matcher m = myPattern.matcher(context.outputString);
 
@@ -1397,8 +1327,8 @@ global class RegExps {
                 if (!ref.contains('N') && !ref.contains('S')) {
                     throw new ExpressionParsingException(
                         'Cannot apply CONVERTID() function: Expected String parameters but received "' +
-                        getValueReferenceType(ref) +
-                        '".'
+                            getValueReferenceType(ref) +
+                            '".'
                     );
                 }
 
@@ -1412,8 +1342,8 @@ global class RegExps {
                     } catch (Exception e) {
                         throw new ExpressionParsingException(
                             'Cannot apply CONVERTID() function: Expected ID String parameters but received "' +
-                            getValueReferenceType(ref) +
-                            '".'
+                                getValueReferenceType(ref) +
+                                '".'
                         );
                     }
                 }
@@ -1424,8 +1354,8 @@ global class RegExps {
                 if (!ref.contains('N') && !ref.contains('S')) {
                     throw new ExpressionParsingException(
                         'Cannot apply LEN() function: Expected String parameters but received "' +
-                        getValueReferenceType(ref) +
-                        '".'
+                            getValueReferenceType(ref) +
+                            '".'
                     );
                 }
 
@@ -1443,8 +1373,8 @@ global class RegExps {
                 if (!ref.contains('N') && !ref.contains('S')) {
                     throw new ExpressionParsingException(
                         'Cannot apply ISBLANK() function: Expected String parameters but received "' +
-                        getValueReferenceType(ref) +
-                        '".'
+                            getValueReferenceType(ref) +
+                            '".'
                     );
                 }
 
@@ -1469,12 +1399,12 @@ global class RegExps {
                 ) {
                     throw new ExpressionParsingException(
                         'Cannot apply SUBSTRING(str, num, num) function: Expected String, Number and Number parameters but received "' +
-                        getValueReferenceType(ref1) +
-                        '","' +
-                        getValueReferenceType(ref2) +
-                        '","' +
-                        getValueReferenceType(ref3) +
-                        '".'
+                            getValueReferenceType(ref1) +
+                            '","' +
+                            getValueReferenceType(ref2) +
+                            '","' +
+                            getValueReferenceType(ref3) +
+                            '".'
                     );
                 }
 
@@ -1527,12 +1457,12 @@ global class RegExps {
                 ) {
                     throw new ExpressionParsingException(
                         'Cannot apply ' +
-                        (isLeft ? 'LEFT' : 'RIGHT') +
-                        '(str, num) function: Expected String, Number parameters but received "' +
-                        getValueReferenceType(ref1) +
-                        '","' +
-                        getValueReferenceType(ref2) +
-                        '".'
+                            (isLeft ? 'LEFT' : 'RIGHT') +
+                            '(str, num) function: Expected String, Number parameters but received "' +
+                            getValueReferenceType(ref1) +
+                            '","' +
+                            getValueReferenceType(ref2) +
+                            '".'
                     );
                 }
 
@@ -1570,10 +1500,10 @@ global class RegExps {
                 ) {
                     throw new ExpressionParsingException(
                         'Cannot apply ISPICKVAL(str, str) function: Expected String, String parameters but received "' +
-                        getValueReferenceType(ref1) +
-                        '","' +
-                        getValueReferenceType(ref2) +
-                        '".'
+                            getValueReferenceType(ref1) +
+                            '","' +
+                            getValueReferenceType(ref2) +
+                            '".'
                     );
                 }
 
@@ -1594,10 +1524,10 @@ global class RegExps {
                 ) {
                     throw new ExpressionParsingException(
                         'Cannot apply CONTAINS(str, subStr) function: Expected String and String parameters but received "' +
-                        getValueReferenceType(ref1) +
-                        '","' +
-                        getValueReferenceType(ref2) +
-                        '".'
+                            getValueReferenceType(ref1) +
+                            '","' +
+                            getValueReferenceType(ref2) +
+                            '".'
                     );
                 }
 
@@ -1617,10 +1547,10 @@ global class RegExps {
                 ) {
                     throw new ExpressionParsingException(
                         'Cannot apply FIND(str, str) function: Expected String, String parameters but received "' +
-                        getValueReferenceType(ref1) +
-                        '","' +
-                        getValueReferenceType(ref2) +
-                        '".'
+                            getValueReferenceType(ref1) +
+                            '","' +
+                            getValueReferenceType(ref2) +
+                            '".'
                     );
                 }
 
@@ -1636,8 +1566,8 @@ global class RegExps {
                 if (!ref1.contains('N') && !ref1.contains('S')) {
                     throw new ExpressionParsingException(
                         'Cannot apply LOWER(str) function: Expected String, String parameters but received "' +
-                        getValueReferenceType(ref1) +
-                        '".'
+                            getValueReferenceType(ref1) +
+                            '".'
                     );
                 }
 
@@ -1664,12 +1594,12 @@ global class RegExps {
                 ) {
                     throw new ExpressionParsingException(
                         'Cannot apply SUBSTITUTE(str, str, str) function: Expected String, Number and Number parameters but received "' +
-                        getValueReferenceType(ref1) +
-                        '","' +
-                        getValueReferenceType(ref2) +
-                        '","' +
-                        getValueReferenceType(ref3) +
-                        '".'
+                            getValueReferenceType(ref1) +
+                            '","' +
+                            getValueReferenceType(ref2) +
+                            '","' +
+                            getValueReferenceType(ref3) +
+                            '".'
                     );
                 }
 
@@ -1687,8 +1617,8 @@ global class RegExps {
                 if (!ref1.contains('N') && !ref1.contains('S')) {
                     throw new ExpressionParsingException(
                         'Cannot apply TRIM(str) function: Expected String parameters but received "' +
-                        getValueReferenceType(ref1) +
-                        '".'
+                            getValueReferenceType(ref1) +
+                            '".'
                     );
                 }
 
@@ -1701,8 +1631,8 @@ global class RegExps {
                 if (!ref1.contains('N') && !ref1.contains('S')) {
                     throw new ExpressionParsingException(
                         'Cannot apply VALUE(str) function: Expected String parameters but received "' +
-                        getValueReferenceType(ref1) +
-                        '".'
+                            getValueReferenceType(ref1) +
+                            '".'
                     );
                 }
 
@@ -1713,8 +1643,8 @@ global class RegExps {
                 } catch (Exception ex) {
                     throw new ExpressionParsingException(
                         'Cannot apply VALUE(str) function: Expected String parameters but received "' +
-                        getValueReferenceType(ref1) +
-                        '".'
+                            getValueReferenceType(ref1) +
+                            '".'
                     );
                 }
             } else if (m.group().startsWith('CONCATENATE')) {
@@ -1728,10 +1658,10 @@ global class RegExps {
                 ) {
                     throw new ExpressionParsingException(
                         'Cannot apply CONCATENATE(str, str) function: Expected String, String parameters but received "' +
-                        getValueReferenceType(ref1) +
-                        '","' +
-                        getValueReferenceType(ref2) +
-                        '".'
+                            getValueReferenceType(ref1) +
+                            '","' +
+                            getValueReferenceType(ref2) +
+                            '".'
                     );
                 }
 
@@ -1780,16 +1710,16 @@ global class RegExps {
                 ) {
                     throw new ExpressionParsingException(
                         iterativePlaceholderDiscover(rightOperand, context) +
-                        ' is not a string in ' +
-                        iterativePlaceholderDiscover(m.group(0), context)
+                            ' is not a string in ' +
+                            iterativePlaceholderDiscover(m.group(0), context)
                     );
                 }
 
                 if (operator != '_O2O_' && operator != '_O5O_') {
                     throw new ExpressionParsingException(
                         operator +
-                        ' is not a valid string compare operator in' +
-                        iterativePlaceholderDiscover(m.group(0), context)
+                            ' is not a valid string compare operator in' +
+                            iterativePlaceholderDiscover(m.group(0), context)
                     );
                 }
 
@@ -1812,8 +1742,8 @@ global class RegExps {
                 ) {
                     throw new ExpressionParsingException(
                         iterativePlaceholderDiscover(rightOperand, context) +
-                        ' is not a number in ' +
-                        m.group(0)
+                            ' is not a number in ' +
+                            m.group(0)
                     );
                 }
 
@@ -1854,16 +1784,16 @@ global class RegExps {
                 ) {
                     throw new ExpressionParsingException(
                         iterativePlaceholderDiscover(rightOperand, context) +
-                        ' is not a boolean in ' +
-                        m.group(0)
+                            ' is not a boolean in ' +
+                            m.group(0)
                     );
                 }
 
                 if (operator != '_O2O_' && operator != '_O5O_') {
                     throw new ExpressionParsingException(
                         operator +
-                        ' is not a valid boolean compare operator in' +
-                        m.group(0)
+                            ' is not a valid boolean compare operator in' +
+                            m.group(0)
                     );
                 }
 
@@ -1885,8 +1815,8 @@ global class RegExps {
                 ) {
                     throw new ExpressionParsingException(
                         rightOperand +
-                        ' is not a date/datetime in ' +
-                        m.group(0)
+                            ' is not a date/datetime in ' +
+                            m.group(0)
                     );
                 }
 
@@ -1935,8 +1865,8 @@ global class RegExps {
             } else {
                 throw new ExpressionParsingException(
                     iterativePlaceholderDiscover(leftOperand, context) +
-                    ' not found in ' +
-                    iterativePlaceholderDiscover(m.group(0), context)
+                        ' not found in ' +
+                        iterativePlaceholderDiscover(m.group(0), context)
                 );
             }
         }
@@ -2178,10 +2108,10 @@ global class RegExps {
     global static void evaluateBooleanExpressions(ParserContext context) {
         Pattern myPattern = pattern.compile(
             '(AND|OR)\\s*\\(\\s*' +
-            EXP_OPERAND +
-            '(\\s*,\\s*' +
-            EXP_OPERAND +
-            ')+\\s*\\)'
+                EXP_OPERAND +
+                '(\\s*,\\s*' +
+                EXP_OPERAND +
+                ')+\\s*\\)'
         );
         Matcher m = myPattern.matcher(context.outputString);
 
@@ -2197,9 +2127,9 @@ global class RegExps {
                 if (!operand.contains('B')) {
                     throw new ExpressionParsingException(
                         'Expected boolean expression on ' +
-                        operator +
-                        ' operand in ' +
-                        iterativePlaceholderDiscover(m2.group(0), context)
+                            operator +
+                            ' operand in ' +
+                            iterativePlaceholderDiscover(m2.group(0), context)
                     );
                 }
 
@@ -2218,9 +2148,7 @@ global class RegExps {
         }
 
         myPattern = pattern.compile(
-            '(NOT)\\s*\\(\\s*' +
-            EXP_OPERAND +
-            '\\s*\\)'
+            '(NOT)\\s*\\(\\s*' + EXP_OPERAND + '\\s*\\)'
         );
         m = myPattern.matcher(context.outputString);
 
@@ -2231,9 +2159,9 @@ global class RegExps {
             if (!rightOperand.contains('B')) {
                 throw new ExpressionParsingException(
                     'Expected boolean expression on ' +
-                    operator +
-                    ' operand in ' +
-                    iterativePlaceholderDiscover(m.group(0), context)
+                        operator +
+                        ' operand in ' +
+                        iterativePlaceholderDiscover(m.group(0), context)
                 );
             }
 
@@ -2244,10 +2172,10 @@ global class RegExps {
 
         myPattern = pattern.compile(
             '(XOR)\\s*\\(\\s*' +
-            EXP_OPERAND +
-            '\\s*,\\s*' +
-            EXP_OPERAND +
-            '\\s*\\)'
+                EXP_OPERAND +
+                '\\s*,\\s*' +
+                EXP_OPERAND +
+                '\\s*\\)'
         );
         m = myPattern.matcher(context.outputString);
 
@@ -2259,9 +2187,9 @@ global class RegExps {
             if (!rightOperand.contains('B') || !leftOperand.contains('B')) {
                 throw new ExpressionParsingException(
                     'Expected boolean expressions on ' +
-                    operator +
-                    ' operands in ' +
-                    iterativePlaceholderDiscover(m.group(0), context)
+                        operator +
+                        ' operands in ' +
+                        iterativePlaceholderDiscover(m.group(0), context)
                 );
             }
 
@@ -2272,9 +2200,7 @@ global class RegExps {
         }
 
         myPattern = pattern.compile(
-            EXP_OPERAND +
-            ' (&&|\\^\\^|\\|\\|) ' +
-            EXP_OPERAND
+            EXP_OPERAND + ' (&&|\\^\\^|\\|\\|) ' + EXP_OPERAND
         );
         m = myPattern.matcher(context.outputString);
 
@@ -2286,18 +2212,18 @@ global class RegExps {
             if (!leftOperand.contains('B')) {
                 throw new ExpressionParsingException(
                     'Expected boolean expression on left ' +
-                    operator +
-                    ' operand in ' +
-                    iterativePlaceholderDiscover(m.group(0), context)
+                        operator +
+                        ' operand in ' +
+                        iterativePlaceholderDiscover(m.group(0), context)
                 );
             }
 
             if (!rightOperand.contains('B')) {
                 throw new ExpressionParsingException(
                     'Expected boolean expression on right ' +
-                    operator +
-                    ' operand in ' +
-                    iterativePlaceholderDiscover(m.group(0), context)
+                        operator +
+                        ' operand in ' +
+                        iterativePlaceholderDiscover(m.group(0), context)
                 );
             }
 
@@ -2328,9 +2254,9 @@ global class RegExps {
             if (!rightOperand.contains('B')) {
                 throw new ExpressionParsingException(
                     'Expected boolean expression on ' +
-                    operator +
-                    ' operand in ' +
-                    iterativePlaceholderDiscover(m.group(0), context)
+                        operator +
+                        ' operand in ' +
+                        iterativePlaceholderDiscover(m.group(0), context)
                 );
             }
 
@@ -2371,8 +2297,8 @@ global class RegExps {
             if (!Pattern.matches(EXP_NUMBER_TOKEN, result)) {
                 throw new ExpressionParsingException(
                     'Formula output is NUMBER. Got ' +
-                    context.outputString +
-                    ' instead'
+                        context.outputString +
+                        ' instead'
                 );
             }
 
@@ -2399,8 +2325,8 @@ global class RegExps {
                 }
                 throw new ExpressionParsingException(
                     'Formula output is BOOLEAN. Got ' +
-                    context.outputString +
-                    ' instead'
+                        context.outputString +
+                        ' instead'
                 );
             }
 
@@ -2413,8 +2339,8 @@ global class RegExps {
             if (!Pattern.matches(EXP_STRING_TOKEN, result)) {
                 throw new ExpressionParsingException(
                     'Formula output is STRING. Got ' +
-                    context.outputString +
-                    ' instead'
+                        context.outputString +
+                        ' instead'
                 );
             }
 
@@ -2427,8 +2353,8 @@ global class RegExps {
             if (!Pattern.matches(EXP_DATETIME_TOKEN, result)) {
                 throw new ExpressionParsingException(
                     'Formula output is DATETIME. Got ' +
-                    context.outputString +
-                    ' instead'
+                        context.outputString +
+                        ' instead'
                 );
             }
 
@@ -2441,8 +2367,8 @@ global class RegExps {
             if (!Pattern.matches(EXP_DATETIME_TOKEN, result)) {
                 throw new ExpressionParsingException(
                     'Formula output is DATE. Got ' +
-                    context.outputString +
-                    ' instead'
+                        context.outputString +
+                        ' instead'
                 );
             }
 

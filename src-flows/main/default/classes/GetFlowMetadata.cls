@@ -28,56 +28,53 @@ global with sharing class GetFlowMetadata {
         return outputs;
     }
 
-    @SuppressWarnings('PMD.ApexSOQLInjection')
     private static OutputParameters invoke(InputParameters input) {
-        // Find flow
-        String query = getQuery(input);
-        FlowDefinitionView flow = Database.query(query);
-        // Return output
-        OutputParameters output = new OutputParameters();
-        output.flowApiName = flow.ApiName;
-        output.flowDefinitionId = flow.DurableId;
-        output.activeVersionId = flow.ActiveVersionId;
-        output.description = flow.Description;
-        output.label = flow.Label;
-        output.latestVersionId = flow.LatestVersionId;
-        output.namespacePrefix = flow.NamespacePrefix;
-        output.flowType = flow.ProcessType;
-        return output;
-    }
-
-    @TestVisible
-    private static String getQuery(InputParameters input) {
         // Get and validate input
-        String apiName = input.flowApiName == null
-            ? null
-            : String.escapeSingleQuotes(input.flowApiName);
-        String definitionId = input.flowDefinitionId == null
-            ? null
-            : String.escapeSingleQuotes(input.flowDefinitionId);
+        String apiName = input.flowApiName;
+        String definitionId = input.flowDefinitionId;
         if (apiName == null && definitionId == null) {
             throw new InvocableException(
                 'At least one of apiName or definitionId must be provided.'
             );
         }
-        // Build flow query
+        // Find flow
+        String query = getQuery(apiName, definitionId);
+        FlowDefinitionView[] flows = Database.query(query);
+        if (flows.isEmpty()) {
+            throw new FlowNotfoundException(
+                'Failed to find flow matching ' + input
+            );
+        }
+        // Return output
+        OutputParameters output = new OutputParameters();
+        output.flowApiName = flows[0].ApiName;
+        output.flowDefinitionId = flows[0].DurableId;
+        output.activeVersionId = flows[0].ActiveVersionId;
+        output.description = flows[0].Description;
+        output.label = flows[0].Label;
+        output.latestVersionId = flows[0].LatestVersionId;
+        output.namespacePrefix = flows[0].NamespacePrefix;
+        output.flowType = flows[0].ProcessType;
+        return output;
+    }
+
+    @TestVisible
+    private static String getQuery(String apiName, String definitionId) {
         String query = BASE_QUERY;
         if (apiName != null && definitionId != null) {
-            query +=
-                ' WHERE DurableId = \'' +
-                definitionId +
-                '\' AND ApiName = \'' +
-                apiName +
-                '\'';
+            query += ' WHERE DurableId = :definitionId AND ApiName = :apiName';
         } else if (apiName != null) {
-            query += ' WHERE ApiName = \'' + apiName + '\'';
+            query += ' WHERE ApiName = :apiName';
         } else /** definitionId != null */ {
-            query += ' WHERE DurableId = \'' + definitionId + '\'';
+            query += ' WHERE DurableId = :definitionId';
         }
-        return query;
+        return query + ' LIMIT 1';
     }
 
     global class InvocableException extends Exception {
+    }
+
+    global class FlowNotfoundException extends Exception {
     }
 
     /**

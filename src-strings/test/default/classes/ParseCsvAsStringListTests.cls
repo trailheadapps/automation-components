@@ -25,12 +25,12 @@ global class ParseCsvAsStringListTests {
             inputs
         );
 
-        System.assertEquals(1, outputs.size());
+        Assert.areEqual(1, outputs.size());
         ParseCsvAsStringList.OutputParameters output = outputs[0];
         String[] strings = output.strings;
-        System.assertEquals(ITEMS_TRIMMED.size(), strings.size());
+        Assert.areEqual(ITEMS_TRIMMED.size(), strings.size());
         for (Integer i = 0; i < ITEMS_TRIMMED.size(); i++) {
-            System.assertEquals(ITEMS_TRIMMED[i], strings[i]);
+            Assert.areEqual(ITEMS_TRIMMED[i], strings[i]);
         }
     }
 
@@ -47,12 +47,12 @@ global class ParseCsvAsStringListTests {
             inputs
         );
 
-        System.assertEquals(1, outputs.size());
+        Assert.areEqual(1, outputs.size());
         ParseCsvAsStringList.OutputParameters output = outputs[0];
         String[] strings = output.strings;
-        System.assertEquals(ITEMS_TRIMMED.size(), strings.size());
+        Assert.areEqual(ITEMS_TRIMMED.size(), strings.size());
         for (Integer i = 0; i < ITEMS_TRIMMED.size(); i++) {
-            System.assertEquals(ITEMS_TRIMMED[i], strings[i]);
+            Assert.areEqual(ITEMS_TRIMMED[i], strings[i]);
         }
     }
 
@@ -69,12 +69,12 @@ global class ParseCsvAsStringListTests {
             inputs
         );
 
-        System.assertEquals(1, outputs.size());
+        Assert.areEqual(1, outputs.size());
         ParseCsvAsStringList.OutputParameters output = outputs[0];
         String[] strings = output.strings;
-        System.assertEquals(ITEMS_UNTRIMMED.size(), strings.size());
+        Assert.areEqual(ITEMS_UNTRIMMED.size(), strings.size());
         for (Integer i = 0; i < ITEMS_UNTRIMMED.size(); i++) {
-            System.assertEquals(ITEMS_UNTRIMMED[i], strings[i]);
+            Assert.areEqual(ITEMS_UNTRIMMED[i], strings[i]);
         }
     }
 }

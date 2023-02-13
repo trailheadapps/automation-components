@@ -13,39 +13,12 @@
                         class="slds-form-element__control slds-input-has-icon slds-input-has-icon slds-input-has-icon_right"
                         role="none"
                     >
-                        <template if:false={displayPill}>
-                            <div onkeyup={handleSearchKeyUp}>
-                                <label
-                                    class="slds-form-element__label"
-                                    onclick={toggleMenu}
-                                    ><abbr
-                                        if:true={required}
-                                        class="slds-required"
-                                        title="required"
-                                        >*</abbr
-                                    >{label}</label
-                                >
-                                <lightning-input
-                                    class="value-input"
-                                    name="searchText"
-                                    type="search"
-                                    required={required}
-                                    data-input-name={name}
-                                    data-id="userinput"
-                                    variant="label-hidden"
-                                    value={_value}
-                                    onchange={handleSearchField}
-                                    onkeydown={handleKeyDown}
-                                    onclick={handleOpenOptions}
-                                ></lightning-input>
-                            </div>
-                        </template>
-                        <template if:true={displayPill}>
+                        <template lwc:if={displayPill}>
                             <label
                                 class="slds-form-element__label slds-no-flex"
                                 onclick={toggleMenu}
                                 ><abbr
-                                    if:true={required}
+                                    lwc:if={required}
                                     class="slds-required"
                                     title="required"
                                     >*</abbr
@@ -69,6 +42,33 @@
                                 </lightning-pill>
                             </div>
                         </template>
+                        <template lwc:else>
+                            <div onkeyup={handleSearchKeyUp}>
+                                <label
+                                    class="slds-form-element__label"
+                                    onclick={toggleMenu}
+                                    ><abbr
+                                        lwc:if={required}
+                                        class="slds-required"
+                                        title="required"
+                                        >*</abbr
+                                    >{label}</label
+                                >
+                                <lightning-input
+                                    class="value-input"
+                                    name="searchText"
+                                    type="search"
+                                    required={required}
+                                    data-input-name={name}
+                                    data-id="userinput"
+                                    variant="label-hidden"
+                                    value={_value}
+                                    onchange={handleSearchField}
+                                    onkeydown={handleKeyDown}
+                                    onclick={handleOpenOptions}
+                                ></lightning-input>
+                            </div>
+                        </template>
                     </div>
 
                     <div
@@ -80,7 +80,7 @@
                             class="slds-listbox slds-listbox_vertical"
                             role="presentation"
                         >
-                            <template if:false={_options.length}>
+                            <template lwc:if={hasNoOptions}>
                                 <div class="slds-var-p-around_small">
                                     No data available
                                 </div>
@@ -132,7 +132,7 @@
                                                 >
                                             </span>
                                             <lightning-icon
-                                                if:true={option.isObject}
+                                                lwc:if={option.isObject}
                                                 data-option-value={option.value}
                                                 data-object-type={option.objectType}
                                                 icon-name="utility:chevronright"
@@ -148,7 +148,7 @@
                 </div>
             </div>
         </div>
-        <template if:true={hasError}>
+        <template lwc:if={hasError}>
             <div class="slds-form-element__help">
                 This Flow doesn't have a defined resource with that name. If
                 you're trying to enter a literal value, don't use &#123;!&#125;

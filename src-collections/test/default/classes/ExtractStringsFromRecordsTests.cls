@@ -30,8 +30,8 @@ global class ExtractStringsFromRecordsTests {
             inputs
         );
 
-        System.assertEquals(ACCOUNT_NUMBERS, outputs[0].values);
-        System.assertEquals(
+        Assert.areEqual(ACCOUNT_NUMBERS, outputs[0].values);
+        Assert.areEqual(
             String.join(ACCOUNT_NUMBERS, ','),
             outputs[0].joinedValues
         );
@@ -51,7 +51,7 @@ global class ExtractStringsFromRecordsTests {
             inputs
         );
 
-        System.assertEquals(UNIQUE_ACCOUNT_NUMBERS, outputs[0].values);
+        Assert.areEqual(UNIQUE_ACCOUNT_NUMBERS, outputs[0].values);
     }
 
     @isTest
@@ -68,7 +68,7 @@ global class ExtractStringsFromRecordsTests {
             inputs
         );
 
-        System.assertEquals(
+        Assert.areEqual(
             String.join(ACCOUNT_NUMBERS, DELIMITER),
             outputs[0].joinedValues
         );
