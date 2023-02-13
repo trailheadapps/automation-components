@@ -67,11 +67,11 @@ jobs:
         steps:
             # Checkout the source code
             - name: 'Checkout source code'
-              uses: actions/checkout@v2
+              uses: actions/checkout@v3
 
             # Run PMD scan
             - name: 'Run PMD scan'
-              uses: pmd/pmd-github-action@v1
+              uses: pmd/pmd-github-action@v1.3.0
               id: pmd
               with:
                   rulesets: 'ruleset.xml'
@@ -84,11 +84,10 @@ jobs:
             # Install Salesforce CLI
             - name: 'Install Salesforce CLI'
               run: |
-                  wget https://developer.salesforce.com/media/salesforce-cli/sfdx/channels/stable/sfdx-linux-x64.tar.xz
-                  mkdir ~/sfdx
-                  tar xJf sfdx-linux-x64.tar.xz -C ~/sfdx --strip-components 1
-                  echo "$HOME/sfdx/bin" >> $GITHUB_PATH
-                  ~/sfdx/bin/sfdx version
+                  npm install sfdx-cli --location=global
+                  nodeInstallPath=$(npm config get prefix)
+                  echo "$nodeInstallPath/bin" >> $GITHUB_PATH
+                  sfdx --version
 
             # Store secret for dev hub
             - name: 'Populate auth file with DEVHUB_SFDX_URL secret'
@@ -133,7 +132,7 @@ jobs:
 
             # Upload code coverage data
             - name: 'Upload code coverage for Apex to Codecov.io'
-              uses: codecov/codecov-action@v2.0.2
+              uses: codecov/codecov-action@v3
               with:
                   flags: Apex
 
@@ -205,7 +204,7 @@ jobs:
                   if (( ${#changedPackages[@]} > 0 )); then
                       changedPackagesJson=$(printf '%s\n' "${changedPackages[@]}" | jq -R . | jq -c -s .)
                   fi
-                  echo "::set-output name=changes::$changedPackagesJson"
+                  echo "changes=$changedPackagesJson" >> $GITHUB_OUTPUT
 
             # Trigger packaging workflow if needed
             - name: 'Trigger packaging workflow if needed'
