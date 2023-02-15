@@ -1,92 +1,93 @@
 {
-    "packageDirectories": [
-        {
-            "path": "src-apex-formula-evaluator",
-            "package": "AC - Apex Formula Evaluator",
-            "versionName": "Spring '23 release",
-            "versionNumber": "57.0.0.NEXT",
-            "ancestorVersion": "HIGHEST"
-        },
-        {
-            "default": true,
-            "path": "src-collections",
-            "package": "AC - Collections",
-            "versionName": "Spring '23 release",
-            "versionNumber": "57.0.0.NEXT",
-            "ancestorVersion": "HIGHEST"
-        },
-        {
-            "path": "src-data",
-            "package": "AC - Data",
-            "versionName": "Spring '23 release",
-            "versionNumber": "57.0.0.NEXT",
-            "ancestorVersion": "HIGHEST"
-        },
-        {
-            "path": "src-flows",
-            "package": "AC - Flows",
-            "versionName": "Spring '23 release",
-            "versionNumber": "57.0.0.NEXT",
-            "ancestorVersion": "HIGHEST"
-        },
-        {
-            "path": "src-messaging",
-            "package": "AC - Messaging",
-            "versionName": "Spring '23 release",
-            "versionNumber": "57.0.0.NEXT",
-            "ancestorVersion": "HIGHEST"
-        },
-        {
-            "path": "src-security",
-            "package": "AC - Security",
-            "versionName": "Spring '23 release",
-            "versionNumber": "57.0.0.NEXT",
-            "ancestorVersion": "HIGHEST"
-        },
-        {
-            "path": "src-strings",
-            "package": "AC - Strings",
-            "versionName": "Spring '23 release",
-            "versionNumber": "57.0.0.NEXT",
-            "ancestorVersion": "HIGHEST"
-        },
-        {
-            "path": "src-ui",
-            "package": "AC - UI",
-            "versionName": "Spring '23 release",
-            "versionNumber": "57.0.0.NEXT",
-            "ancestorVersion": "HIGHEST"
-        },
-        {
-            "path": "src-utilities",
-            "package": "AC - Utilities",
-            "versionName": "Spring '23 release",
-            "versionNumber": "57.0.0.NEXT",
-            "ancestorVersion": "HIGHEST"
-        }
-    ],
-    "namespace": "",
-    "sfdcLoginUrl": "https://login.salesforce.com",
-    "sourceApiVersion": "57.0",
-    "packageAliases": {
-        "AC - Apex Formula Evaluator": "0Ho5w000000TN4OCAW",
-        "AC - Collections": "0Ho5w000000TN3kCAG",
-        "AC - Data": "0Ho5w000000TN3pCAG",
-        "AC - Flows": "0Ho5w000000TN3uCAG",
-        "AC - Messaging": "0Ho5w000000TN3zCAG",
-        "AC - Security": "0Ho5w000000TN44CAG",
-        "AC - Strings": "0Ho5w000000TN49CAG",
-        "AC - UI": "0Ho5w000000TN4ECAW",
-        "AC - Utilities": "0Ho5w000000TN4JCAW",
-        "AC - Security@54.0.0-1": "04t5w000005hjJnAAI",
-        "AC - UI@54.0.0-1": "04t5w000005hjJOAAY",
-        "AC - Collections@54.0.0-1": "04t5w000005hjJYAAY",
-        "AC - Flows@54.0.0-1": "04t5w000005hjJiAAI",
-        "AC - Apex Formula Evaluator@54.0.0-1": "04t5w000005hjJdAAI",
-        "AC - Data@54.0.0-1": "04t5w000005hjJEAAY",
-        "AC - Strings@54.0.0-1": "04t5w000005hjJ9AAI",
-        "AC - Utilities@54.0.0-1": "04t5w000005hjJTAAY",
-        "AC - Messaging@54.0.0-1": "04t5w000005hjJJAAY",
-        "AC - Collections@54.1.0-1": "04t5w000005hje9AAA"
+  "packageDirectories": [
+    {
+      "path": "src-apex-formula-evaluator",
+      "package": "AC - Apex Formula Evaluator",
+      "versionName": "Spring '23 release",
+      "versionNumber": "57.0.0.NEXT",
+      "ancestorVersion": "HIGHEST"
+    },
+    {
+      "default": true,
+      "path": "src-collections",
+      "package": "AC - Collections",
+      "versionName": "Spring '23 release",
+      "versionNumber": "57.0.0.NEXT",
+      "ancestorVersion": "HIGHEST"
+    },
+    {
+      "path": "src-data",
+      "package": "AC - Data",
+      "versionName": "Spring '23 release",
+      "versionNumber": "57.0.0.NEXT",
+      "ancestorVersion": "HIGHEST"
+    },
+    {
+      "path": "src-flows",
+      "package": "AC - Flows",
+      "versionName": "Spring '23 release",
+      "versionNumber": "57.0.0.NEXT",
+      "ancestorVersion": "HIGHEST"
+    },
+    {
+      "path": "src-messaging",
+      "package": "AC - Messaging",
+      "versionName": "Spring '23 release",
+      "versionNumber": "57.0.0.NEXT",
+      "ancestorVersion": "HIGHEST"
+    },
+    {
+      "path": "src-security",
+      "package": "AC - Security",
+      "versionName": "Spring '23 release",
+      "versionNumber": "57.0.0.NEXT",
+      "ancestorVersion": "HIGHEST"
+    },
+    {
+      "path": "src-strings",
+      "package": "AC - Strings",
+      "versionName": "Spring '23 release",
+      "versionNumber": "57.0.0.NEXT",
+      "ancestorVersion": "HIGHEST"
+    },
+    {
+      "path": "src-ui",
+      "package": "AC - UI",
+      "versionName": "Spring '23 release",
+      "versionNumber": "57.0.0.NEXT",
+      "ancestorVersion": "HIGHEST"
+    },
+    {
+      "path": "src-utilities",
+      "package": "AC - Utilities",
+      "versionName": "Spring '23 release",
+      "versionNumber": "57.0.0.NEXT",
+      "ancestorVersion": "HIGHEST"
     }
+  ],
+  "namespace": "",
+  "sfdcLoginUrl": "https://login.salesforce.com",
+  "sourceApiVersion": "57.0",
+  "packageAliases": {
+    "AC - Apex Formula Evaluator": "0Ho5w000000TN4OCAW",
+    "AC - Collections": "0Ho5w000000TN3kCAG",
+    "AC - Data": "0Ho5w000000TN3pCAG",
+    "AC - Flows": "0Ho5w000000TN3uCAG",
+    "AC - Messaging": "0Ho5w000000TN3zCAG",
+    "AC - Security": "0Ho5w000000TN44CAG",
+    "AC - Strings": "0Ho5w000000TN49CAG",
+    "AC - UI": "0Ho5w000000TN4ECAW",
+    "AC - Utilities": "0Ho5w000000TN4JCAW",
+    "AC - Security@54.0.0-1": "04t5w000005hjJnAAI",
+    "AC - UI@54.0.0-1": "04t5w000005hjJOAAY",
+    "AC - Collections@54.0.0-1": "04t5w000005hjJYAAY",
+    "AC - Flows@54.0.0-1": "04t5w000005hjJiAAI",
+    "AC - Apex Formula Evaluator@54.0.0-1": "04t5w000005hjJdAAI",
+    "AC - Data@54.0.0-1": "04t5w000005hjJEAAY",
+    "AC - Strings@54.0.0-1": "04t5w000005hjJ9AAI",
+    "AC - Utilities@54.0.0-1": "04t5w000005hjJTAAY",
+    "AC - Messaging@54.0.0-1": "04t5w000005hjJJAAY",
+    "AC - Collections@54.1.0-1": "04t5w000005hje9AAA",
+    "AC - Messaging@57.0.0-1": "04t5w000005hkOZAAY"
+  }
 }
