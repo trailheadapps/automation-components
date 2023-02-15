@@ -1,70 +1,70 @@
 {
-    "packageDirectories": [
-        {
-            "path": "src-apex-formula-evaluator",
-            "package": "AC - Apex Formula Evaluator",
-            "versionName": "Spring '23 release",
-            "versionNumber": "57.0.0.NEXT",
-            "ancestorVersion": "HIGHEST"
-        },
-        {
-            "default": true,
-            "path": "src-collections",
-            "package": "AC - Collections",
-            "versionName": "Spring '23 release",
-            "versionNumber": "57.0.0.NEXT",
-            "ancestorVersion": "HIGHEST"
-        },
-        {
-            "path": "src-data",
-            "package": "AC - Data",
-            "versionName": "Spring '23 release",
-            "versionNumber": "57.0.0.NEXT",
-            "ancestorVersion": "HIGHEST"
-        },
-        {
-            "path": "src-flows",
-            "package": "AC - Flows",
-            "versionName": "Spring '23 release",
-            "versionNumber": "57.0.0.NEXT",
-            "ancestorVersion": "HIGHEST"
-        },
-        {
-            "path": "src-messaging",
-            "package": "AC - Messaging",
-            "versionName": "Spring '23 release",
-            "versionNumber": "57.0.0.NEXT",
-            "ancestorVersion": "HIGHEST"
-        },
-        {
-            "path": "src-security",
-            "package": "AC - Security",
-            "versionName": "Spring '23 release",
-            "versionNumber": "57.0.0.NEXT",
-            "ancestorVersion": "HIGHEST"
-        },
-        {
-            "path": "src-strings",
-            "package": "AC - Strings",
-            "versionName": "Spring '23 release",
-            "versionNumber": "57.0.0.NEXT",
-            "ancestorVersion": "HIGHEST"
-        },
-        {
-            "path": "src-ui",
-            "package": "AC - UI",
-            "versionName": "Spring '23 release",
-            "versionNumber": "57.0.0.NEXT",
-            "ancestorVersion": "HIGHEST"
-        },
-        {
-            "path": "src-utilities",
-            "package": "AC - Utilities",
-            "versionName": "Spring '23 release",
-            "versionNumber": "57.0.0.NEXT",
-            "ancestorVersion": "HIGHEST"
-        }
-    ],
+  "packageDirectories": [
+    {
+      "path": "src-apex-formula-evaluator",
+      "package": "AC - Apex Formula Evaluator",
+      "versionName": "Spring '23 release",
+      "versionNumber": "57.0.0.NEXT",
+      "ancestorVersion": "HIGHEST"
+    },
+    {
+      "default": true,
+      "path": "src-collections",
+      "package": "AC - Collections",
+      "versionName": "Spring '23 release",
+      "versionNumber": "57.0.0.NEXT",
+      "ancestorVersion": "HIGHEST"
+    },
+    {
+      "path": "src-data",
+      "package": "AC - Data",
+      "versionName": "Spring '23 release",
+      "versionNumber": "57.0.0.NEXT",
+      "ancestorVersion": "HIGHEST"
+    },
+    {
+      "path": "src-flows",
+      "package": "AC - Flows",
+      "versionName": "Spring '23 release",
+      "versionNumber": "57.0.0.NEXT",
+      "ancestorVersion": "HIGHEST"
+    },
+    {
+      "path": "src-messaging",
+      "package": "AC - Messaging",
+      "versionName": "Spring '23 release",
+      "versionNumber": "57.0.0.NEXT",
+      "ancestorVersion": "HIGHEST"
+    },
+    {
+      "path": "src-security",
+      "package": "AC - Security",
+      "versionName": "Spring '23 release",
+      "versionNumber": "57.0.0.NEXT",
+      "ancestorVersion": "HIGHEST"
+    },
+    {
+      "path": "src-strings",
+      "package": "AC - Strings",
+      "versionName": "Spring '23 release",
+      "versionNumber": "57.0.0.NEXT",
+      "ancestorVersion": "HIGHEST"
+    },
+    {
+      "path": "src-ui",
+      "package": "AC - UI",
+      "versionName": "Spring '23 release",
+      "versionNumber": "57.0.0.NEXT",
+      "ancestorVersion": "HIGHEST"
+    },
+    {
+      "path": "src-utilities",
+      "package": "AC - Utilities",
+      "versionName": "Spring '23 release",
+      "versionNumber": "57.0.0.NEXT",
+      "ancestorVersion": "HIGHEST"
+    }
+  ],
   "namespace": "",
   "sfdcLoginUrl": "https://login.salesforce.com",
   "sourceApiVersion": "57.0",
@@ -90,6 +90,7 @@
     "AC - Collections@54.1.0-1": "04t5w000005hje9AAA",
     "AC - Data@57.0.0-1": "04t5w000005hkOUAAY",
     "AC - Messaging@57.0.0-1": "04t5w000005hkOZAAY",
-    "AC - Apex Formula Evaluator@57.0.0-1": "04t5w000005hkOPAAY"
+    "AC - Apex Formula Evaluator@57.0.0-1": "04t5w000005hkOPAAY",
+    "AC - Security@57.0.0-2": "04t5w000005hkOoAAI"
   }
 }
