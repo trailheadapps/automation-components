@@ -33,7 +33,7 @@ global class GetFlowMetadataTests {
     }
 
     @isTest
-    global static void bulkInvoke_fails_when_params_are_missing() {
+    global static void getQuery_fails_when_params_are_missing() {
         List<GetFlowMetadata.InputParameters> inputs = new List<GetFlowMetadata.InputParameters>{
             new GetFlowMetadata.InputParameters()
         };
