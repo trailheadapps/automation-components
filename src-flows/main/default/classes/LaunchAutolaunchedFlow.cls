@@ -101,17 +101,17 @@ global class LaunchAutolaunchedFlow {
         @InvocableVariable
         global String namespace;
         @InvocableVariable
-        public String param1Name;
+        global String param1Name;
         @InvocableVariable
-        public String param1Value;
+        global String param1Value;
         @InvocableVariable
-        public String param2Name;
+        global String param2Name;
         @InvocableVariable
-        public String param2Value;
+        global String param2Value;
         @InvocableVariable
-        public String param3Name;
+        global String param3Name;
         @InvocableVariable
-        public String param3Value;
+        global String param3Value;
     }
 
     /**
