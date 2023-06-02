@@ -64,7 +64,7 @@ Follow this set of instructions if you want to deploy the components to your pro
 1. If you haven't already done so, authorize your hub org and provide it with an alias (**myhuborg** in the command below):
 
     ```
-    sfdx auth:web:login -d -a myhuborg
+    sf org login web -d -a myhuborg
     ```
 
 1. Clone this repository:
@@ -77,19 +77,19 @@ Follow this set of instructions if you want to deploy the components to your pro
 1. Create a scratch org and provide it with an alias (**automation** in the command below):
 
     ```
-    sfdx force:org:create -s -f config/project-scratch-def.json -c -a automation
+    sf org create scratch -d -f config/project-scratch-def.json -c -a automation
     ```
 
 1. Push the app to your scratch org:
 
     ```
-    sfdx force:source:push
+    sf project deploy start
     ```
 
 1. Open the scratch org:
 
     ```
-    sfdx force:org:open
+    sf org open
     ```
 
 ## Installing the components using a Developer Edition Org or a Trailhead Playground
@@ -107,19 +107,19 @@ This includes non source-tracked orgs such as a [free Developer Edition Org](htt
 1. Authorize your Trailhead Playground or Developer org and provide it with an alias (**mydevorg** in the command below):
 
     ```
-    sfdx auth:web:login -s -a mydevorg
+    sf org login web -s -a mydevorg
     ```
 
 1. Run this command in a terminal to deploy the app.
 
     ```
-    sfdx force:source:deploy -p src-collections,src-data,src-flows,src-messaging,src-security,src-strings,src-ui,src-utilities
+    sf project deploy start -d src-collections,src-data,src-flows,src-messaging,src-security,src-strings,src-ui,src-utilities
     ```
 
 1. If your org isn't already open, open it now:
 
     ```
-    sfdx force:org:open -u mydevorg
+    sf org open -o mydevorg
     ```
 
 ## Optional Installation Instructions

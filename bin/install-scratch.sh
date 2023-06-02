@@ -11,19 +11,19 @@ echo ""
 
 # Install script
 echo "Cleaning previous scratch org..."
-sfdx force:org:delete -p -u $ORG_ALIAS &> /dev/null
+sf org delete scratch -p -o $ORG_ALIAS &> /dev/null
 echo ""
 
 echo "Creating scratch org..." && \
-sfdx force:org:create -s -f config/project-scratch-def.json -d 30 -c -a $ORG_ALIAS && \
+sf org create scratch -d -f config/project-scratch-def.json -y 30 -c -a $ORG_ALIAS && \
 echo "" && \
 
 echo "Pushing source..." && \
-sfdx force:source:push && \
+sf project deploy start && \
 echo "" && \
 
 echo "Opening org..." && \
-sfdx force:org:open -p /lightning/page/home && \
+sf org open -p /lightning/page/home && \
 echo ""
 
 EXIT_CODE="$?"
