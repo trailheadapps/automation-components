@@ -165,7 +165,7 @@ jobs:
 
             # Create scratch org
             - name: 'Create scratch org'
-              run: sf org create scratch -f config/project-scratch-def.json -a streaming-ci -d -y 1 -c
+              run: sf org create scratch -f config/project-scratch-def.json -a scratch-org -d -y 1 -c
 
             # Deploy source to scratch org
             - name: 'Push source to scratch org'
