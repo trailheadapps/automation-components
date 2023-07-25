@@ -7,10 +7,12 @@ on:
     pull_request:
         types: [opened, edited, synchronize, reopened]
         branches-ignore:
-            - prerelease/spring[2-9][0-9]
-            - prerelease/summer[2-9][0-9]
-            - prerelease/winter[2-9][0-9]
             - auto/package-version*
+
+# Workflow environment variables
+env:
+    # Is the PR base branch a prerelease branch
+    IS_PRERELEASE: ${{ startsWith(github.event.pull_request.base.ref, 'prerelease/') }}
 
 # Jobs to be executed
 jobs:
@@ -164,8 +166,14 @@ jobs:
               run: |
                   find . -type f -name "*.js-meta.xml" -print0 | xargs -0 sed -i 's,configurationEditor="c-,configurationEditor="autocomp-,'
 
+            # Create prerelease scratch org
+            - name: 'Create prerelease scratch org'
+              if: env.IS_PRERELEASE
+              run: sf org create scratch -f config/project-scratch-def.json -a scratch-org -d -y 1 -c --release=preview
+
             # Create scratch org
             - name: 'Create scratch org'
+              if: !env.IS_PRERELEASE
               run: sf org create scratch -f config/project-scratch-def.json -a scratch-org -d -y 1 -c
 
             # Deploy source to scratch org
