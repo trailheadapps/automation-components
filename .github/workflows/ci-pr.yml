@@ -4,6 +4,11 @@ name: CI on PR
 # Definition when the workflow should run
 on:
     workflow_dispatch:
+        inputs:
+            prerelease:
+                description: 'Run on a prerelease org?'
+                required: false
+                type: boolean
     pull_request:
         types: [opened, edited, synchronize, reopened]
         branches-ignore:
@@ -12,7 +17,7 @@ on:
 # Workflow environment variables
 env:
     # Is the PR base branch a prerelease branch
-    IS_PRERELEASE: ${{ startsWith(github.event.pull_request.base.ref, 'prerelease/') }}
+    IS_PRERELEASE: ${{ startsWith(github.event.pull_request.base.ref, 'prerelease/') || inputs.prerelease }}
 
 # Jobs to be executed
 jobs:
@@ -168,12 +173,12 @@ jobs:
 
             # Create prerelease scratch org
             - name: 'Create prerelease scratch org'
-              if: env.IS_PRERELEASE
+              if: ${{ env.IS_PRERELEASE }}
               run: sf org create scratch -f config/project-scratch-def.json -a scratch-org -d -y 1 -c --release=preview
 
             # Create scratch org
             - name: 'Create scratch org'
-              if: !env.IS_PRERELEASE
+              if: ${{ !env.IS_PRERELEASE }}
               run: sf org create scratch -f config/project-scratch-def.json -a scratch-org -d -y 1 -c
 
             # Deploy source to scratch org
