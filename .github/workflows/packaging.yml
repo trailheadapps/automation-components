@@ -121,12 +121,14 @@ jobs:
                   branch: 'auto/package-version-${{ steps.createPackageVersion.outputs.packageVersionId }}'
                   token: ${{ secrets.BOT_ACCESS_TOKEN }}
 
-            # Approve pull request
-            - name: 'Approve Pull Request'
-              uses: juliangruber/approve-pull-request-action@v2
-              with:
-                  github-token: ${{ secrets.GITHUB_TOKEN }}
-                  number: ${{ steps.create-pr.outputs.pull-request-number }}
+            # Approve and mark PR for auto merge
+            - name: 'Approve and mark PR for auto merge'
+              run: |
+                  gh pr review --approve "$PR_NUMBER"
+                  gh pr merge --auto --squash "$PR_NUMBER"
+              env:
+                  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+                  PR_NUMBER: ${{ steps.create-pr.outputs.pull-request-number }}
 
             # Housekeeping
             - name: 'Delete scratch org'
