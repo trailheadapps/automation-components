@@ -22,8 +22,13 @@
                                     class="slds-required"
                                     title="required"
                                     >*</abbr
-                                >{label}</label
-                            >
+                                >{label}
+                                <lightning-helptext
+                                    lwc:if={helptext}
+                                    content={helptext}
+                                >
+                                </lightning-helptext>
+                            </label>
                             <div
                                 id="pill-container"
                                 data-input-name={name}
@@ -53,8 +58,14 @@
                                         class="slds-required"
                                         title="required"
                                         >*</abbr
-                                    >{label}</label
+                                    >{label}
+                                </label>
+                                <lightning-helptext
+                                    lwc:if={helptext}
+                                    content={helptext}
+                                    class="slds-form-element__icon"
                                 >
+                                </lightning-helptext>
                                 <lightning-input
                                     id="this-input"
                                     class="value-input"

@@ -15,6 +15,7 @@ import {
 export default class FlowCombobox extends LightningElement {
     @api name;
     @api label;
+    @api helptext;
     @api required = false;
     @api builderContextFilterType;
     @api builderContextFilterCollectionBoolean;
