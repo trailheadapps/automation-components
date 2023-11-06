@@ -43,6 +43,14 @@ export default class QuickChoiceEditor extends LightningElement {
                 });
             }
         });
+        // Check format for qualified field API Name
+        const errorString = this.validateQualifiedPicklistFieldName();
+        if (errorString) {
+            validity.push({
+                key: 'Qualified Picklist Field Name',
+                errorString
+            });
+        }
         return validity;
     }
 
@@ -84,10 +92,15 @@ export default class QuickChoiceEditor extends LightningElement {
         this.propagateChangeToConfigEditor(name, type, value);
     }
 
-    handleValueChanged(event) {
+    handleFlowComboboxChange(event) {
         const { id, newValueDataType, newValue } = event.detail;
         this.setInputVariableValue(id, newValueDataType, newValue);
         this.propagateChangeToConfigEditor(id, newValueDataType, newValue);
+    }
+
+    handleQualifiedPicklistFieldNameChange(event) {
+        this.handleFlowComboboxChange(event);
+        this.validateQualifiedPicklistFieldName();
     }
 
     getValueFromChangeEvent(event) {
@@ -126,6 +139,21 @@ export default class QuickChoiceEditor extends LightningElement {
             }
         );
         this.dispatchEvent(valueChangedEvent);
+    }
+
+    validateQualifiedPicklistFieldName() {
+        let error = null;
+        if (
+            this.qualifiedPicklistFieldName !== '' &&
+            !/.\../.test(this.qualifiedPicklistFieldName)
+        ) {
+            error = `Value is not a qualified field API name.`;
+            const input = this.template.querySelector(
+                '.qualifiedPicklistFieldName'
+            );
+            input?.setCustomValidity(error);
+        }
+        return error;
     }
 
     get label() {

@@ -1,6 +1,7 @@
 import { LightningElement, api, wire } from 'lwc';
 import { FlowAttributeChangeEvent } from 'lightning/flowSupport';
 import { getPicklistValues } from 'lightning/uiObjectInfoApi';
+import LightningAlert from 'lightning/alert';
 import FORM_FACTOR from '@salesforce/client/formFactor';
 
 // Import component templates
@@ -64,9 +65,12 @@ export default class QuickChoice extends LightningElement {
                 'getPicklistValues wire service returned error: ',
                 JSON.stringify(error)
             );
-            throw new Error(
-                `Failed to retrieve picklist values for ${this.label}`
-            );
+            let message = `Failed to retrieve picklist values for component '${this.label}'`;
+            if (!/.\../.test(this.qualifiedPicklistFieldName)) {
+                message = `Invalid configuration for component '${this.label}': '${this.qualifiedPicklistFieldName}' is not a qualified field API name`;
+            }
+            this.displayError(message);
+            throw new Error(message);
         } else if (data) {
             const icons = this.choiceIcons
                 ? this.choiceIcons
@@ -153,10 +157,9 @@ export default class QuickChoice extends LightningElement {
                 break;
 
             default: {
-                const errorMessage = `Invalid input source for '${this.label}': ${this.inputSource}`;
-                // eslint-disable-next-line no-alert
-                alert(errorMessage);
-                throw new Error(errorMessage);
+                const message = `Invalid configuration for component '${this.label}': unsupported input source '${this.inputSource}'`;
+                this.displayError(message);
+                throw new Error(message);
             }
         }
     }
@@ -167,6 +170,14 @@ export default class QuickChoice extends LightningElement {
             stack
         );
         console.error(JSON.stringify(error, null, 2));
+    }
+
+    displayError(message) {
+        LightningAlert.open({
+            message,
+            theme: 'error',
+            label: 'Quick Choice Component Error'
+        });
     }
 
     renderedCallback() {

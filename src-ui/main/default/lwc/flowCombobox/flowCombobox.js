@@ -115,6 +115,16 @@ export default class FlowCombobox extends LightningElement {
         return this.isValid;
     }
 
+    @api
+    setCustomValidity(message) {
+        this.isValid = message === '';
+        const inputCmp = this.template.querySelector('lightning-input');
+        if (inputCmp) {
+            inputCmp.setCustomValidity(message);
+            inputCmp.reportValidity();
+        }
+    }
+
     @wire(getObjectInfo, { objectApiName: '$_selectedObjectType' })
     _getObjectInfo({ error, data }) {
         if (error) {
@@ -417,6 +427,9 @@ export default class FlowCombobox extends LightningElement {
         }
 
         if (this.isDataModified) {
+            this.setCustomValidity('');
+            this.reportValidity();
+
             this.dispatchValueChangedEvent();
             this.isDataModified = false;
         }

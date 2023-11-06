@@ -53,8 +53,8 @@
     {
       "path": "src-ui",
       "package": "AC - UI",
-      "versionName": "Spring '23 release",
-      "versionNumber": "57.0.0.NEXT",
+      "versionName": "Winter '24 release",
+      "versionNumber": "59.0.0.NEXT",
       "ancestorVersion": "HIGHEST"
     },
     {
@@ -67,7 +67,7 @@
   ],
   "namespace": "",
   "sfdcLoginUrl": "https://login.salesforce.com",
-  "sourceApiVersion": "57.0",
+  "sourceApiVersion": "59.0",
   "packageAliases": {
     "AC - Apex Formula Evaluator": "0Ho5w000000TN4OCAW",
     "AC - Collections": "0Ho5w000000TN3kCAG",
@@ -78,16 +78,6 @@
     "AC - Strings": "0Ho5w000000TN49CAG",
     "AC - UI": "0Ho5w000000TN4ECAW",
     "AC - Utilities": "0Ho5w000000TN4JCAW",
-    "AC - Security@54.0.0-1": "04t5w000005hjJnAAI",
-    "AC - UI@54.0.0-1": "04t5w000005hjJOAAY",
-    "AC - Collections@54.0.0-1": "04t5w000005hjJYAAY",
-    "AC - Flows@54.0.0-1": "04t5w000005hjJiAAI",
-    "AC - Apex Formula Evaluator@54.0.0-1": "04t5w000005hjJdAAI",
-    "AC - Data@54.0.0-1": "04t5w000005hjJEAAY",
-    "AC - Strings@54.0.0-1": "04t5w000005hjJ9AAI",
-    "AC - Utilities@54.0.0-1": "04t5w000005hjJTAAY",
-    "AC - Messaging@54.0.0-1": "04t5w000005hjJJAAY",
-    "AC - Collections@54.1.0-1": "04t5w000005hje9AAA",
     "AC - Data@57.0.0-1": "04t5w000005hkOUAAY",
     "AC - Messaging@57.0.0-1": "04t5w000005hkOZAAY",
     "AC - Apex Formula Evaluator@57.0.0-1": "04t5w000005hkOPAAY",
@@ -95,7 +85,6 @@
     "AC - Collections@57.0.0-2": "04t5w000005hkOtAAI",
     "AC - Strings@57.0.0-1": "04t5w000005hkP8AAI",
     "AC - UI@57.0.0-1": "04t5w000005hkP3AAI",
-    "AC - Flows@57.0.0-1": "04t5w000005hkOyAAI",
     "AC - Utilities@57.0.0-1": "04t5w000005hkPDAAY",
     "AC - Flows@57.1.0-1": "04t5w000005hkkbAAA"
   }

@@ -16,7 +16,7 @@
                         <template lwc:if={displayPill}>
                             <label
                                 class="slds-form-element__label slds-no-flex"
-                                onclick={toggleMenu}
+                                for="pill-container"
                                 ><abbr
                                     lwc:if={required}
                                     class="slds-required"
@@ -25,6 +25,7 @@
                                 >{label}</label
                             >
                             <div
+                                id="pill-container"
                                 data-input-name={name}
                                 class="slds-pill_container"
                                 onclick={handleOpenOptions}
@@ -46,7 +47,7 @@
                             <div onkeyup={handleSearchKeyUp}>
                                 <label
                                     class="slds-form-element__label"
-                                    onclick={toggleMenu}
+                                    for="this-input"
                                     ><abbr
                                         lwc:if={required}
                                         class="slds-required"
@@ -55,6 +56,7 @@
                                     >{label}</label
                                 >
                                 <lightning-input
+                                    id="this-input"
                                     class="value-input"
                                     name="searchText"
                                     type="search"
