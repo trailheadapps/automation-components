@@ -64,7 +64,7 @@ jobs:
               run: |
                   set +e
                   packageName="${{ matrix.package }}"
-                  json=$(sf package version create -p "$packageName" -x -w 20 -f config/project-scratch-def.json --json)
+                  json=$(sf package version create -p "$packageName" -c -x -w 20 -f config/project-scratch-def.json --json)
                   echo $json
                   status=$(echo $json | jq '.status')
                   if [ $status == "0" ]; then
