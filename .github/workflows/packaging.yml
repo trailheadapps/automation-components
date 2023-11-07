@@ -76,7 +76,7 @@ jobs:
                   exit $status
 
             # Wait for package replication
-            - name: 'Wait for package replication'
+            - name: 'Wait for package replication (360s)'
               run: sleep 360s
 
             # Create scratch org
@@ -120,6 +120,11 @@ jobs:
                   commit-message: 'Package: ${{ matrix.package }} - New version: ${{ steps.createPackageVersion.outputs.packageVersionId }}'
                   branch: 'auto/package-version-${{ steps.createPackageVersion.outputs.packageVersionId }}'
                   token: ${{ secrets.BOT_ACCESS_TOKEN }}
+
+            # Wait for PR to stabilize (auto skip CI)
+            - name: 'Wait for PR to stabilize (60s)'
+              run: sleep 60s
+              shell: bash
 
             # Approve and mark PR for auto merge
             - name: 'Approve and mark PR for auto merge'
