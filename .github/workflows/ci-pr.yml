@@ -77,6 +77,7 @@ jobs:
             - name: 'Upload code coverage for LWC to Codecov.io'
               uses: codecov/codecov-action@v4
               with:
+                  token: ${{ secrets.CODECOV_TOKEN }}
                   flags: LWC
 
     # Auto merge Dependabot PRs for:
@@ -193,6 +194,7 @@ jobs:
             - name: 'Upload code coverage for Apex to Codecov.io'
               uses: codecov/codecov-action@v4
               with:
+                  token: ${{ secrets.CODECOV_TOKEN }}
                   flags: Apex
 
             # Housekeeping

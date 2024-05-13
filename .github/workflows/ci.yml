@@ -58,6 +58,7 @@ jobs:
             - name: 'Upload code coverage for LWC to Codecov.io'
               uses: codecov/codecov-action@v4
               with:
+                  token: ${{ secrets.CODECOV_TOKEN }}
                   flags: LWC
 
     scratch-org-test:
@@ -131,6 +132,7 @@ jobs:
             - name: 'Upload code coverage for Apex to Codecov.io'
               uses: codecov/codecov-action@v4
               with:
+                  token: ${{ secrets.CODECOV_TOKEN }}
                   flags: Apex
 
             # Housekeeping
