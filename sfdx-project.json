@@ -78,16 +78,14 @@
     "AC - Strings": "0Ho5w000000TN49CAG",
     "AC - UI": "0Ho5w000000TN4ECAW",
     "AC - Utilities": "0Ho5w000000TN4JCAW",
-    "AC - Data@57.0.0-1": "04t5w000005hkOUAAY",
-    "AC - Messaging@57.0.0-1": "04t5w000005hkOZAAY",
-    "AC - Apex Formula Evaluator@57.0.0-1": "04t5w000005hkOPAAY",
-    "AC - Security@57.0.0-2": "04t5w000005hkOoAAI",
-    "AC - Collections@57.0.0-2": "04t5w000005hkOtAAI",
-    "AC - Strings@57.0.0-1": "04t5w000005hkP8AAI",
-    "AC - UI@57.0.0-1": "04t5w000005hkP3AAI",
-    "AC - Utilities@57.0.0-1": "04t5w000005hkPDAAY",
-    "AC - Flows@57.1.0-1": "04t5w000005hkkbAAA",
-    "AC - UI@59.0.0-5": "04t5w000005hlGTAAY",
-    "AC - Apex Formula Evaluator@60.0.0-1": "04t5w000005hlW8AAI"
+    "AC - Apex Formula Evaluator@60.0.0-1": "04t5w000005hlW8AAI",
+    "AC - Collections@60.0.0-1": "04t5w000005hlW3AAI",
+    "AC - Flows@60.0.0-1": "04t5w000005hlWIAAY",
+    "AC - Data@60.0.0-1": "04t5w000005hlWDAAY",
+    "AC - Messaging@60.0.0-1": "04t5w000005hlWSAAY",
+    "AC - Security@60.0.0-1": "04t5w000005hlWNAAY",
+    "AC - UI@60.0.0-1": "04t5w000005hlWXAAY",
+    "AC - Utilities@60.0.0-1": "04t5w000005hlWhAAI",
+    "AC - Strings@60.0.0-1": "04t5w000005hlWcAAI"
   }
 }
