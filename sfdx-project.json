@@ -90,6 +90,10 @@
     "AC - UI@59.0.0-5": "04t5w000005hlGTAAY",
     "AC - Collections@60.0.0-1": "04t5w000005hlW3AAI",
     "AC - Data@60.0.0-1": "04t5w000005hlWDAAY",
-    "AC - Messaging@60.0.0-1": "04t5w000005hlWSAAY"
+    "AC - Messaging@60.0.0-1": "04t5w000005hlWSAAY",
+    "AC - Security@60.0.0-1": "04t5w000005hlWNAAY",
+    "AC - UI@60.0.0-1": "04t5w000005hlWXAAY",
+    "AC - Utilities@60.0.0-1": "04t5w000005hlWhAAI",
+    "AC - Strings@60.0.0-1": "04t5w000005hlWcAAI"
   }
 }
