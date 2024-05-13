@@ -72,7 +72,7 @@ jobs:
 
             # Run PMD scan
             - name: 'Run PMD scan'
-              uses: pmd/pmd-github-action@v1.4.0
+              uses: pmd/pmd-github-action@v2.0.0
               id: pmd
               with:
                   version: '6.55.0'
