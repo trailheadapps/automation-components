@@ -17,7 +17,7 @@ jobs:
         steps:
             # Trigger packaging workflow
             - name: 'Trigger packaging workflow'
-              uses: peter-evans/repository-dispatch@v2
+              uses: peter-evans/repository-dispatch@v3
               with:
                   token: ${{ secrets.REPO_ACCESS_TOKEN }}
                   event-type: start-packaging
