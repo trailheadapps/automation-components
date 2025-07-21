@@ -1,5 +1,5 @@
 {
-    "name": "automation-components",
+    "name": "@salesforce/automation-components",
     "private": true,
     "version": "1.0.0",
     "description": "Automation Components for the Salesforce Platform",
